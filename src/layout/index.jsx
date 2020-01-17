@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledLayout = styled.div`
-  color: red;
+  /* color: red; */
 `;
 
 export default class MainLayout extends React.Component {
