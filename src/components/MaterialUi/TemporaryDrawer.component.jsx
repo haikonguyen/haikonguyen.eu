@@ -45,7 +45,7 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map(text => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
           </ListItem>
@@ -56,7 +56,7 @@ export default function TemporaryDrawer() {
   );
 
   return (
-    <div>
+    <>
       <IconButton
         edge='start'
         color='inherit'
@@ -68,6 +68,11 @@ export default function TemporaryDrawer() {
       <StyledDrawer open={state.left} onClose={toggleDrawer('left', false)}>
         {sideList('left')}
       </StyledDrawer>
-    </div>
+      <span>test</span>
+      <span>test</span>
+      <span>test</span>
+      <span>test</span>
+      <span>test</span>
+    </>
   );
 }

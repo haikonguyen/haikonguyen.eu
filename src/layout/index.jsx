@@ -1,9 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import config from '../../data/SiteConfig';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import Navigation from '../components/Navigation/Navigation.component';
 import DarkTheme from '../themes/dark.theme';
+import config from '../../data/SiteConfig';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -16,8 +18,6 @@ const GlobalStyle = createGlobalStyle`
 
 export default class MainLayout extends React.Component {
   render() {
-    const { children } = this.props;
-
     return (
       <ThemeProvider theme={DarkTheme}>
         <GlobalStyle />
@@ -34,7 +34,23 @@ export default class MainLayout extends React.Component {
           />
         </Helmet>
         <Navigation />
-        {children}
+
+        {/* Main Sections */}
+
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Paper>xs=12</Paper>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Paper>xs=6</Paper>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Paper>xs=6</Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper>xs=3</Paper>
+          </Grid>
+        </Grid>
       </ThemeProvider>
     );
   }
