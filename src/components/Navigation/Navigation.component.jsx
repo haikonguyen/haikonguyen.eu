@@ -1,40 +1,21 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginRight: theme.spacing(2)
+const StyledAppBar = styled(AppBar)`
+  && {
+    background-color: ${props => props.theme.navBarColor};
   }
-}));
+`;
 
 export default function DenseAppBar() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <AppBar position='static'>
-        <Toolbar variant='dense'>
-          <IconButton
-            edge='start'
-            className={classes.menuButton}
-            color='inherit'
-            aria-label='menu'
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6' color='inherit'>
-            Photos
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <StyledAppBar position='static'>
+      <Toolbar variant='dense'>
+        <TemporaryDrawer />
+      </Toolbar>
+    </StyledAppBar>
   );
 }

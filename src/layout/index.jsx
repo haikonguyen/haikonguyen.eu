@@ -1,25 +1,25 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import config from '../../data/SiteConfig';
 import Navigation from '../components/Navigation/Navigation.component';
+import DarkTheme from '../themes/dark.theme';
 
 const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
+    background-color: ${props => props.theme.backgroundColor};
+    color: ${props => props.theme.bodyTextColor}
   }
-`;
-
-const StyledLayout = styled.div`
-  /* color: red; */
 `;
 
 export default class MainLayout extends React.Component {
   render() {
     const { children } = this.props;
+
     return (
-      <StyledLayout>
+      <ThemeProvider theme={DarkTheme}>
         <GlobalStyle />
         <Helmet>
           <meta name='description' content={config.siteDescription} />
@@ -35,7 +35,7 @@ export default class MainLayout extends React.Component {
         </Helmet>
         <Navigation />
         {children}
-      </StyledLayout>
+      </ThemeProvider>
     );
   }
 }
