@@ -33,13 +33,15 @@ const StyledAppBar = styled(AppBar)`
       color: ${props => props.theme.primaryThemeColor};
       cursor: pointer;
       position: relative;
+      padding: 0.6rem 1.3rem;
+      text-decoration: none;
 
       &:after {
         background: none repeat scroll 0 0 transparent;
         bottom: 0;
         content: '';
         display: block;
-        height: 2px;
+        height: 1px;
         left: 50%;
         position: absolute;
         background: ${props => props.theme.primaryThemeColor};
