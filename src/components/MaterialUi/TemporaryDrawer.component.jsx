@@ -68,11 +68,6 @@ export default function TemporaryDrawer() {
       <StyledDrawer open={state.left} onClose={toggleDrawer('left', false)}>
         {sideList('left')}
       </StyledDrawer>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
     </>
   );
 }
