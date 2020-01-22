@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import Grid from '@material-ui/core/Grid';
 import Navigation from '../components/Navigation/Navigation.component';
+import Hero from '../components/Hero/Hero.component';
 import DarkTheme from '../themes/dark.theme';
 import config from '../../data/SiteConfig';
 
@@ -39,6 +40,9 @@ export default class MainLayout extends React.Component {
           />
         </Helmet>
         <Navigation />
+
+        {/* Main Sections */}
+        <Hero />
 
         {/* Main Sections */}
         <Container fixed>
