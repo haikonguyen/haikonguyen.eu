@@ -9,7 +9,7 @@ import "./listing.css";
 
 class Listing extends React.Component {
   renderPaging() {
-    const { currentPageNum, pageCount } = this.props.pageContext;
+    const { currentPageNum, pageCount } = this.props;
     const prevPage = currentPageNum - 1 === 1 ? "/" : `/${currentPageNum - 1}/`;
     const nextPage = `/${currentPageNum + 1}/`;
     const isFirstPage = currentPageNum === 1;

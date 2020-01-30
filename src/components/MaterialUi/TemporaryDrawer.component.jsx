@@ -2,6 +2,7 @@ import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
+import Link from '@material-ui/core/Link';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -34,9 +35,36 @@ export default function TemporaryDrawer() {
     ) {
       return;
     }
-
     setState({ ...state, [side]: open });
   };
+
+  const mobileLinks = [
+    {
+      id: 1,
+      href: '#about',
+      name: 'About'
+    },
+    {
+      id: 2,
+      href: '#blog',
+      name: 'Blog'
+    },
+    {
+      id: 3,
+      href: '#portfolio',
+      name: 'Portfolio'
+    },
+    {
+      id: 4,
+      href: '#contact',
+      name: 'Contact'
+    },
+    {
+      id: 5,
+      href: '#instagram',
+      name: 'Instagram'
+    }
+  ];
 
   const sideList = side => (
     <StyledSideList
@@ -45,16 +73,16 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map(text => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
+        {mobileLinks.map((link) => (
+          <ListItem button component='a' href={link.href} key={link.id}>
+            {link.name}
           </ListItem>
         ))}
       </List>
-      <Divider />
+      <Divider /> 
     </StyledSideList>
   );
-
+ 
   return (
     <>
       <IconButton

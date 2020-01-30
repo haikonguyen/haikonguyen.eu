@@ -1,28 +1,43 @@
 import React from 'react';
+import styled from 'styled-components';
+import bgSrc from '../../images/heroBg.jpg'
 
-const videoSrc = '';
+
+const StyledBgWrap = styled.section`
+  background-image: url(${bgSrc});
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  .hero-content {
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    position:absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+  }
+`
+
 
 const Hero = () => {
   return (
-    <div>
-      <video
-        src='http://thenewcode.com/assets/videos/polina.mp4'
-        autoPlay
-        muted
-        loop
-        id='myVideo'
-      />
-
-      <div class='content'>
+    <StyledBgWrap>
+      <div className='hero-content'>
         <h1>Heading</h1>
         <p>
           Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat
-          phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum
-          maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore
-          latine molestiae, ad mutat oblique delicatissimi pro.
+          phaedrum te duo, eum cu recteque expetendis neglegentur.
         </p>
       </div>
-    </div>
+    </StyledBgWrap>
   );
 };
 
