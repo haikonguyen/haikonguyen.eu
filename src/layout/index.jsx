@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .anchorDiv {
-    height: 500px;
+    min-height: 500px;
   }
 `;
 
@@ -48,36 +48,36 @@ export default class MainLayout extends React.Component {
         <Container fixed>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <ScrollableAnchor id='section1'>
+              <ScrollableAnchor id='about'>
                 <div className='anchorDiv'>About</div>
               </ScrollableAnchor>
             </Grid>
           </Grid>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <ScrollableAnchor id='section2'>
-                <div className='anchorDiv'>About</div>
+              <ScrollableAnchor id='blog'>
+                <div className='anchorDiv'>Blog</div>
               </ScrollableAnchor>
             </Grid>
           </Grid>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <ScrollableAnchor id='section3'>
-                <div className='anchorDiv'>About</div>
+              <ScrollableAnchor id='portfolio'>
+                <div className='anchorDiv'>Portfolio</div>
               </ScrollableAnchor>
             </Grid>
           </Grid>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <ScrollableAnchor id='section4'>
-                <div className='anchorDiv'>About</div>
+              <ScrollableAnchor id='contact'>
+                <div className='anchorDiv'>Contact</div>
               </ScrollableAnchor>
             </Grid>
           </Grid>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <ScrollableAnchor id='section5'>
-                <div className='anchorDiv'>About</div>
+              <ScrollableAnchor id='instagram'>
+                <div className='anchorDiv'>Instagram</div>
               </ScrollableAnchor>
             </Grid>
           </Grid>
