@@ -1,13 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import Container from '@material-ui/core/Container';
-import ScrollableAnchor from 'react-scrollable-anchor';
-import Grid from '@material-ui/core/Grid';
 import Navigation from '../components/Navigation/Navigation.component';
-import Hero from '../components/Hero/Hero.component';
 import DarkTheme from '../themes/dark.theme';
 import config from '../../data/SiteConfig';
+import SEO from '../components/SEO/SEO';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
 export default class MainLayout extends React.Component {
   render() {
+    const { children } = this.props;
     return (
       <ThemeProvider theme={DarkTheme}>
         <GlobalStyle />
@@ -39,49 +37,11 @@ export default class MainLayout extends React.Component {
             href='https://fonts.googleapis.com/icon?family=Material+Icons'
           />
         </Helmet>
+        <SEO />
         <Navigation />
 
-        {/* Main Sections */}
-        <Hero />
-
-        {/* Main Sections */}
-        <Container fixed>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <ScrollableAnchor id='about'>
-                <div className='anchorDiv'>About</div>
-              </ScrollableAnchor>
-            </Grid>
-          </Grid>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <ScrollableAnchor id='blog'>
-                <div className='anchorDiv'>Blog</div>
-              </ScrollableAnchor>
-            </Grid>
-          </Grid>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <ScrollableAnchor id='portfolio'>
-                <div className='anchorDiv'>Portfolio</div>
-              </ScrollableAnchor>
-            </Grid>
-          </Grid>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <ScrollableAnchor id='contact'>
-                <div className='anchorDiv'>Contact</div>
-              </ScrollableAnchor>
-            </Grid>
-          </Grid>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <ScrollableAnchor id='instagram'>
-                <div className='anchorDiv'>Instagram</div>
-              </ScrollableAnchor>
-            </Grid>
-          </Grid>
-        </Container>
+        {/* Templates & Pages */}
+        {children}
       </ThemeProvider>
     );
   }
