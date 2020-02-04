@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import bgSrc from '../../images/heroBg.jpg'
-
+import bgSrc from '../../images/heroBg.jpg';
 
 const StyledBgWrap = styled.section`
   background-image: url(${bgSrc});
@@ -9,13 +8,13 @@ const StyledBgWrap = styled.section`
   background-position: center center;
   width: 100%;
   height: 100vh;
-  position: relative;
+  display: flex;
+  align-items: flex-end;
 
   .hero-content {
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
-    position:absolute;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -24,8 +23,7 @@ const StyledBgWrap = styled.section`
     padding: 20px;
     width: 100%;
   }
-`
-
+`;
 
 const Hero = () => {
   return (

@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
 
 const StyledAppBar = styled(AppBar)`
@@ -67,9 +68,11 @@ const StyledAppBar = styled(AppBar)`
 export default function DenseAppBar() {
   return (
     <StyledAppBar position='fixed'>
-      <Toolbar xsUp className='mobileNav' variant='dense'>
-        <TemporaryDrawer />
-      </Toolbar>
+      <Hidden>
+        <Toolbar className='mobileNav' variant='dense'>
+          <TemporaryDrawer />
+        </Toolbar>
+      </Hidden>
 
       <Container className='desktopNav' fixed>
         <Grid container>
