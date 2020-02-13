@@ -25,7 +25,7 @@ export default class MainLayout extends React.Component {
     return (
       <ThemeProvider theme={DarkTheme}>
         <GlobalStyle />
-        <Helmet>
+        <Helmet title={config.siteTitle}>
           <meta name='description' content={config.siteDescription} />
           <html lang='en' />
           <link
