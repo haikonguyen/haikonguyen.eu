@@ -2,7 +2,6 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import Grid from '@material-ui/core/Grid';
-import { graphql } from 'gatsby';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 import Hero from '../components/Hero/Hero.component';
@@ -134,30 +133,3 @@ const Home = ({ data }) => {
 };
 
 export default Home;
-
-/* eslint no-undef: "off" */
-export const ListingQuery = graphql`
-  query ListingQuery {
-    allMarkdownRemark(
-      sort: { fields: [fields___date], order: DESC }
-      limit: 3
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            tags
-            cover
-            date
-          }
-        }
-      }
-    }
-  }
-`;
