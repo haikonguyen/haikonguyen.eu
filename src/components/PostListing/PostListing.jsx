@@ -6,12 +6,20 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 
 const StyledCard = styled(Card)`
-  max-width: 345px;
+  && {
+    background-color: ${props => props.theme.colors.cardItemBg};
+    color: ${props => props.theme.colors.bodyTextColor};
+
+    .styledLink {
+      color: ${props => props.theme.colors.primaryThemeColor};
+      text-decoration: none;
+      border: none;
+    }
+  }
 
   .media {
     height: 140px;
@@ -44,37 +52,30 @@ class PostListing extends React.Component {
         <Grid container spacing={3}>
           {postList.map((post, index) => (
             <Grid key={index} item xs={12} sm={6} lg={4}>
-              <StyledCard>
-                <CardActionArea>
-                  <CardMedia
-                    className='media'
-                    image='/static/images/cards/contemplative-reptile.jpg'
-                    title='Contemplative Reptile'
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant='h5' component='h2'>
-                      {post.title}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      color='textSecondary'
-                      component='p'
-                    >
-                      {post.excerpt}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Button size='small' color='primary'>
-                    Share
-                  </Button>
-                  <Button size='small' color='primary'>
-                    <Link to={post.path} key={post.title}>
-                      <h1>See more</h1>
-                    </Link>
-                  </Button>
-                </CardActions>
-              </StyledCard>
+              <Link
+                className='MuiLink-underlineNone'
+                to={post.path}
+                key={post.title}
+              >
+                <StyledCard>
+                  <CardActionArea>
+                    <CardMedia
+                      className='media'
+                      image={post.cover}
+                      title='Contemplative Reptile'
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant='h5' component='h2'>
+                        {post.title}
+                      </Typography>
+                      <Typography variant='body2' component='p'>
+                        {post.excerpt}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions />
+                </StyledCard>
+              </Link>
             </Grid>
           ))}
         </Grid>

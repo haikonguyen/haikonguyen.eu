@@ -11,7 +11,7 @@ import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
 
 const StyledAppBar = styled(AppBar)`
   && {
-    background-color: ${props => props.theme.navBarColor};
+    background-color: ${props => props.theme.colors.navBarColor};
   }
 
   .mobileNav {
@@ -31,7 +31,7 @@ const StyledAppBar = styled(AppBar)`
     }
 
     .navLinks {
-      color: ${props => props.theme.primaryThemeColor};
+      color: ${props => props.theme.colors.primaryThemeColor};
       cursor: pointer;
       position: relative;
       padding: 0.6rem 1.3rem;
@@ -45,7 +45,7 @@ const StyledAppBar = styled(AppBar)`
         height: 1px;
         left: 50%;
         position: absolute;
-        background: ${props => props.theme.primaryThemeColor};
+        background: ${props => props.theme.colors.primaryThemeColor};
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
       }

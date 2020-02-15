@@ -3,53 +3,128 @@ import Container from '@material-ui/core/Container';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import Grid from '@material-ui/core/Grid';
 import { graphql } from 'gatsby';
+import Typography from '@material-ui/core/Typography';
+import styled from 'styled-components';
 import Hero from '../components/Hero/Hero.component';
 import MainLayout from '../layout/index';
 import PostListing from '../components/PostListing/PostListing';
 
+const StyledHeading1 = styled.div`
+  margin-bottom: 20px;
+
+  .styledH1 {
+    color: ${props => props.theme.colors.primaryThemeColor};
+  }
+
+  .styledHr {
+    border: 1px solid ${props => props.theme.colors.primaryThemeColor};
+    width: 80px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+`;
+
 const Home = ({ data }) => {
   return (
     <MainLayout>
-      {/* Main Sections */}
+      {/* Hero Section */}
       <Hero />
-
-      {/* Main Sections */}
       <Container fixed>
+        {/* About Sections */}
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <ScrollableAnchor id='about'>
-              <div className='anchorDiv'>About</div>
+              <StyledHeading1>
+                <Typography
+                  variant='h4'
+                  component='h1'
+                  gutterBottom
+                  align='center'
+                  className='styledH1'
+                >
+                  About
+                </Typography>
+                <hr className='styledHr' />
+              </StyledHeading1>
             </ScrollableAnchor>
           </Grid>
         </Grid>
+        {/* Blog Sections */}
         <Grid container spacing={3}>
           <Grid item xs={12}>
+            <StyledHeading1>
+              <Typography
+                variant='h4'
+                component='h1'
+                gutterBottom
+                align='center'
+                className='styledH1'
+              >
+                Latest Posts
+              </Typography>
+              <hr className='styledHr' />
+            </StyledHeading1>
+          </Grid>
+          <Grid item xs={12}>
             <ScrollableAnchor id='blog'>
-              <div className='anchorDiv'>
-                <h1>Latest Posts</h1>
-                <PostListing data={data} />
-              </div>
+              <PostListing data={data} />
             </ScrollableAnchor>
           </Grid>
         </Grid>
+        {/* Portfolio Sections */}
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <ScrollableAnchor id='portfolio'>
-              <div className='anchorDiv'>Portfolio</div>
+              <StyledHeading1>
+                <Typography
+                  variant='h4'
+                  component='h1'
+                  gutterBottom
+                  align='center'
+                  className='styledH1'
+                >
+                  Portfolio
+                </Typography>
+                <hr className='styledHr' />
+              </StyledHeading1>
             </ScrollableAnchor>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <ScrollableAnchor id='contact'>
-              <div className='anchorDiv'>Contact</div>
-            </ScrollableAnchor>
-          </Grid>
-        </Grid>
+        {/* Instagram Sections */}
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <ScrollableAnchor id='instagram'>
-              <div className='anchorDiv'>Instagram</div>
+              <StyledHeading1>
+                <Typography
+                  variant='h4'
+                  component='h1'
+                  gutterBottom
+                  align='center'
+                  className='styledH1'
+                >
+                  Instagram
+                </Typography>
+                <hr className='styledHr' />
+              </StyledHeading1>
+            </ScrollableAnchor>
+          </Grid>
+        </Grid>
+        {/* Contact Sections */}
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <ScrollableAnchor id='contact'>
+              <StyledHeading1>
+                <Typography
+                  variant='h4'
+                  component='h1'
+                  gutterBottom
+                  align='center'
+                  className='styledH1'
+                >
+                  Contact
+                </Typography>
+                <hr className='styledHr' />
+              </StyledHeading1>
             </ScrollableAnchor>
           </Grid>
         </Grid>
