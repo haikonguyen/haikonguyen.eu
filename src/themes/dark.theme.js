@@ -5,11 +5,14 @@
  */
 
 const DarkTheme = {
-  navBarColor: ' rgba(0, 0, 0, 0.5);',
-  backgroundColor: '#212121',
-  bodyTextColor: '#fff',
-  containerBg: '#333333',
-  primaryThemeColor: '#2196f3',
+  colors: {
+    navBarColor: ' rgba(0, 0, 0, 0.5);',
+    backgroundColor: '#212121',
+    bodyTextColor: '#fff',
+    containerBg: '#333333',
+    primaryThemeColor: '#0288d1',
+    cardItemBg: '#424242'
+  },
 
   screen: {
     mobileS: '(min-width: 320px)',
