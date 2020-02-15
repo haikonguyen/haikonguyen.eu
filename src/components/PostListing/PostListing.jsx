@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -26,9 +26,34 @@ const StyledCard = styled(Card)`
   }
 `;
 
-class PostListing extends React.Component {
-  getPostList() {
-    const { data } = this.props;
+const PostListing = () => {
+  const data = useStaticQuery(graphql`
+    query ListingQuery {
+      allMarkdownRemark(
+        sort: { fields: [fields___date], order: DESC }
+        limit: 3
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+              date
+            }
+            excerpt
+            timeToRead
+            frontmatter {
+              title
+              tags
+              cover
+              date
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const getPostList = () => {
     const postEdges = data.allMarkdownRemark.edges;
     const postList = [];
     postEdges.forEach(postEdge => {
@@ -43,45 +68,42 @@ class PostListing extends React.Component {
       });
     });
     return postList;
-  }
+  };
 
-  render() {
-    const postList = this.getPostList();
-    return (
-      <>
-        <Grid container spacing={3}>
-          {postList.map((post, index) => (
-            <Grid key={index} item xs={12} sm={6} lg={4}>
-              <Link
-                className='MuiLink-underlineNone'
-                to={post.path}
-                key={post.title}
-              >
-                <StyledCard>
-                  <CardActionArea>
-                    <CardMedia
-                      className='media'
-                      image={post.cover}
-                      title='Contemplative Reptile'
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant='h5' component='h2'>
-                        {post.title}
-                      </Typography>
-                      <Typography variant='body2' component='p'>
-                        {post.excerpt}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions />
-                </StyledCard>
-              </Link>
-            </Grid>
-          ))}
+  const postList = getPostList();
+
+  return (
+    <Grid container spacing={3}>
+      {postList.map((post, index) => (
+        <Grid key={index} item xs={12} sm={6} lg={4}>
+          <Link
+            className='MuiLink-underlineNone'
+            to={post.path}
+            key={post.title}
+          >
+            <StyledCard>
+              <CardActionArea>
+                <CardMedia
+                  className='media'
+                  image={post.cover}
+                  title='Contemplative Reptile'
+                />
+                <CardContent>
+                  <Typography gutterBottom variant='h5' component='h2'>
+                    {post.title}
+                  </Typography>
+                  <Typography variant='body2' component='p'>
+                    {post.excerpt}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions />
+            </StyledCard>
+          </Link>
         </Grid>
-      </>
-    );
-  }
-}
+      ))}
+    </Grid>
+  );
+};
 
 export default PostListing;
