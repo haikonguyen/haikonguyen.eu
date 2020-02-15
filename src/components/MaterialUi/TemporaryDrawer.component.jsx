@@ -13,8 +13,8 @@ const StyledSideList = styled.div`
 
 const StyledDrawer = styled(Drawer)`
   .MuiDrawer-paperAnchorLeft {
-    background: ${props => props.theme.backgroundColor};
-    color: ${props => props.theme.bodyTextColor};
+    background: ${props => props.theme.colors.backgroundColor};
+    color: ${props => props.theme.colors.bodyTextColor};
   }
 `;
 
@@ -71,16 +71,16 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {mobileLinks.map((link) => (
+        {mobileLinks.map(link => (
           <ListItem button component='a' href={link.href} key={link.id}>
             {link.name}
           </ListItem>
         ))}
       </List>
-      <Divider /> 
+      <Divider />
     </StyledSideList>
   );
- 
+
   return (
     <>
       <IconButton
