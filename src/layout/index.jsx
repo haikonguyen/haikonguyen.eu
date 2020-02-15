@@ -10,8 +10,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    background-color: ${props => props.theme.backgroundColor};
-    color: ${props => props.theme.bodyTextColor}
+    background-color: ${props => props.theme.colors.backgroundColor};
+    color: ${props => props.theme.colors.bodyTextColor}
   }
   
   .anchorDiv {
