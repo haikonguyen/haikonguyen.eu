@@ -4,7 +4,13 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import {
+  Link,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+  smooth
+} from 'react-scroll';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
@@ -57,6 +63,10 @@ const StyledAppBar = styled(AppBar)`
       :not(:last-child) {
         margin-right: 17px;
       }
+
+      &.active {
+        border-bottom: 1px solid #333;
+      }
     }
 
     @media ${props => props.theme.screen.tablet} {
@@ -77,16 +87,41 @@ export default function DenseAppBar() {
       <Container className='desktopNav' fixed>
         <Grid container>
           <Typography>
-            <Link className='navLinks' href='#section3'>
+            <Link
+              activeClass='active'
+              className='navLinks'
+              to='about'
+              smooth
+              spy
+            >
               Link
             </Link>
-            <Link className='navLinks' href='#section3'>
+            <Link
+              activeClass='active'
+              className='navLinks'
+              to='blog'
+              smooth
+              spy
+            >
               Link
             </Link>
-            <Link className='navLinks' href='#section3'>
+            <Link
+              activeClass='active'
+              className='navLinks'
+              to='portfolio'
+              smooth
+            >
               Link
             </Link>
-            <Link className='navLinks' href='#section3'>
+            <Link
+              activeClass='active'
+              className='navLinks'
+              to='instagram'
+              smooth
+            >
+              Link
+            </Link>
+            <Link activeClass='active' className='navLinks' to='contact' smooth>
               Link
             </Link>
           </Typography>
