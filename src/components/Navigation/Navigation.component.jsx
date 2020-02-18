@@ -4,10 +4,17 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import {
+  Link,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+  smooth
+} from 'react-scroll';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
+import { NavLinks } from './Links';
 
 const StyledAppBar = styled(AppBar)`
   && {
@@ -57,6 +64,10 @@ const StyledAppBar = styled(AppBar)`
       :not(:last-child) {
         margin-right: 17px;
       }
+
+      &.active {
+        border-bottom: 1px solid #333;
+      }
     }
 
     @media ${props => props.theme.screen.tablet} {
@@ -77,18 +88,17 @@ export default function DenseAppBar() {
       <Container className='desktopNav' fixed>
         <Grid container>
           <Typography>
-            <Link className='navLinks' href='#section3'>
-              Link
-            </Link>
-            <Link className='navLinks' href='#section3'>
-              Link
-            </Link>
-            <Link className='navLinks' href='#section3'>
-              Link
-            </Link>
-            <Link className='navLinks' href='#section3'>
-              Link
-            </Link>
+            {NavLinks.map(link => (
+              <Link
+                activeClass='active'
+                className='navLinks'
+                to={link.href}
+                smooth
+                spy
+              >
+                {link.name}
+              </Link>
+            ))}
           </Typography>
         </Grid>
       </Container>
