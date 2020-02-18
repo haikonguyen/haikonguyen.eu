@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import ScrollableAnchor from 'react-scrollable-anchor';
+import { Element } from 'react-scroll';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
@@ -32,7 +32,7 @@ const Home = ({ data }) => {
         {/* About Sections */}
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <ScrollableAnchor id='about'>
+            <Element name='about'>
               <StyledHeading1>
                 <Typography
                   variant='h4'
@@ -45,7 +45,7 @@ const Home = ({ data }) => {
                 </Typography>
                 <hr className='styledHr' />
               </StyledHeading1>
-            </ScrollableAnchor>
+            </Element>
           </Grid>
         </Grid>
         {/* Blog Sections */}
@@ -65,15 +65,15 @@ const Home = ({ data }) => {
             </StyledHeading1>
           </Grid>
           <Grid item xs={12}>
-            <ScrollableAnchor id='blog'>
+            <Element name='blog'>
               <PostListing data={data} />
-            </ScrollableAnchor>
+            </Element>
           </Grid>
         </Grid>
         {/* Portfolio Sections */}
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <ScrollableAnchor id='portfolio'>
+            <Element name='portfolio'>
               <StyledHeading1>
                 <Typography
                   variant='h4'
@@ -86,13 +86,13 @@ const Home = ({ data }) => {
                 </Typography>
                 <hr className='styledHr' />
               </StyledHeading1>
-            </ScrollableAnchor>
+            </Element>
           </Grid>
         </Grid>
         {/* Instagram Sections */}
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <ScrollableAnchor id='instagram'>
+            <Element name='instagram'>
               <StyledHeading1>
                 <Typography
                   variant='h4'
@@ -105,13 +105,13 @@ const Home = ({ data }) => {
                 </Typography>
                 <hr className='styledHr' />
               </StyledHeading1>
-            </ScrollableAnchor>
+            </Element>
           </Grid>
         </Grid>
         {/* Contact Sections */}
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <ScrollableAnchor id='contact'>
+            <Element name='contact'>
               <StyledHeading1>
                 <Typography
                   variant='h4'
@@ -124,7 +124,7 @@ const Home = ({ data }) => {
                 </Typography>
                 <hr className='styledHr' />
               </StyledHeading1>
-            </ScrollableAnchor>
+            </Element>
           </Grid>
         </Grid>
       </Container>
