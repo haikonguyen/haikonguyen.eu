@@ -14,6 +14,7 @@ import {
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
+import { NavLinks } from './Links';
 
 const StyledAppBar = styled(AppBar)`
   && {
@@ -87,43 +88,17 @@ export default function DenseAppBar() {
       <Container className='desktopNav' fixed>
         <Grid container>
           <Typography>
-            <Link
-              activeClass='active'
-              className='navLinks'
-              to='about'
-              smooth
-              spy
-            >
-              Link
-            </Link>
-            <Link
-              activeClass='active'
-              className='navLinks'
-              to='blog'
-              smooth
-              spy
-            >
-              Link
-            </Link>
-            <Link
-              activeClass='active'
-              className='navLinks'
-              to='portfolio'
-              smooth
-            >
-              Link
-            </Link>
-            <Link
-              activeClass='active'
-              className='navLinks'
-              to='instagram'
-              smooth
-            >
-              Link
-            </Link>
-            <Link activeClass='active' className='navLinks' to='contact' smooth>
-              Link
-            </Link>
+            {NavLinks.map(link => (
+              <Link
+                activeClass='active'
+                className='navLinks'
+                to={link.href}
+                smooth
+                spy
+              >
+                {link.name}
+              </Link>
+            ))}
           </Typography>
         </Grid>
       </Container>
