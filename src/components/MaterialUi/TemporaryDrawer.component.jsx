@@ -1,14 +1,22 @@
 import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
+import { NavLinks } from '../Navigation/Links';
 
 const StyledSideList = styled.div`
   width: 250px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+
+  .navLinks {
+    margin: 10px 0 0 10px;
+  }
 `;
 
 const StyledDrawer = styled(Drawer)`
@@ -36,47 +44,24 @@ export default function TemporaryDrawer() {
     setState({ ...state, [side]: open });
   };
 
-  const mobileLinks = [
-    {
-      id: 1,
-      href: '#about',
-      name: 'About'
-    },
-    {
-      id: 2,
-      href: '#blog',
-      name: 'Blog'
-    },
-    {
-      id: 3,
-      href: '#portfolio',
-      name: 'Portfolio'
-    },
-    {
-      id: 4,
-      href: '#contact',
-      name: 'Contact'
-    },
-    {
-      id: 5,
-      href: '#instagram',
-      name: 'Instagram'
-    }
-  ];
-
   const sideList = side => (
     <StyledSideList
       role='presentation'
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <List>
-        {mobileLinks.map(link => (
-          <ListItem button component='a' href={link.href} key={link.id}>
-            {link.name}
-          </ListItem>
-        ))}
-      </List>
+      {NavLinks.map(link => (
+        <Link
+          activeClass='active'
+          className='navLinks'
+          to={link.href}
+          smooth
+          spy
+        >
+          {link.name}
+        </Link>
+      ))}
+
       <Divider />
     </StyledSideList>
   );
