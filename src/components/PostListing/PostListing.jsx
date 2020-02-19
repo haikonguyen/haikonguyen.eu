@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
+import { rem } from 'polished';
 
 const StyledCard = styled(Card)`
   && {
@@ -22,7 +23,7 @@ const StyledCard = styled(Card)`
   }
 
   .media {
-    height: 140px;
+    height: ${rem('140px')};
   }
 `;
 
