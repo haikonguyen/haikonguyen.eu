@@ -1,18 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import {
-  Link,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-  smooth
-} from 'react-scroll';
+import { Link } from 'react-scroll';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
+import { rem } from 'polished';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
 import { NavLinks } from './Links';
 
@@ -29,27 +24,32 @@ const StyledAppBar = styled(AppBar)`
 
   .desktopNav {
     display: none;
-    min-height: 48px;
+    min-height: ${rem('48px')};
     .MuiGrid-root {
-      min-height: 48px;
+      min-height: ${rem('48px')};
       display: flex;
       align-items: center;
       justify-content: flex-end;
     }
 
     .navLinks {
-      color: ${props => props.theme.colors.primaryThemeColor};
+      color: ${props => props.theme.colors.bodyTextColor};
       cursor: pointer;
       position: relative;
-      padding: 0.6rem 1.3rem;
+      padding: ${rem('16px')};
       text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      &--active {
+        color: ${props => props.theme.colors.primaryThemeColor};
+      }
 
       &:after {
-        background: none repeat scroll 0 0 transparent;
         bottom: 0;
         content: '';
         display: block;
-        height: 1px;
+        height: ${rem('3px')};
         left: 50%;
         position: absolute;
         background: ${props => props.theme.colors.primaryThemeColor};
@@ -62,11 +62,7 @@ const StyledAppBar = styled(AppBar)`
       }
 
       :not(:last-child) {
-        margin-right: 17px;
-      }
-
-      &.active {
-        border-bottom: 1px solid #333;
+        margin-right: ${rem('17px')};
       }
     }
 
@@ -76,7 +72,13 @@ const StyledAppBar = styled(AppBar)`
   }
 `;
 
-export default function DenseAppBar() {
+const DenseAppBar = () => {
+  const [activeLink, setActiveLink] = useState(undefined);
+
+  const onClickLinkItem = index => {
+    setActiveLink(index);
+  };
+
   return (
     <StyledAppBar position='fixed'>
       <Hidden>
@@ -88,13 +90,19 @@ export default function DenseAppBar() {
       <Container className='desktopNav' fixed>
         <Grid container>
           <Typography>
-            {NavLinks.map(link => (
+            {NavLinks.map((link, index) => (
               <Link
                 activeClass='active'
-                className='navLinks'
+                className={
+                  activeLink === index
+                    ? 'navLinks navLinks--active'
+                    : 'navLinks'
+                }
                 to={link.href}
                 smooth
                 spy
+                onClick={() => onClickLinkItem(index)}
+                key={index}
               >
                 {link.name}
               </Link>
@@ -104,4 +112,6 @@ export default function DenseAppBar() {
       </Container>
     </StyledAppBar>
   );
-}
+};
+
+export default DenseAppBar;

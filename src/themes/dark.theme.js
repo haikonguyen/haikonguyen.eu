@@ -6,7 +6,7 @@
 
 const DarkTheme = {
   colors: {
-    navBarColor: ' rgba(0, 0, 0, 0.5);',
+    navBarColor: ' rgba(0, 0, 0, 0.5)',
     backgroundColor: '#212121',
     bodyTextColor: '#fff',
     containerBg: '#333333',
