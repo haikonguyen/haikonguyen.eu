@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Navigation from '../components/Navigation/Navigation.component';
+import GoUp from '../components/Navigation/goup.component';
 import DarkTheme from '../themes/dark.theme';
 import config from '../../data/SiteConfig';
 import SEO from '../components/SEO/SEO';
@@ -11,7 +12,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     background-color: ${props => props.theme.colors.backgroundColor};
-    color: ${props => props.theme.colors.bodyTextColor}
+    color: ${props => props.theme.colors.bodyTextColor};
+    outline: none;
   }
   
   .anchorDiv {
@@ -39,6 +41,7 @@ export default class MainLayout extends React.Component {
         </Helmet>
         <SEO />
         <Navigation />
+        <GoUp />
 
         {/* Templates & Pages */}
         {children}
