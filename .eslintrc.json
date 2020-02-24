@@ -13,7 +13,8 @@
         "aspects": ["noHref", "invalidHref", "preferButton"]
       }
     ],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-unused-expressions": ["error", { "allowTernary": true }]
   },
   "settings": {
     "import/core-modules": []
