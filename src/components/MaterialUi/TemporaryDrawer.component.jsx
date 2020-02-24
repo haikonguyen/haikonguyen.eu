@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import Divider from '@material-ui/core/Divider';
@@ -16,6 +16,10 @@ const StyledSideList = styled.div`
 
   .navLinks {
     margin: 10px 0 0 10px;
+
+    &--active {
+      color: ${props => props.theme.colors.primaryThemeColor};
+    }
   }
 `;
 
@@ -44,27 +48,39 @@ export default function TemporaryDrawer() {
     setState({ ...state, [side]: open });
   };
 
-  const sideList = side => (
-    <StyledSideList
-      role='presentation'
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
-      {NavLinks.map(link => (
-        <Link
-          activeClass='active'
-          className='navLinks'
-          to={link.href}
-          smooth
-          spy
-        >
-          {link.name}
-        </Link>
-      ))}
+  const sideList = side => {
+    const [activeLink, setActiveLink] = useState(undefined);
 
-      <Divider />
-    </StyledSideList>
-  );
+    const onClickLinkItem = index => {
+      setActiveLink(index);
+    };
+
+    return (
+      <StyledSideList
+        role='presentation'
+        onClick={toggleDrawer(side, false)}
+        onKeyDown={toggleDrawer(side, false)}
+      >
+        {NavLinks.map((link, index) => (
+          <Link
+            activeClass='active'
+            className={
+              activeLink === index ? 'navLinks navLinks--active' : 'navLinks'
+            }
+            to={link.href}
+            smooth
+            spy
+            onClick={() => onClickLinkItem(index)}
+            key={index}
+          >
+            {link.name}
+          </Link>
+        ))}
+
+        <Divider />
+      </StyledSideList>
+    );
+  };
 
   return (
     <>
