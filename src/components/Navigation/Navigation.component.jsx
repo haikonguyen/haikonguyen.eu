@@ -8,12 +8,17 @@ import { Link } from 'react-scroll';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
 import { rem } from 'polished';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
 import { NavLinks } from './Links';
 
 const StyledAppBar = styled(AppBar)`
   && {
     background-color: ${props => props.theme.colors.navBarColor};
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.65);
+    visibility: ${props => (props.show ? 'visible' : 'hidden')};
+    transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
+    transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
   }
 
   .mobileNav {
@@ -74,13 +79,18 @@ const StyledAppBar = styled(AppBar)`
 
 const DenseAppBar = () => {
   const [activeLink, setActiveLink] = useState(undefined);
+  const [showOnScroll, setShowOnScroll] = useState(false);
 
   const onClickLinkItem = index => {
     setActiveLink(index);
   };
 
+  useScrollPosition(({ currPos }) => {
+    currPos.y < -150 ? setShowOnScroll(true) : setShowOnScroll(false);
+  });
+
   return (
-    <StyledAppBar position='fixed'>
+    <StyledAppBar position='fixed' show={showOnScroll ? 1 : 0}>
       <Hidden>
         <Toolbar className='mobileNav' variant='dense'>
           <TemporaryDrawer />
