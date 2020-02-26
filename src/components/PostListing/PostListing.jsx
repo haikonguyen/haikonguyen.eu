@@ -3,7 +3,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
@@ -14,16 +13,16 @@ const StyledCard = styled(Card)`
   && {
     background-color: ${props => props.theme.colors.cardItemBg};
     color: ${props => props.theme.colors.bodyTextColor};
-
-    .styledLink {
-      color: ${props => props.theme.colors.primaryThemeColor};
-      text-decoration: none;
-      border: none;
-    }
+    box-shadow: ${props => props.theme.colors.cardItemShadow};
   }
 
   .media {
     height: ${rem('140px')};
+  }
+
+  .styledLink {
+    color: ${props => props.theme.colors.primaryThemeColor};
+    text-decoration: none !important;
   }
 `;
 
@@ -48,6 +47,7 @@ const PostListing = () => {
               cover
               date
             }
+            id
           }
         }
       }
@@ -65,7 +65,8 @@ const PostListing = () => {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
+        id: postEdge.node.id
       });
     });
     return postList;
@@ -75,13 +76,9 @@ const PostListing = () => {
 
   return (
     <Grid container spacing={3}>
-      {postList.map((post, index) => (
-        <Grid key={index} item xs={12} sm={6} lg={4}>
-          <Link
-            className='MuiLink-underlineNone'
-            to={post.path}
-            key={post.title}
-          >
+      {postList.map(post => (
+        <Grid key={post.id} item xs={12} sm={6} lg={4}>
+          <Link className='styledLink' to={post.path}>
             <StyledCard>
               <CardActionArea>
                 <CardMedia
@@ -98,7 +95,6 @@ const PostListing = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions />
             </StyledCard>
           </Link>
         </Grid>

@@ -23,7 +23,7 @@ const StyledGoUp = styled.div`
   color: #fff;
   font-size: ${rem('30px')};
   border-radius: 50%;
-  background-color: ${props => props.theme.colors.cardItemBg};
+  background-color: ${props => props.theme.colors.goUpBg};
   text-align: center;
   border: none;
   box-shadow: 0 ${rem('2px')} ${rem('6px')} 0 rgba(0, 0, 0, 0.26);
