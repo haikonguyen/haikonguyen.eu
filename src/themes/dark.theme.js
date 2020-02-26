@@ -6,12 +6,17 @@
 
 const DarkTheme = {
   colors: {
-    navBarColor: ' rgba(0, 0, 0, 0.5)',
+    navBarColor: '#333',
     backgroundColor: '#212121',
-    bodyTextColor: '#fff',
+    bodyTextColor: 'white',
     containerBg: '#333333',
     primaryThemeColor: '#0288d1',
-    cardItemBg: '#424242'
+    cardItemBg: '#424242',
+    themeToggleIcon: 'white',
+    navLinks: 'white',
+    navLinksActive: '#0288d1',
+    cardItemShadow: 'none',
+    goUpBg: '#333'
   },
 
   screen: {
