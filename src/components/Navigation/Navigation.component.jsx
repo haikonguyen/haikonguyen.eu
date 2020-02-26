@@ -9,7 +9,11 @@ import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
 import { rem } from 'polished';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import IconButton from '@material-ui/core/IconButton';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
+
 import { NavLinks } from './Links';
 
 const StyledAppBar = styled(AppBar)`
@@ -38,7 +42,7 @@ const StyledAppBar = styled(AppBar)`
     }
 
     .navLinks {
-      color: ${props => props.theme.colors.bodyTextColor};
+      color: ${props => props.theme.colors.navLinks};
       cursor: pointer;
       position: relative;
       padding: ${rem('16px')};
@@ -47,7 +51,7 @@ const StyledAppBar = styled(AppBar)`
       font-weight: bold;
 
       &--active {
-        color: ${props => props.theme.colors.primaryThemeColor};
+        color: ${props => props.theme.colors.navLinksActive};
       }
 
       &:after {
@@ -57,7 +61,7 @@ const StyledAppBar = styled(AppBar)`
         height: ${rem('3px')};
         left: 50%;
         position: absolute;
-        background: ${props => props.theme.colors.primaryThemeColor};
+        background: ${props => props.theme.colors.navLinksActive};
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
       }
@@ -71,13 +75,18 @@ const StyledAppBar = styled(AppBar)`
       }
     }
 
+    .themeToggleIcon {
+      color: ${props => props.theme.colors.themeToggleIcon};
+    }
+
     @media ${props => props.theme.screen.tablet} {
       display: block;
     }
   }
 `;
 
-const DenseAppBar = () => {
+const DenseAppBar = props => {
+  const { themeToggler, lightTheme } = props;
   const [activeLink, setActiveLink] = useState(undefined);
   const [showOnScroll, setShowOnScroll] = useState(false);
 
@@ -112,12 +121,19 @@ const DenseAppBar = () => {
                 smooth
                 spy
                 onClick={() => onClickLinkItem(index)}
-                key={index}
+                key={link.id}
               >
                 {link.name}
               </Link>
             ))}
           </Typography>
+          <IconButton onClick={() => themeToggler()}>
+            {lightTheme ? (
+              <Brightness4Icon className='themeToggleIcon' />
+            ) : (
+              <Brightness7Icon className='themeToggleIcon' />
+            )}
+          </IconButton>
         </Grid>
       </Container>
     </StyledAppBar>
