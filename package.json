@@ -41,6 +41,7 @@
     "react-scroll": "^1.7.16",
     "react-share": "^3.0.1",
     "react-twitter-widgets": "^1.7.1",
+    "react-typed": "^1.2.0",
     "styled-components": "^5.0.0",
     "url-join": "^4.0.0"
   },
