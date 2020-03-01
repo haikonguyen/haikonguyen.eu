@@ -3,6 +3,8 @@ import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
 import { NavLinks } from '../Navigation/Links';
@@ -30,7 +32,8 @@ const StyledDrawer = styled(Drawer)`
   }
 `;
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(props) {
+  const { lightTheme, themeToggler } = props;
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -95,6 +98,13 @@ export default function TemporaryDrawer() {
       <StyledDrawer open={state.left} onClose={toggleDrawer('left', false)}>
         {sideList('left')}
       </StyledDrawer>
+      <IconButton onClick={() => themeToggler()}>
+        {lightTheme ? (
+          <Brightness4Icon className='themeToggleIcon' />
+        ) : (
+          <Brightness7Icon className='themeToggleIcon' />
+        )}
+      </IconButton>
     </>
   );
 }
