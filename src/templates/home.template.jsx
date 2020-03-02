@@ -23,11 +23,11 @@ const StyledHeading1 = styled.div`
   }
 `;
 
-const Home = ({ data }) => {
+const Home = ({ showOnScroll, data }) => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <Hero />
+      <Hero showOnScroll={showOnScroll} />
       <Container fixed>
         {/* About Sections */}
         <Grid container spacing={3}>

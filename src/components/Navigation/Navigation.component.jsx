@@ -8,7 +8,6 @@ import { Link } from 'react-scroll';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
 import { rem } from 'polished';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import IconButton from '@material-ui/core/IconButton';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
@@ -19,15 +18,28 @@ import { NavLinks } from './Links';
 const StyledAppBar = styled(AppBar)`
   && {
     background-color: ${props => props.theme.colors.navBarColor};
-    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.65);
+    box-shadow: ${props =>
+      props.show ? `0 0.5rem 2rem rgba(0, 0, 0, 0.65)` : `none`};
     visibility: ${props => (props.show ? 'visible' : 'hidden')};
     transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
-    transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
+    opacity: ${props => (props.show ? 1 : 0)};
   }
 
   .mobileNav {
-    @media ${props => props.theme.screen.tablet} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media ${props => props.theme.screen.laptop} {
       display: none;
+    }
+
+    .MuiSvgIcon-root {
+      color: ${props => props.theme.colors.themeToggleIcon};
+    }
+
+    .themeToggleIcon {
+      color: ${props => props.theme.colors.themeToggleIcon};
     }
   }
 
@@ -79,30 +91,28 @@ const StyledAppBar = styled(AppBar)`
       color: ${props => props.theme.colors.themeToggleIcon};
     }
 
-    @media ${props => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.laptop} {
       display: block;
     }
   }
 `;
 
 const DenseAppBar = props => {
-  const { themeToggler, lightTheme } = props;
+  const { themeToggler, lightTheme, showOnScroll } = props;
   const [activeLink, setActiveLink] = useState(undefined);
-  const [showOnScroll, setShowOnScroll] = useState(false);
 
   const onClickLinkItem = index => {
     setActiveLink(index);
   };
 
-  useScrollPosition(({ currPos }) => {
-    currPos.y < -150 ? setShowOnScroll(true) : setShowOnScroll(false);
-  });
-
   return (
     <StyledAppBar position='fixed' show={showOnScroll ? 1 : 0}>
       <Hidden>
         <Toolbar className='mobileNav' variant='dense'>
-          <TemporaryDrawer />
+          <TemporaryDrawer
+            themeToggler={themeToggler}
+            lightTheme={lightTheme}
+          />
         </Toolbar>
       </Hidden>
 
