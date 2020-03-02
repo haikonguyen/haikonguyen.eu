@@ -26,18 +26,35 @@ const StyledGoUp = styled.div`
   background-color: ${props => props.theme.colors.goUpBg};
   text-align: center;
   border: none;
-  box-shadow: 0 ${rem('2px')} ${rem('6px')} 0 rgba(0, 0, 0, 0.26);
+  box-shadow: ${props => (props.showOnScroll ? 'visible' : 'hidden')};
   cursor: pointer;
+  opacity: ${props => (props.showOnScroll ? 1 : 0)};
+  visibility: ${props => (props.showOnScroll ? 'visible' : 'hidden')};
+  transition: all 200ms
+    ${props => (props.showOnScroll ? 'ease-in' : 'ease-out')};
+  box-shadow: ${props =>
+    props.lightTheme ? props.theme.colors.cardItemShadow : 'none'};
+
+  .chevron {
+    &--up {
+      fill: ${props => props.theme.colors.bodyTextColor};
+    }
+  }
 
   &:hover {
     background-color: ${props => props.theme.colors.primaryThemeColor};
   }
 `;
 
-const GoUp = () => {
+const GoUp = props => {
+  const { showOnScroll, lightTheme } = props;
   return (
-    <StyledGoUp onClick={() => scrollToTop()}>
-      <ExpandLessIcon />
+    <StyledGoUp
+      lightTheme={lightTheme}
+      showOnScroll={showOnScroll}
+      onClick={() => scrollToTop()}
+    >
+      <ExpandLessIcon className='chevron--up' />
     </StyledGoUp>
   );
 };

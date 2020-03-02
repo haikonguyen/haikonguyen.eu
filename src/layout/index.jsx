@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import Navigation from '../components/Navigation/Navigation.component';
 import GoUp from '../components/Navigation/goup.component';
 import DarkTheme from '../themes/dark.theme';
@@ -26,10 +27,21 @@ const GlobalStyle = createGlobalStyle`
 const MainLayout = props => {
   const { children } = props;
   const [lightTheme, setLightTheme] = useState(false);
+  const [showOnScroll, setShowOnScroll] = useState(false);
 
   const themeToggler = () => {
     !lightTheme ? setLightTheme(true) : setLightTheme(false);
   };
+
+  useScrollPosition(({ currPos }) => {
+    currPos.y < -150 ? setShowOnScroll(true) : setShowOnScroll(false);
+  });
+
+  const childrenWithProps = React.Children.map(children, child => {
+    return React.cloneElement(child, {
+      showonscroll: showOnScroll ? 1 : 0
+    });
+  });
 
   return (
     <ThemeProvider theme={lightTheme ? LightTheme : DarkTheme}>
@@ -47,11 +59,15 @@ const MainLayout = props => {
         />
       </Helmet>
       <SEO />
-      <Navigation lightTheme={lightTheme} themeToggler={themeToggler} />
-      <GoUp />
+      <Navigation
+        showOnScroll={showOnScroll}
+        lightTheme={lightTheme}
+        themeToggler={themeToggler}
+      />
+      <GoUp lightTheme={lightTheme} showOnScroll={showOnScroll} />
 
       {/* Templates & Pages */}
-      {children}
+      {childrenWithProps}
     </ThemeProvider>
   );
 };
