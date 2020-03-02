@@ -15,6 +15,7 @@ const StyledBgWrap = styled.section`
   height: 100vh;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
 
   .hero-content {
     background: rgba(0, 0, 0, 0.5);
@@ -25,7 +26,7 @@ const StyledBgWrap = styled.section`
       ${props => props.theme.colors.primaryThemeColor};
 
     &__text {
-      font-size: 18px;
+      font-size: ${rem('18px')};
     }
 
     &__highlight {
@@ -43,9 +44,60 @@ const StyledBgWrap = styled.section`
       border-radius: ${rem('15px')};
     }
   }
+
+  .iconScroll {
+    width: ${rem('30px')};
+    height: ${rem('50px')};
+    box-shadow: inset 0 0 0 ${rem('1px')} #fff;
+    border-radius: ${rem('25px')};
+    position: relative;
+    margin-bottom: ${rem('20px')};
+    display: none;
+      /* visibility: ${props => (props.showonscroll ? 'hidden' : 'visible')};
+    transition: all 300ms
+      ${props => (props.showonscroll ? 'ease-out' : 'ease-in')};
+    opacity: ${props => (props.showOnScroll === 1 ? 0 : 1)}; */
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      content: '';
+      width: ${rem('8px')};
+      height: ${rem('8px')};
+      background: #fff;
+      margin-left: ${rem('-4px')};
+      top: ${rem('8px')};
+      border-radius: ${rem('4px')};
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-name: scroll;
+    }
+
+    @media (min-width: 1200px) {
+      display: inline-block;
+    }
+
+    /* &--hide {
+      display: none;
+    } */
+
+    @keyframes scroll {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(${rem('25px')});
+        opacity: 0;
+      }
+    }
+
+
+  }
 `;
 
-const Hero = () => {
+const Hero = props => {
+  const { showonscroll } = props;
+  console.log('show/hidden', showonscroll);
   return (
     <StyledBgWrap>
       <div className='hero-content'>
@@ -63,6 +115,7 @@ const Hero = () => {
           <div className='hero-content__text'>Contact Me</div>
         </Typography>
       </div>
+      <div className={showonscroll ? 'iconScroll--hide' : 'iconScroll'} />
     </StyledBgWrap>
   );
 };

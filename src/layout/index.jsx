@@ -37,6 +37,12 @@ const MainLayout = props => {
     currPos.y < -150 ? setShowOnScroll(true) : setShowOnScroll(false);
   });
 
+  const childrenWithProps = React.Children.map(children, child => {
+    return React.cloneElement(child, {
+      showonscroll: showOnScroll ? 1 : 0
+    });
+  });
+
   return (
     <ThemeProvider theme={lightTheme ? LightTheme : DarkTheme}>
       <GlobalStyle />
@@ -61,7 +67,7 @@ const MainLayout = props => {
       <GoUp lightTheme={lightTheme} showOnScroll={showOnScroll} />
 
       {/* Templates & Pages */}
-      {children}
+      {childrenWithProps}
     </ThemeProvider>
   );
 };
