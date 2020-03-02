@@ -30,7 +30,8 @@ const StyledGoUp = styled.div`
   cursor: pointer;
   opacity: ${props => (props.showOnScroll ? 1 : 0)};
   visibility: ${props => (props.showOnScroll ? 'visible' : 'hidden')};
-  transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
+  transition: all 200ms
+    ${props => (props.showOnScroll ? 'ease-in' : 'ease-out')};
   box-shadow: ${props =>
     props.lightTheme ? props.theme.colors.cardItemShadow : 'none'};
 
