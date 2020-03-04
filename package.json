@@ -7,6 +7,7 @@
     "@material-ui/core": "^4.8.3",
     "@material-ui/icons": "^4.5.1",
     "@n8tb1t/use-scroll-position": "^1.0.43",
+    "@plq/use-persisted-state": "^0.1.2",
     "gatsby": "^2.19.18",
     "gatsby-image": "^2.2.23",
     "gatsby-plugin-catch-links": "^2.1.12",
@@ -43,7 +44,8 @@
     "react-twitter-widgets": "^1.7.1",
     "react-typed": "^1.2.0",
     "styled-components": "^5.0.0",
-    "url-join": "^4.0.0"
+    "url-join": "^4.0.0",
+    "use-persisted-state": "^0.3.0"
   },
   "devDependencies": {
     "cli-glob": "^0.1.0",

@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import createPersistedState from '@plq/use-persisted-state';
 import Navigation from '../components/Navigation/Navigation.component';
 import GoUp from '../components/Navigation/goup.component';
 import DarkTheme from '../themes/dark.theme';
 import LightTheme from '../themes/light.theme';
 import config from '../../data/SiteConfig';
 import SEO from '../components/SEO/SEO';
+
+const [usePersistedState] = createPersistedState('persisted-theme');
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -26,7 +29,10 @@ const GlobalStyle = createGlobalStyle`
 
 const MainLayout = props => {
   const { children } = props;
-  const [lightTheme, setLightTheme] = useState(false);
+  const [lightTheme, setLightTheme] = usePersistedState(
+    'persisted-theme',
+    false
+  );
   const [showOnScroll, setShowOnScroll] = useState(false);
 
   const themeToggler = () => {
