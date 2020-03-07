@@ -53,10 +53,6 @@ const StyledBgWrap = styled.section`
     position: relative;
     margin-bottom: ${rem('20px')};
     display: none;
-      /* visibility: ${props => (props.showonscroll ? 'hidden' : 'visible')};
-    transition: all 300ms
-      ${props => (props.showonscroll ? 'ease-out' : 'ease-in')};
-    opacity: ${props => (props.showOnScroll === 1 ? 0 : 1)}; */
 
     &::before {
       position: absolute;
@@ -77,10 +73,6 @@ const StyledBgWrap = styled.section`
       display: inline-block;
     }
 
-    /* &--hide {
-      display: none;
-    } */
-
     @keyframes scroll {
       0% {
         opacity: 1;
@@ -90,14 +82,11 @@ const StyledBgWrap = styled.section`
         opacity: 0;
       }
     }
-
-
   }
 `;
 
 const Hero = props => {
   const { showonscroll } = props;
-  console.log('show/hidden', showonscroll);
   return (
     <StyledBgWrap>
       <div className='hero-content'>
