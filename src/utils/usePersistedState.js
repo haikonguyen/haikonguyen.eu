@@ -8,7 +8,6 @@ export default function usePersistedState(key, defaultValue) {
   });
   React.useEffect(() => {
     window.localStorage.setItem(key, JSON.stringify(state));
-    console.log('localstorage');
   }, [state, key]);
   return [state, setState];
 }

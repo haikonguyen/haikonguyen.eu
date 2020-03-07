@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.colors.backgroundColor};
     color: ${props => props.theme.colors.bodyTextColor};
     outline: none;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   }
 
   a:-webkit-any-link {
