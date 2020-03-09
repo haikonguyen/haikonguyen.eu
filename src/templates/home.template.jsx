@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import styled from 'styled-components';
 import { rem } from 'polished';
-import Button from '@material-ui/core/Button';
+import CustomBtn from '../components/MaterialUi/Button.component';
 import profileimg from '../images/HaikoProfile.jpg';
 import Hero from '../components/Hero/Hero.component';
 import MainLayout from '../layout/index';
@@ -60,17 +60,6 @@ const StyledFluidContainer = styled(Container)`
         }
       }
     }
-
-    .button {
-      color: #90caf9;
-      border: ${rem('1px')} solid
-        ${props => props.theme.colors.primaryThemeColor};
-
-      &:hover {
-        border: ${rem('1px')} solid #90caf9;
-        background-color: rgba(144, 202, 249, 0.08);
-      }
-    }
   }
 `;
 
@@ -115,9 +104,7 @@ const Home = ({ showOnScroll, data }) => {
                     over the years, sometimes by accident, sometimes on purpose
                     (injected humour and the like).
                   </p>
-                  <Button className='button' size='large' variant='outlined'>
-                    Read My Story
-                  </Button>
+                  <CustomBtn text='Read My Story' />
                 </Col>
               </Row>
             </Col>

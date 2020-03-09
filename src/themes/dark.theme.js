@@ -16,7 +16,9 @@ const DarkTheme = {
     navLinks: 'white',
     navLinksActive: '#0288d1',
     cardItemShadow: 'none',
-    goUpBg: '#333'
+    goUpBg: '#333',
+    buttonHover: '#90caf9',
+    buttonHOverBg: ' rgba(144, 202, 249, 0.08)'
   },
 
   screen: {
