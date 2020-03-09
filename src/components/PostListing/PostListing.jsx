@@ -9,6 +9,10 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { Row, Col } from 'react-grid-system';
 
+const StyledCol = styled(Col)`
+  margin-bottom: ${rem('30px')};
+`;
+
 const StyledCard = styled(Card)`
   && {
     background-color: ${props => props.theme.colors.cardItemBg};
@@ -77,7 +81,7 @@ const PostListing = () => {
   return (
     <Row>
       {postList.map(post => (
-        <Col key={post.id} item xs={12} sm={6} lg={4}>
+        <StyledCol key={post.id} xs={12} sm={6} lg={4}>
           <Link className='styledLink' to={post.path}>
             <StyledCard>
               <CardActionArea>
@@ -97,7 +101,7 @@ const PostListing = () => {
               </CardActionArea>
             </StyledCard>
           </Link>
-        </Col>
+        </StyledCol>
       ))}
     </Row>
   );
