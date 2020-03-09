@@ -16,7 +16,7 @@ const StyledContainer = styled(Container)`
 
   hr {
     border: ${rem('1px')} solid ${props => props.theme.colors.primaryThemeColor};
-    width: 100px;
+    width: ${rem('100px')};
     margin: 0 auto;
     margin-top: ${rem('10px')};
   }
