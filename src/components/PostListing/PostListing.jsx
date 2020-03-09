@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,6 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 import { rem } from 'polished';
+import { Row, Col } from 'react-grid-system';
 
 const StyledCard = styled(Card)`
   && {
@@ -75,9 +75,9 @@ const PostListing = () => {
   const postList = getPostList();
 
   return (
-    <Grid container spacing={3}>
+    <Row>
       {postList.map(post => (
-        <Grid key={post.id} item xs={12} sm={6} lg={4}>
+        <Col key={post.id} item xs={12} sm={6} lg={4}>
           <Link className='styledLink' to={post.path}>
             <StyledCard>
               <CardActionArea>
@@ -97,9 +97,9 @@ const PostListing = () => {
               </CardActionArea>
             </StyledCard>
           </Link>
-        </Grid>
+        </Col>
       ))}
-    </Grid>
+    </Row>
   );
 };
 
