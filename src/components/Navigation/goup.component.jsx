@@ -15,7 +15,7 @@ const scrollToTop = () => {
 const StyledGoUp = styled.div`
   position: fixed;
   right: ${rem('25px')};
-  bottom: ${rem('25px')};
+  bottom: ${rem('50px')};
   z-index: 5;
   line-height: ${rem('40px')} !important;
   height: ${rem('40px')};
