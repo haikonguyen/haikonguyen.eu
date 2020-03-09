@@ -13,7 +13,6 @@ const StyledSideList = styled.div`
   width: 250px;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto';
   text-transform: uppercase;
 
   .navLinks {
@@ -52,29 +51,20 @@ export default function TemporaryDrawer(props) {
   };
 
   const sideList = side => {
-    const [activeLink, setActiveLink] = useState(undefined);
-
-    const onClickLinkItem = index => {
-      setActiveLink(index);
-    };
-
     return (
       <StyledSideList
         role='presentation'
         onClick={toggleDrawer(side, false)}
         onKeyDown={toggleDrawer(side, false)}
       >
-        {NavLinks.map((link, index) => (
+        {NavLinks.map(link => (
           <Link
-            activeClass='active'
-            className={
-              activeLink === index ? 'navLinks navLinks--active' : 'navLinks'
-            }
+            activeClass='navLinks--active'
+            className='navLinks'
             to={link.href}
             smooth
             spy
-            onClick={() => onClickLinkItem(index)}
-            key={index}
+            key={link.id}
           >
             {link.name}
           </Link>

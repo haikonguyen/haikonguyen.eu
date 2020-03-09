@@ -72,7 +72,7 @@ const Home = ({ showOnScroll, data }) => {
       {/* About Section */}
       <StyledFluidContainer fluid>
         <Row>
-          <StyledFixedContainer className='about'>
+          <StyledFixedContainer id='about' className='about'>
             <Col xs={12}>
               <div className='heading'>
                 <h1>About</h1>
@@ -113,10 +113,46 @@ const Home = ({ showOnScroll, data }) => {
 
         <Row>
           {/* Blog Section */}
-          <StyledFixedContainer className='blog'>
+          <StyledFixedContainer id='blog' className='blog'>
             <Col xs={12}>
               <div className='heading'>
                 <h1>Blog</h1>
+                <hr />
+              </div>
+              <PostListing data={data} />
+            </Col>
+          </StyledFixedContainer>
+        </Row>
+        <Row>
+          {/* Portfolio Section */}
+          <StyledFixedContainer id='portfolio' className='blog'>
+            <Col xs={12}>
+              <div className='heading'>
+                <h1>Portfolio</h1>
+                <hr />
+              </div>
+              <PostListing data={data} />
+            </Col>
+          </StyledFixedContainer>
+        </Row>
+        <Row>
+          {/* Instagram Section */}
+          <StyledFixedContainer id='instagram' className='blog'>
+            <Col xs={12}>
+              <div className='heading'>
+                <h1>Blog</h1>
+                <hr />
+              </div>
+              <PostListing data={data} />
+            </Col>
+          </StyledFixedContainer>
+        </Row>
+        <Row>
+          {/* Contact Section */}
+          <StyledFixedContainer id='contact' className='blog'>
+            <Col xs={12}>
+              <div className='heading'>
+                <h1>Contact</h1>
                 <hr />
               </div>
               <PostListing data={data} />
