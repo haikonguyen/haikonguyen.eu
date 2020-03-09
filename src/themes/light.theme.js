@@ -17,7 +17,9 @@ const LightTheme = {
     navLinksActive: '#0288d1',
     cardItemShadow:
       '0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)',
-    goUpBg: 'white'
+    goUpBg: 'white',
+    buttonHover: '#90caf9',
+    buttonHOverBg: ' rgba(144, 202, 249, 0.08)'
   },
 
   screen: {

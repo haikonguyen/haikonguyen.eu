@@ -99,11 +99,6 @@ const StyledAppBar = styled(AppBar)`
 
 const DenseAppBar = props => {
   const { themeToggler, lightTheme, showOnScroll } = props;
-  const [activeLink, setActiveLink] = useState(undefined);
-
-  const onClickLinkItem = index => {
-    setActiveLink(index);
-  };
 
   return (
     <StyledAppBar position='fixed' show={showOnScroll ? 1 : 0}>
@@ -119,18 +114,13 @@ const DenseAppBar = props => {
       <Container className='desktopNav' fixed>
         <Grid container>
           <Typography>
-            {NavLinks.map((link, index) => (
+            {NavLinks.map(link => (
               <Link
-                activeClass='active'
-                className={
-                  activeLink === index
-                    ? 'navLinks navLinks--active'
-                    : 'navLinks'
-                }
+                activeClass='navLinks--active'
+                className='navLinks'
                 to={link.href}
                 smooth
                 spy
-                onClick={() => onClickLinkItem(index)}
                 key={link.id}
               >
                 {link.name}
