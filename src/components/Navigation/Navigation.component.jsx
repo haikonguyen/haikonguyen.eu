@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-scroll';
-import Typography from '@material-ui/core/Typography';
-import Hidden from '@material-ui/core/Hidden';
 import { rem } from 'polished';
 import IconButton from '@material-ui/core/IconButton';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
@@ -17,12 +15,11 @@ import { NavLinks } from './Links';
 
 const StyledAppBar = styled(AppBar)`
   && {
-    background-color: ${props => props.theme.colors.navBarColor};
+    background-color: ${props =>
+      props.show ? props.theme.colors.navBarColor : 'transparent'};
     box-shadow: ${props =>
       props.show ? `0 0.5rem 2rem rgba(0, 0, 0, 0.65)` : `none`};
-    visibility: ${props => (props.show ? 'visible' : 'hidden')};
     transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
-    opacity: ${props => (props.show ? 1 : 0)};
   }
 
   .mobileNav {
@@ -102,31 +99,25 @@ const DenseAppBar = props => {
 
   return (
     <StyledAppBar position='fixed' show={showOnScroll ? 1 : 0}>
-      <Hidden>
-        <Toolbar className='mobileNav' variant='dense'>
-          <TemporaryDrawer
-            themeToggler={themeToggler}
-            lightTheme={lightTheme}
-          />
-        </Toolbar>
-      </Hidden>
+      <Toolbar className='mobileNav' variant='dense'>
+        <TemporaryDrawer themeToggler={themeToggler} lightTheme={lightTheme} />
+      </Toolbar>
 
       <Container className='desktopNav' fixed>
         <Grid container>
-          <Typography>
-            {NavLinks.map(link => (
-              <Link
-                activeClass='navLinks--active'
-                className='navLinks'
-                to={link.href}
-                smooth
-                spy
-                key={link.id}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </Typography>
+          {NavLinks.map(link => (
+            <Link
+              activeClass='navLinks--active'
+              className='navLinks'
+              to={link.href}
+              smooth
+              spy
+              key={link.id}
+            >
+              {link.name}
+            </Link>
+          ))}
+
           <IconButton onClick={() => themeToggler()}>
             {lightTheme ? (
               <Brightness4Icon className='themeToggleIcon' />

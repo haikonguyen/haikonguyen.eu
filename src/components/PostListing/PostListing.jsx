@@ -4,7 +4,6 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { Row, Col } from 'react-grid-system';
@@ -24,6 +23,19 @@ const StyledCard = styled(Card)`
     height: ${rem('140px')};
   }
 
+  .cardContent {
+    min-height: ${rem('172px')};
+
+    h2 {
+      font-size: ${rem('24px')};
+    }
+
+    p {
+      font-size: ${rem('16px')};
+      line-height: ${rem('22px')};
+      text-align: justify;
+    }
+  }
   .styledLink {
     color: ${props => props.theme.colors.primaryThemeColor};
     text-decoration: none !important;
@@ -90,13 +102,9 @@ const PostListing = () => {
                   image={post.cover}
                   title='Contemplative Reptile'
                 />
-                <CardContent>
-                  <Typography gutterBottom variant='h5' component='h2'>
-                    {post.title}
-                  </Typography>
-                  <Typography variant='body2' component='p'>
-                    {post.excerpt}
-                  </Typography>
+                <CardContent className='cardContent'>
+                  <h2>{post.title}</h2>
+                  <p>{post.excerpt}</p>
                 </CardContent>
               </CardActionArea>
             </StyledCard>
