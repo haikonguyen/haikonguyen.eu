@@ -72,92 +72,103 @@ const Home = ({ showOnScroll, data }) => {
       {/* About Section */}
       <StyledFluidContainer fluid>
         <Row>
-          <StyledFixedContainer id='about' className='about'>
-            <Col xs={12}>
-              <div className='heading'>
-                <h1>About</h1>
-                <hr />
-              </div>
-              <Row>
-                <Col xs={12} md={5}>
-                  <div className='profilePictureWrap'>
-                    <img
-                      className='profilePicture'
-                      src={profileimg}
-                      alt='profile avatar'
-                    />
-                    <div className='profilePicture--designElement' />
-                  </div>
-                </Col>
-                <Col xs={12} offset={{ md: 1 }} md={6}>
-                  <h2>HI, I'M HAIKO</h2>
-                  <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to
-                    using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web
-                    page editors now use Lorem Ipsum as their default model
-                    text, and a search for 'lorem ipsum' will uncover many web
-                    sites still in their infancy. Various versions have evolved
-                    over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).
-                  </p>
-                  <CustomBtn text='Read My Story' />
-                </Col>
-              </Row>
-            </Col>
-          </StyledFixedContainer>
+          <Col xs={12}>
+            <StyledFixedContainer id='about' className='about'>
+              <Col xs={12}>
+                <div className='heading'>
+                  <h1>About</h1>
+                  <hr />
+                </div>
+                <Row>
+                  <Col xs={12} md={5}>
+                    <div className='profilePictureWrap'>
+                      <img
+                        className='profilePicture'
+                        src={profileimg}
+                        alt='profile avatar'
+                      />
+                      <div className='profilePicture--designElement' />
+                    </div>
+                  </Col>
+                  <Col xs={12} offset={{ md: 1 }} md={6}>
+                    <h2>HI, I'M HAIKO</h2>
+                    <p>
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking
+                      at its layout. The point of using Lorem Ipsum is that it
+                      has a more-or-less normal distribution of letters, as
+                      opposed to using 'Content here, content here', making it
+                      look like readable English. Many desktop publishing
+                      packages and web page editors now use Lorem Ipsum as their
+                      default model text, and a search for 'lorem ipsum' will
+                      uncover many web sites still in their infancy. Various
+                      versions have evolved over the years, sometimes by
+                      accident, sometimes on purpose (injected humour and the
+                      like).
+                    </p>
+                    <CustomBtn text='Read My Story' />
+                  </Col>
+                </Row>
+              </Col>
+            </StyledFixedContainer>
+          </Col>
         </Row>
 
         <Row>
-          {/* Blog Section */}
-          <StyledFixedContainer id='blog' className='blog'>
-            <Col xs={12}>
-              <div className='heading'>
-                <h1>Blog</h1>
-                <hr />
-              </div>
-              <PostListing data={data} />
-            </Col>
-          </StyledFixedContainer>
+          <Col xs={12}>
+            {/* Blog Section */}
+            <StyledFixedContainer id='blog' className='blog'>
+              <Col xs={12}>
+                <div className='heading'>
+                  <h1>Blog</h1>
+                  <hr />
+                </div>
+                <PostListing data={data} />
+              </Col>
+            </StyledFixedContainer>
+          </Col>
         </Row>
         <Row>
-          {/* Portfolio Section */}
-          <StyledFixedContainer id='portfolio' className='blog'>
-            <Col xs={12}>
-              <div className='heading'>
-                <h1>Portfolio</h1>
-                <hr />
-              </div>
-              <PostListing data={data} />
-            </Col>
-          </StyledFixedContainer>
+          <Col xs={12}>
+            {/* Portfolio Section */}
+            <StyledFixedContainer id='portfolio' className='blog'>
+              <Col xs={12}>
+                <div className='heading'>
+                  <h1>Portfolio</h1>
+                  <hr />
+                </div>
+                <PostListing data={data} />
+              </Col>
+            </StyledFixedContainer>
+          </Col>
         </Row>
         <Row>
-          {/* Instagram Section */}
-          <StyledFixedContainer id='instagram' className='blog'>
-            <Col xs={12}>
-              <div className='heading'>
-                <h1>Blog</h1>
-                <hr />
-              </div>
-              <PostListing data={data} />
-            </Col>
-          </StyledFixedContainer>
+          <Col xs={12}>
+            {/* Instagram Section */}
+            <StyledFixedContainer id='instagram' className='blog'>
+              <Col xs={12}>
+                <div className='heading'>
+                  <h1>Blog</h1>
+                  <hr />
+                </div>
+                <PostListing data={data} />
+              </Col>
+            </StyledFixedContainer>
+          </Col>
         </Row>
         <Row>
-          {/* Contact Section */}
-          <StyledFixedContainer id='contact' className='blog'>
-            <Col xs={12}>
-              <div className='heading'>
-                <h1>Contact</h1>
-                <hr />
-              </div>
-              <PostListing data={data} />
-            </Col>
-          </StyledFixedContainer>
+          <Col xs={12}>
+            {/* Contact Section */}
+            <StyledFixedContainer id='contact' className='blog'>
+              <Col xs={12}>
+                <div className='heading'>
+                  <h1>Contact</h1>
+                  <hr />
+                </div>
+                <PostListing data={data} />
+              </Col>
+            </StyledFixedContainer>
+          </Col>
         </Row>
       </StyledFluidContainer>
     </MainLayout>
