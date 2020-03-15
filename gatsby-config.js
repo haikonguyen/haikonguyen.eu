@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
+    'babel-plugin-styled-components',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -59,10 +60,6 @@ module.exports = {
       options: {
         // Add any options here
       }
-    },
-    'babel-plugin-styled-components',
-    {
-      ssr: false
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
