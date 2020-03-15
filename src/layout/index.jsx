@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import Navigation from '../components/Navigation/Navigation.component';
+import Nav from '../components/Navigation/Navigation.component';
 import GoUp from '../components/Navigation/goup.component';
 import DarkTheme from '../themes/dark.theme';
 import LightTheme from '../themes/light.theme';
@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   
 `;
 
-const MainLayout = props => {
+const Layout = props => {
   const { children } = props;
   const [lightTheme, setLightTheme] = usePersistedState(
     'persisted-theme',
@@ -64,17 +64,16 @@ const MainLayout = props => {
         />
       </Helmet>
       <SEO />
-      <Navigation
+      <Nav
         showOnScroll={showOnScroll}
         lightTheme={lightTheme}
         themeToggler={themeToggler}
       />
-      <GoUp lightTheme={lightTheme} showOnScroll={showOnScroll} />
-
       {/* Templates & Pages */}
       {childrenWithProps}
+      <GoUp lightTheme={lightTheme} showOnScroll={showOnScroll} />
     </ThemeProvider>
   );
 };
 
-export default MainLayout;
+export default Layout;
