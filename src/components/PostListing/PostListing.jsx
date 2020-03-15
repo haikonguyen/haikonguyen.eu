@@ -6,10 +6,21 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { Row, Col } from 'react-grid-system';
 
-const StyledCol = styled(Col)`
-  margin-bottom: ${rem('30px')};
+const StyledContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1140px;
+  margin: 0 auto;
+  grid-gap: 20px;
+
+  @media ${props => props.theme.screen.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ${props => props.theme.screen.laptopL} {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const StyledCard = styled(Card)`
@@ -91,27 +102,25 @@ const PostListing = () => {
   const postList = getPostList();
 
   return (
-    <Row>
+    <StyledContainer>
       {postList.map(post => (
-        <StyledCol key={post.id} xs={12} sm={6} lg={4}>
-          <Link className='styledLink' to={post.path}>
-            <StyledCard>
-              <CardActionArea>
-                <CardMedia
-                  className='media'
-                  image={post.cover}
-                  title='Contemplative Reptile'
-                />
-                <CardContent className='cardContent'>
-                  <h2>{post.title}</h2>
-                  <p>{post.excerpt}</p>
-                </CardContent>
-              </CardActionArea>
-            </StyledCard>
-          </Link>
-        </StyledCol>
+        <Link className='styledLink' to={post.path}>
+          <StyledCard>
+            <CardActionArea>
+              <CardMedia
+                className='media'
+                image={post.cover}
+                title='Contemplative Reptile'
+              />
+              <CardContent className='cardContent'>
+                <h2>{post.title}</h2>
+                <p>{post.excerpt}</p>
+              </CardContent>
+            </CardActionArea>
+          </StyledCard>
+        </Link>
       ))}
-    </Row>
+    </StyledContainer>
   );
 };
 
