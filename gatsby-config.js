@@ -60,6 +60,10 @@ module.exports = {
         // Add any options here
       }
     },
+    'babel-plugin-styled-components',
+    {
+      ssr: false
+    },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
