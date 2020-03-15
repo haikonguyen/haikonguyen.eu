@@ -8,7 +8,6 @@
     "@material-ui/icons": "^4.5.1",
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "@plq/use-persisted-state": "^0.1.2",
-    "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.18",
     "gatsby-image": "^2.2.23",
     "gatsby-plugin-catch-links": "^2.1.12",
@@ -50,6 +49,7 @@
     "use-persisted-state": "^0.3.0"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
     "cli-glob": "^0.1.0",
     "eslint": "^6.5.0",
     "eslint-config-airbnb": "^18.0.1",
