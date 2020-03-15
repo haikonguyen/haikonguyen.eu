@@ -94,41 +94,46 @@ const StyledAppBar = styled(AppBar)`
   }
 `;
 
-const DenseAppBar = props => {
+const Nav = props => {
   const { themeToggler, lightTheme, showOnScroll } = props;
 
   return (
-    <StyledAppBar position='fixed' show={showOnScroll ? 1 : 0}>
-      <Toolbar className='mobileNav' variant='dense'>
-        <TemporaryDrawer themeToggler={themeToggler} lightTheme={lightTheme} />
-      </Toolbar>
+    <nav>
+      <StyledAppBar position='fixed' show={showOnScroll ? 1 : 0}>
+        <Toolbar className='mobileNav' variant='dense'>
+          <TemporaryDrawer
+            themeToggler={themeToggler}
+            lightTheme={lightTheme}
+          />
+        </Toolbar>
 
-      <Container className='desktopNav' fixed>
-        <Grid container>
-          {NavLinks.map(link => (
-            <Link
-              activeClass='navLinks--active'
-              className='navLinks'
-              to={link.href}
-              smooth
-              spy
-              key={link.id}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <Container className='desktopNav' fixed>
+          <Grid container>
+            {NavLinks.map(link => (
+              <Link
+                activeClass='navLinks--active'
+                className='navLinks'
+                to={link.href}
+                smooth
+                spy
+                key={link.id}
+              >
+                {link.name}
+              </Link>
+            ))}
 
-          <IconButton onClick={() => themeToggler()}>
-            {lightTheme ? (
-              <Brightness4Icon className='themeToggleIcon' />
-            ) : (
-              <Brightness7Icon className='themeToggleIcon' />
-            )}
-          </IconButton>
-        </Grid>
-      </Container>
-    </StyledAppBar>
+            <IconButton onClick={() => themeToggler()}>
+              {lightTheme ? (
+                <Brightness4Icon className='themeToggleIcon' />
+              ) : (
+                <Brightness7Icon className='themeToggleIcon' />
+              )}
+            </IconButton>
+          </Grid>
+        </Container>
+      </StyledAppBar>
+    </nav>
   );
 };
 
-export default DenseAppBar;
+export default Nav;

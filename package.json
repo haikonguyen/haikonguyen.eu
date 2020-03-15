@@ -2,7 +2,7 @@
   "name": "gatsby-starter-advanced",
   "description": "GatsbyJS starter that includes examples for advanced use cases.",
   "version": "1.1.0",
-  "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
+  "author": "Haiko Nguyen <haicorp87@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.8.3",
     "@material-ui/icons": "^4.5.1",
@@ -38,7 +38,6 @@
     "react": "^16.10.1",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.10.1",
-    "react-grid-system": "^6.2.4",
     "react-helmet": "^5.2.1",
     "react-scroll": "^1.7.16",
     "react-share": "^3.0.1",
