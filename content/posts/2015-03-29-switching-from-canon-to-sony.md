@@ -1,9 +1,10 @@
 ---
-title: 'Switching from Canon to Sony'
+title: Switching from Canon to Sony
 date: '2015-03-29'
-cover: 'Sony-a6000-Mirrorless-Camera-Officially-Revealed-Features-World-s-Fastest-AF-426154-4.jpg'
-slug: 'Switching from Canon to Sony'
-category: 'Photography'
+cover: >-
+  /images/sony-a6000-mirrorless-camera-officially-revealed-features-world-s-fastest-af-426154-4.jpg
+slug: Switching from Canon to Sony
+category: Photography
 tags:
   - review
   - photography
