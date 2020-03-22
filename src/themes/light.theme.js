@@ -12,7 +12,7 @@ const LightTheme = {
     containerBg: '#333333',
     primaryThemeColor: '#0288d1',
     cardItemBg: 'white',
-    themeToggleIcon: 'rgba(0, 0, 0, 0.87)',
+    themeToggleIcon: '#ECC400',
     navLinks: 'rgba(0, 0, 0, 0.87)',
     navLinksActive: '#0288d1',
     cardItemShadow:

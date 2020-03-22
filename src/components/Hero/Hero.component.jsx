@@ -44,45 +44,6 @@ const StyledBgWrap = styled.section`
       border-radius: ${rem('15px')};
     }
   }
-
-  .iconScroll {
-    width: ${rem('30px')};
-    height: ${rem('50px')};
-    box-shadow: inset 0 0 0 ${rem('1px')} #fff;
-    border-radius: ${rem('25px')};
-    position: relative;
-    margin-bottom: ${rem('20px')};
-    display: none;
-
-    &::before {
-      position: absolute;
-      left: 50%;
-      content: '';
-      width: ${rem('8px')};
-      height: ${rem('8px')};
-      background: #fff;
-      margin-left: ${rem('-4px')};
-      top: ${rem('8px')};
-      border-radius: ${rem('4px')};
-      animation-duration: 1.5s;
-      animation-iteration-count: infinite;
-      animation-name: scroll;
-    }
-
-    @media (min-width: 1200px) {
-      display: inline-block;
-    }
-
-    @keyframes scroll {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(${rem('25px')});
-        opacity: 0;
-      }
-    }
-  }
 `;
 
 const Hero = props => {
@@ -104,7 +65,6 @@ const Hero = props => {
           <div className='hero-content__text'>Contact Me</div>
         </Typography>
       </div>
-      <div className={showonscroll ? 'iconScroll--hide' : 'iconScroll'} />
     </StyledBgWrap>
   );
 };

@@ -36,7 +36,7 @@ const StyledMain = styled.main`
     grid-gap: ${rem('50px')};
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    max-width: 1140px;
+    max-width: ${rem('1140px')};
     margin: 0 auto;
     align-items: flex-start;
 
