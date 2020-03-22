@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import { rem } from 'polished';
 import Layout from '../layout/index';
 import UserInfo from '../components/UserInfo/UserInfo';
 import Disqus from '../components/Disqus/Disqus';
@@ -27,6 +28,7 @@ export default class PostTemplate extends React.Component {
     const StyledContainer = styled.div`
       max-width: 1140px;
       margin: 0 auto;
+      padding: ${rem('70px')} ${rem('15px')};
     `;
     return (
       <Layout>

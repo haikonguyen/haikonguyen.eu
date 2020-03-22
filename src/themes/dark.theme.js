@@ -12,7 +12,7 @@ const DarkTheme = {
     containerBg: '#333333',
     primaryThemeColor: '#0288d1',
     cardItemBg: '#424242',
-    themeToggleIcon: 'white',
+    themeToggleIcon: '#ECC400',
     navLinks: 'white',
     navLinksActive: '#0288d1',
     cardItemShadow: 'none',
