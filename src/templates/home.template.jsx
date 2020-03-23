@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
+import { navigate } from '@reach/router';
 import CustomBtn from '../components/MaterialUi/Button.component';
 import profileimg from '../images/HaikoProfile.jpg';
 import Hero from '../components/Hero/Hero.component';
@@ -53,12 +54,18 @@ const StyledMain = styled.main`
   }
 `;
 
-const Home = ({ showOnScroll }) => {
+const Home = props => {
+  // const navigate = useNavigate();
+
+  const { theme } = props;
+
+  console.log('home', theme);
+
   return (
     <Layout>
       <StyledMain>
         {/* Hero Section */}
-        <Hero showOnScroll={showOnScroll} />
+        <Hero theme={theme} />
         {/* About Section */}
         <section className='sections'>
           <div className='heading'>
@@ -90,7 +97,10 @@ const Home = ({ showOnScroll }) => {
                 Various versions have evolved over the years, sometimes by
                 accident, sometimes on purpose (injected humour and the like).
               </p>
-              <CustomBtn text='Read My Story' />
+              <CustomBtn
+                onClick={() => navigate('/about')}
+                text='Read My Story'
+              />
             </div>
           </div>
         </section>

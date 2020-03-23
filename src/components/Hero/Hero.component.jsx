@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Typed from 'react-typed';
 import Typography from '@material-ui/core/Typography';
 import { rem } from 'polished';
+import CustomBtn from '../MaterialUi/Button.component';
 import bgSrc from '../../images/heroBg.jpg';
 
 const textLines = [`Web Developer`, `Fotographer`, `VLOGGER`];
@@ -19,6 +20,8 @@ const StyledBgWrap = styled.section`
 
   .hero-content {
     background: rgba(0, 0, 0, 0.5);
+    background: ${props =>
+      props.lightTheme ? `rgba(0, 0, 0, 0.65)` : `white`};
     color: ${props => props.theme.colors.white};
     padding: ${rem('20px')};
     width: 100%;
@@ -47,7 +50,10 @@ const StyledBgWrap = styled.section`
 `;
 
 const Hero = props => {
-  const { showonscroll } = props;
+  const { theme } = props;
+
+  console.log('theme', theme);
+
   return (
     <StyledBgWrap>
       <div className='hero-content'>
@@ -62,7 +68,10 @@ const Hero = props => {
               typeSpeed={100}
             />
           </div>
-          <div className='hero-content__text'>Contact Me</div>
+          <CustomBtn
+            onClick={() => console.log('Do something later')}
+            text='Contact Me'
+          />
         </Typography>
       </div>
     </StyledBgWrap>

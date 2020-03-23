@@ -17,9 +17,9 @@ const StyledButton = styled(Button)`
 `;
 
 const CustomBtn = props => {
-  const { text } = props;
+  const { text, onClick } = props;
   return (
-    <StyledButton size='large' variant='outlined'>
+    <StyledButton onClick={onClick} size='large' variant='outlined'>
       {text}
     </StyledButton>
   );
