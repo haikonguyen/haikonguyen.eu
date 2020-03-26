@@ -104,14 +104,16 @@ const PostListing = () => {
   return (
     <StyledContainer>
       {postList.map(post => (
-        <Link className='styledLink' to={post.path}>
+        <Link key={post.id} className='styledLink' to={post.path}>
           <StyledCard>
             <CardActionArea>
               <CardMedia
                 className='media'
                 image={post.cover}
-                title='Contemplative Reptile'
-              />
+                title={post.title}
+              >
+                <img src={post.cover} alt={`${post.title} cover`} />
+              </CardMedia>
               <CardContent className='cardContent'>
                 <h2>{post.title}</h2>
                 <p>{post.excerpt}</p>

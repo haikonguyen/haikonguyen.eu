@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Typed from 'react-typed';
 import Typography from '@material-ui/core/Typography';
 import { rem } from 'polished';
+import CustomBtn from '../MaterialUi/Button.component';
 import bgSrc from '../../images/heroBg.jpg';
 
 const textLines = [`Web Developer`, `Fotographer`, `VLOGGER`];
@@ -18,7 +19,7 @@ const StyledBgWrap = styled.section`
   justify-content: center;
 
   .hero-content {
-    background: rgba(0, 0, 0, 0.5);
+    background: ${props => props.theme.colors.heroContentBg};
     color: ${props => props.theme.colors.white};
     padding: ${rem('20px')};
     width: 100%;
@@ -30,7 +31,7 @@ const StyledBgWrap = styled.section`
     }
 
     &__highlight {
-      font-size: 38px;
+      font-size: ${rem('38px')};
       color: ${props => props.theme.colors.primaryThemeColor};
       text-transform: uppercase;
     }
@@ -44,49 +45,9 @@ const StyledBgWrap = styled.section`
       border-radius: ${rem('15px')};
     }
   }
-
-  .iconScroll {
-    width: ${rem('30px')};
-    height: ${rem('50px')};
-    box-shadow: inset 0 0 0 ${rem('1px')} #fff;
-    border-radius: ${rem('25px')};
-    position: relative;
-    margin-bottom: ${rem('20px')};
-    display: none;
-
-    &::before {
-      position: absolute;
-      left: 50%;
-      content: '';
-      width: ${rem('8px')};
-      height: ${rem('8px')};
-      background: #fff;
-      margin-left: ${rem('-4px')};
-      top: ${rem('8px')};
-      border-radius: ${rem('4px')};
-      animation-duration: 1.5s;
-      animation-iteration-count: infinite;
-      animation-name: scroll;
-    }
-
-    @media (min-width: 1200px) {
-      display: inline-block;
-    }
-
-    @keyframes scroll {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(${rem('25px')});
-        opacity: 0;
-      }
-    }
-  }
 `;
 
-const Hero = props => {
-  const { showonscroll } = props;
+const Hero = () => {
   return (
     <StyledBgWrap>
       <div className='hero-content'>
@@ -101,10 +62,12 @@ const Hero = props => {
               typeSpeed={100}
             />
           </div>
-          <div className='hero-content__text'>Contact Me</div>
+          <CustomBtn
+            onClick={() => console.log('Do something later')}
+            text='Contact Me'
+          />
         </Typography>
       </div>
-      <div className={showonscroll ? 'iconScroll--hide' : 'iconScroll'} />
     </StyledBgWrap>
   );
 };

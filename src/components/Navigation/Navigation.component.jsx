@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-scroll';
 import { rem } from 'polished';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,11 +13,11 @@ import { NavLinks } from './Links';
 
 const StyledAppBar = styled(AppBar)`
   && {
-    background-color: ${props =>
-      props.show ? props.theme.colors.navBarColor : 'transparent'};
+    background: ${props => props.theme.colors.navBarColor};
     box-shadow: ${props =>
       props.show ? `0 0.5rem 2rem rgba(0, 0, 0, 0.65)` : `none`};
-    transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
+    justify-content: center;
+    height: ${props => (props.show ? 'auto' : '70px')};
   }
 
   .mobileNav {
@@ -40,13 +38,13 @@ const StyledAppBar = styled(AppBar)`
     }
   }
 
-  .desktopNav {
+  .destkopNav {
     display: none;
-    min-height: ${rem('48px')};
-    .MuiGrid-root {
-      min-height: ${rem('48px')};
+
+    @media ${props => props.theme.screen.laptop} {
       display: flex;
-      align-items: center;
+      width: 1140px;
+      margin: 0 auto;
       justify-content: flex-end;
     }
 
@@ -87,10 +85,6 @@ const StyledAppBar = styled(AppBar)`
     .themeToggleIcon {
       color: ${props => props.theme.colors.themeToggleIcon};
     }
-
-    @media ${props => props.theme.screen.laptop} {
-      display: block;
-    }
   }
 `;
 
@@ -98,41 +92,37 @@ const Nav = props => {
   const { themeToggler, lightTheme, showOnScroll } = props;
 
   return (
-    <nav>
-      <StyledAppBar position='fixed' show={showOnScroll ? 1 : 0}>
-        <Toolbar className='mobileNav' variant='dense'>
-          <TemporaryDrawer
-            themeToggler={themeToggler}
-            lightTheme={lightTheme}
-          />
-        </Toolbar>
+    <StyledAppBar
+      position={showOnScroll ? 'fixed' : 'relative'}
+      show={showOnScroll ? 1 : 0}
+    >
+      <Toolbar className='mobileNav' variant='dense'>
+        <TemporaryDrawer themeToggler={themeToggler} lightTheme={lightTheme} />
+      </Toolbar>
 
-        <Container className='desktopNav' fixed>
-          <Grid container>
-            {NavLinks.map(link => (
-              <Link
-                activeClass='navLinks--active'
-                className='navLinks'
-                to={link.href}
-                smooth
-                spy
-                key={link.id}
-              >
-                {link.name}
-              </Link>
-            ))}
+      <div className='destkopNav'>
+        {NavLinks.map(link => (
+          <Link
+            activeClass='navLinks--active'
+            className='navLinks'
+            to={link.href}
+            smooth
+            spy
+            key={link.id}
+          >
+            {link.name}
+          </Link>
+        ))}
 
-            <IconButton onClick={() => themeToggler()}>
-              {lightTheme ? (
-                <Brightness4Icon className='themeToggleIcon' />
-              ) : (
-                <Brightness7Icon className='themeToggleIcon' />
-              )}
-            </IconButton>
-          </Grid>
-        </Container>
-      </StyledAppBar>
-    </nav>
+        <IconButton onClick={() => themeToggler()}>
+          {lightTheme ? (
+            <Brightness4Icon className='themeToggleIcon' />
+          ) : (
+            <Brightness7Icon className='themeToggleIcon' />
+          )}
+        </IconButton>
+      </div>
+    </StyledAppBar>
   );
 };
 
