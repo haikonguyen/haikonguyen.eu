@@ -26,8 +26,7 @@ const GlobalStyle = createGlobalStyle`
   
 `;
 
-const Layout = props => {
-  const { children } = props;
+const Layout = ({ children }) => {
   const [lightTheme, setLightTheme] = usePersistedState(
     'persisted-theme',
     false
@@ -40,12 +39,6 @@ const Layout = props => {
 
   useScrollPosition(({ currPos }) => {
     currPos.y < -150 ? setShowOnScroll(true) : setShowOnScroll(false);
-  });
-
-  const childrenWithProps = React.Children.map(children, child => {
-    return React.cloneElement(child, {
-      showonscroll: showOnScroll ? 1 : 0
-    });
   });
 
   return (
@@ -70,7 +63,7 @@ const Layout = props => {
         themeToggler={themeToggler}
       />
       {/* Templates & Pages */}
-      {childrenWithProps}
+      {children}
       <GoUp lightTheme={lightTheme} showOnScroll={showOnScroll} />
     </ThemeProvider>
   );
