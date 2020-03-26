@@ -4,13 +4,6 @@ import Layout from '../layout';
 import config from '../../data/SiteConfig';
 
 class AboutPage extends Component {
-  constructor(props) {
-    super(props);
-
-    const { lightTheme } = props;
-    console.log('about', lightTheme);
-  }
-
   render() {
     return (
       <Layout>

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import Typed from 'react-typed';
 import Typography from '@material-ui/core/Typography';
 import { rem } from 'polished';
