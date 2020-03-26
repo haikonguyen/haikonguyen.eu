@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import Typed from 'react-typed';
 import Typography from '@material-ui/core/Typography';
 import { rem } from 'polished';
@@ -19,9 +19,7 @@ const StyledBgWrap = styled.section`
   justify-content: center;
 
   .hero-content {
-    background: rgba(0, 0, 0, 0.5);
-    background: ${props =>
-      props.lightTheme ? `rgba(0, 0, 0, 0.65)` : `white`};
+    background: ${props => props.theme.colors.heroContentBg};
     color: ${props => props.theme.colors.white};
     padding: ${rem('20px')};
     width: 100%;
@@ -33,7 +31,7 @@ const StyledBgWrap = styled.section`
     }
 
     &__highlight {
-      font-size: 38px;
+      font-size: ${rem('38px')};
       color: ${props => props.theme.colors.primaryThemeColor};
       text-transform: uppercase;
     }
@@ -49,11 +47,7 @@ const StyledBgWrap = styled.section`
   }
 `;
 
-const Hero = props => {
-  const { theme } = props;
-
-  console.log('theme', theme);
-
+const Hero = () => {
   return (
     <StyledBgWrap>
       <div className='hero-content'>

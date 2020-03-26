@@ -55,17 +55,11 @@ const StyledMain = styled.main`
 `;
 
 const Home = props => {
-  // const navigate = useNavigate();
-
-  const { theme } = props;
-
-  console.log('home', theme);
-
   return (
     <Layout>
       <StyledMain>
         {/* Hero Section */}
-        <Hero theme={theme} />
+        <Hero />
         {/* About Section */}
         <section className='sections'>
           <div className='heading'>

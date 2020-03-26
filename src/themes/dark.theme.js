@@ -18,7 +18,8 @@ const DarkTheme = {
     cardItemShadow: 'none',
     goUpBg: '#333',
     buttonHover: '#90caf9',
-    buttonHOverBg: ' rgba(144, 202, 249, 0.08)'
+    buttonHOverBg: ' rgba(144, 202, 249, 0.08)',
+    heroContentBg: 'rgba(0, 0, 0, 0.65)'
   },
 
   screen: {
