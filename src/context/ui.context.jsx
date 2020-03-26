@@ -12,7 +12,7 @@ const UiContextProvider = props => {
   });
 
   return (
-    <UiContext.Provider value={showOnScroll}>{children}</UiContext.Provider>
+    <UiContext.Provider value={{ showOnScroll }}>{children}</UiContext.Provider>
   );
 };
 
