@@ -12,13 +12,14 @@ const DarkTheme = {
     containerBg: '#333333',
     primaryThemeColor: '#0288d1',
     cardItemBg: '#424242',
-    themeToggleIcon: 'white',
+    themeToggleIcon: '#ECC400',
     navLinks: 'white',
     navLinksActive: '#0288d1',
     cardItemShadow: 'none',
     goUpBg: '#333',
     buttonHover: '#90caf9',
-    buttonHOverBg: ' rgba(144, 202, 249, 0.08)'
+    buttonHOverBg: ' rgba(144, 202, 249, 0.08)',
+    heroContentBg: 'rgba(0, 0, 0, 0.65)'
   },
 
   screen: {
