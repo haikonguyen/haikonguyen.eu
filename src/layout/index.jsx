@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { ThemeContext } from '../context/theme.context';
+import { UiContext } from '../context/ui.context';
 import Nav from '../components/Navigation/Navigation.component';
 import GoUp from '../components/Navigation/goup.component';
 import DarkTheme from '../themes/dark.theme';
@@ -28,12 +28,9 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ children }) => {
   const themeContext = useContext(ThemeContext);
+  const uiContext = useContext(UiContext);
   const { lightTheme, themeToggler } = themeContext;
-  const [showOnScroll, setShowOnScroll] = useState(false);
-
-  useScrollPosition(({ currPos }) => {
-    currPos.y < -150 ? setShowOnScroll(true) : setShowOnScroll(false);
-  });
+  const { showOnScroll } = uiContext;
 
   return (
     <ThemeProvider theme={lightTheme ? LightTheme : DarkTheme}>
