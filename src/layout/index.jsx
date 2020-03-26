@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import { ThemeContext } from '../context/theme.context';
 import Nav from '../components/Navigation/Navigation.component';
 import GoUp from '../components/Navigation/goup.component';
 import DarkTheme from '../themes/dark.theme';
 import LightTheme from '../themes/light.theme';
 import config from '../../data/SiteConfig';
 import SEO from '../components/SEO/SEO';
-import usePersistedState from '../utils/usePersistedState';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,15 +27,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Layout = ({ children }) => {
-  const [lightTheme, setLightTheme] = usePersistedState(
-    'persisted-theme',
-    false
-  );
+  const themeContext = useContext(ThemeContext);
+  const { lightTheme, themeToggler } = themeContext;
   const [showOnScroll, setShowOnScroll] = useState(false);
-
-  const themeToggler = () => {
-    !lightTheme ? setLightTheme(true) : setLightTheme(false);
-  };
 
   useScrollPosition(({ currPos }) => {
     currPos.y < -150 ? setShowOnScroll(true) : setShowOnScroll(false);

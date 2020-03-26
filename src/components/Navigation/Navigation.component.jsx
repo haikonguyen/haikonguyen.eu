@@ -16,10 +16,8 @@ const StyledAppBar = styled(AppBar)`
     background: ${props => props.theme.colors.navBarColor};
     box-shadow: ${props =>
       props.show ? `0 0.5rem 2rem rgba(0, 0, 0, 0.65)` : `none`};
-      justify-content: center;
-      height: ${props => (props.show ? 'auto' : '70px')};
-    /* transition: all 200ms ${props =>
-      props.show ? 'ease-in' : 'ease-out'}; */
+    justify-content: center;
+    height: ${props => (props.show ? 'auto' : '70px')};
   }
 
   .mobileNav {
