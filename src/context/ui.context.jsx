@@ -1,7 +1,11 @@
 import React, { createContext, useState } from 'react';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 
-export const UiContext = createContext();
+const initialState = {
+  showOnScroll: false
+};
+
+export const UiContext = createContext(initialState);
 
 const UiContextProvider = props => {
   const { children } = props;

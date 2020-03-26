@@ -1,7 +1,12 @@
 import React, { createContext } from 'react';
 import usePersistedState from '../utils/usePersistedState';
 
-export const ThemeContext = createContext();
+const initialState = {
+  lightTheme: false,
+  themeToggler: () => {}
+};
+
+export const ThemeContext = createContext(initialState);
 
 const ThemeContextProvider = props => {
   const { children } = props;
