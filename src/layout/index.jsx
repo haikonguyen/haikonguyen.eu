@@ -28,8 +28,8 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ children }) => {
   const themeContext = useContext(ThemeContext);
-  const uiContext = useContext(UiContext);
   const { lightTheme, themeToggler } = themeContext;
+  const uiContext = useContext(UiContext);
   const { showOnScroll } = uiContext;
 
   return (
