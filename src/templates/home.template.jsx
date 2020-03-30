@@ -54,7 +54,7 @@ const StyledMain = styled.main`
   }
 `;
 
-const Home = props => {
+const Home = () => {
   return (
     <Layout>
       <StyledMain>
