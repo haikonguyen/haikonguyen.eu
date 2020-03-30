@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { rem } from 'polished';
 import { ThemeContext } from '../context/theme.context';
 import { UiContext } from '../context/ui.context';
 import Nav from '../components/Navigation/Navigation.component';
@@ -18,6 +19,38 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.colors.bodyTextColor};
     outline: none;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+
+  h1 {
+      font-size:  ${rem('25px')};
+
+      @media ${props => props.theme.screen.tablet} {
+        font-size:  ${rem('35px')};
+      }
+  }
+
+  h2 {
+      font-size:  ${rem('22px')};
+
+      @media ${props => props.theme.screen.tablet} {
+        font-size:  ${rem('29px')};
+      }
+  }
+
+  h3 {
+      font-size:  ${rem('20px')};
+
+      @media ${props => props.theme.screen.tablet} {
+        font-size:  ${rem('25px')};
+      }
+  }
+
+  h4 {
+      font-size:  ${rem('18px')};
+
+      @media ${props => props.theme.screen.tablet} {
+        font-size:  ${rem('22px')};
+      }
   }
 
   a:-webkit-any-link {
