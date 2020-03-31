@@ -56,6 +56,18 @@ const GlobalStyle = createGlobalStyle`
   a:-webkit-any-link {
     text-decoration: none;
   }
+
+  .MuiButton-outlinedPrimary {
+    && {
+      color: ${props => props.theme.colors.primaryThemeColor};
+      border: 1px solid ${props => props.theme.colors.primaryThemeColor};
+
+      &:hover {
+        border: 1px solid #90caf9;
+        background-color: rgba(144, 202, 249, 0.08);
+      }
+    }
+  } 
   
 `;
 
