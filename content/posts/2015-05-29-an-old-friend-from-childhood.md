@@ -1,9 +1,9 @@
 ---
-title: 'An old friend from childhood'
+title: An old friend from childhood
 date: '2015-05-29'
-cover: 'DSC00764.jpg'
-slug: 'An old friend from childhood'
-category: 'Photography'
+cover: /images/testwall.jpg
+slug: An old friend from childhood
+category: Photography
 tags:
   - photography
   - workshop
