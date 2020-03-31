@@ -43,9 +43,12 @@ const StyledAppBar = styled(AppBar)`
 
     @media ${props => props.theme.screen.laptop} {
       display: flex;
+      justify-content: flex-end;
+    }
+
+    @media ${props => props.theme.screen.laptopL} {
       width: 1140px;
       margin: 0 auto;
-      justify-content: flex-end;
     }
 
     .navLinks {

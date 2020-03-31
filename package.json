@@ -38,7 +38,6 @@
     "polished": "^3.4.4",
     "prismjs": "^1.16.0",
     "react": "^16.10.1",
-    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.10.1",
     "react-helmet": "^5.2.1",
     "react-scroll": "^1.7.16",
