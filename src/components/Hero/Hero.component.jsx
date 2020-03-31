@@ -65,6 +65,9 @@ const Hero = () => {
           <CustomBtn
             onClick={() => console.log('Do something later')}
             text='Contact Me'
+            variant='outlined'
+            size='large'
+            color='primary'
           />
         </Typography>
       </div>
