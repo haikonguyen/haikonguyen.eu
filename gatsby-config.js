@@ -19,9 +19,27 @@ module.exports = {
     }
   },
   plugins: [
+    'gatsby-plugin-netlify',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
     'babel-plugin-styled-components',
+    // Including in your Gatsby plugins will transform any paths in your frontmatter
+    `gatsby-plugin-netlify-cms-paths`,
+
+    // Including in your Remark plugins will transform any paths in your markdown body
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-plugin-netlify-cms-paths`]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-netlify-cms-paths`,
+      options: {
+        // Path to your Netlify CMS config file
+        cmsConfig: `/static/admin/config.yml`
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
