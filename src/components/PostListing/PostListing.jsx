@@ -67,7 +67,7 @@ const PostListing = () => {
                   image={post.cover}
                   title={post.title}
                 >
-                  <img src='' alt={`${post.title} cover`} />
+                  <img src='' alt='' />
                 </CardMedia>
                 <CardContent className='cardContent'>
                   <h2>{post.title}</h2>
