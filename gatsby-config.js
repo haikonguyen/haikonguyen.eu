@@ -2,6 +2,13 @@ const urljoin = require('url-join');
 const path = require('path');
 const config = require('./data/SiteConfig');
 
+const netlifyCmsPaths = {
+  resolve: `gatsby-plugin-netlify-cms-paths`,
+  options: {
+    cmsConfig: `/static/admin/config.yml`,
+  },
+};
+
 module.exports = {
   pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
   siteMetadata: {
@@ -15,44 +22,45 @@ module.exports = {
         config.siteUrl,
         config.pathPrefix
       )}/logos/logo-512.png`,
-      copyright: config.copyright
-    }
+      copyright: config.copyright,
+    },
   },
   plugins: [
-    'gatsby-plugin-netlify',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
     'babel-plugin-styled-components',
-    // Including in your Gatsby plugins will transform any paths in your frontmatter
-    `gatsby-plugin-netlify-cms-paths`,
-
-    // Including in your Remark plugins will transform any paths in your markdown body
+    netlifyCmsPaths,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [`gatsby-plugin-netlify-cms-paths`]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-netlify-cms-paths`,
-      options: {
-        // Path to your Netlify CMS config file
-        cmsConfig: `/static/admin/config.yml`
-      }
+        plugins: [
+          netlifyCmsPaths, // Including in your Remark plugins will transform any paths in your markdown body
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 930,
+              backgroundColor: 'transparent', // required to display blurred image first
+            },
+          },
+        ],
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'upload-images',
-        path: `${__dirname}/content/images`
-      }
+        path: `${__dirname}/static/images`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/content/posts`
-      }
+        path: `${__dirname}/static/posts`,
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -61,35 +69,35 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 690
-            }
+              maxWidth: 690,
+            },
           },
           {
-            resolve: 'gatsby-remark-responsive-iframe'
+            resolve: 'gatsby-remark-responsive-iframe',
           },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-autolink-headers',
-          'gatsby-remark-prismjs'
-        ]
-      }
+          'gatsby-remark-prismjs',
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
-      }
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: config.googleAnalyticsID
-      }
+        trackingId: config.googleAnalyticsID,
+      },
     },
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: config.themeColor
-      }
+        color: config.themeColor,
+      },
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -110,15 +118,15 @@ module.exports = {
           {
             src: '/logos/logo-192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: '/logos/logo-512.png',
             sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
-      }
+            type: 'image/png',
+          },
+        ],
+      },
     },
     'gatsby-plugin-offline',
     {
@@ -128,82 +136,9 @@ module.exports = {
         enableIdentityWidget: true,
         publicPath: 'admin',
         htmlTitle: 'Content Manager',
-        includeRobots: false
-      }
+        includeRobots: false,
+      },
     },
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: {
-        setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = 'GatsbyJS Advanced Starter';
-          return ret;
-        },
-        query: `
-        {
-          site {
-            siteMetadata {
-              rssMetadata {
-                site_url
-                feed_url
-                title
-                description
-                image_url
-                copyright
-              }
-            }
-          }
-        }
-      `,
-        feeds: [
-          {
-            serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
-                categories: edge.node.frontmatter.tags,
-                date: edge.node.fields.date,
-                title: edge.node.frontmatter.title,
-                description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [
-                  { 'content:encoded': edge.node.html },
-                  { author: config.userEmail }
-                ]
-              }));
-            },
-            query: `
-            {
-              allMarkdownRemark(
-                limit: 1000,
-                sort: { order: DESC, fields: [fields___date] },
-              ) {
-                edges {
-                  node {
-                    excerpt
-                    html
-                    timeToRead
-                    fields {
-                      slug
-                      date
-                    }
-                    frontmatter {
-                      title
-                      cover
-                      date
-                      category
-                      tags
-                    }
-                  }
-                }
-              }
-            }
-          `,
-            output: config.siteRss
-          }
-        ]
-      }
-    }
-  ]
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
+  ],
 };

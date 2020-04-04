@@ -9,7 +9,7 @@ import Footer from '../../components/Footer/Footer';
 import config from '../../../data/SiteConfig';
 import StyledContainer, { PostHeader } from './post.style';
 
-const PostTemplate = props => {
+const PostTemplate = (props) => {
   const { data, pageContext } = props;
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
@@ -27,7 +27,7 @@ const PostTemplate = props => {
         <title>{`${post.title} | ${config.siteTitle}`}</title>
       </Helmet>
       <SEO postPath={slug} postNode={postNode} postSEO />
-      <PostHeader styled={{ backgroundImage: `url(${post.cover})` }}>
+      <PostHeader style={{ backgroundImage: `url(${post.cover})` }}>
         <div className='postHeaderWrap'>
           <PostTags className='postHeaderWrap__tags' tags={post.tags} />
         </div>
