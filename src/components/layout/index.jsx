@@ -2,21 +2,21 @@ import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { rem } from 'polished';
-import { ThemeContext } from '../context/theme.context';
-import { UiContext } from '../context/ui.context';
-import Nav from '../components/Navigation/Navigation.component';
-import GoUp from '../components/Navigation/goup.component';
-import DarkTheme from '../themes/dark.theme';
-import LightTheme from '../themes/light.theme';
-import config from '../../data/SiteConfig';
-import SEO from '../components/SEO/SEO';
+import { ThemeContext } from '../../context/theme.context';
+import { UiContext } from '../../context/ui.context';
+import Nav from '../Navigation/Navigation.component';
+import GoUp from '../Navigation/goup.component';
+import DarkTheme from '../../themes/dark.theme';
+import LightTheme from '../../themes/light.theme';
+import config from '../../../data/SiteConfig';
+import SEO from '../SEO/SEO';
 
 const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    background-color: ${props => props.theme.colors.backgroundColor};
-    color: ${props => props.theme.colors.bodyTextColor};
+    background-color: ${(props) => props.theme.colors.backgroundColor};
+    color: ${(props) => props.theme.colors.bodyTextColor};
     outline: none;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   }
@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   h1 {
       font-size:  ${rem('25px')};
 
-      @media ${props => props.theme.screen.tablet} {
+      @media ${(props) => props.theme.screen.tablet} {
         font-size:  ${rem('35px')};
       }
   }
@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   h2 {
       font-size:  ${rem('22px')};
 
-      @media ${props => props.theme.screen.tablet} {
+      @media ${(props) => props.theme.screen.tablet} {
         font-size:  ${rem('29px')};
       }
   }
@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
   h3 {
       font-size:  ${rem('20px')};
 
-      @media ${props => props.theme.screen.tablet} {
+      @media ${(props) => props.theme.screen.tablet} {
         font-size:  ${rem('25px')};
       }
   }
@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
   h4 {
       font-size:  ${rem('18px')};
 
-      @media ${props => props.theme.screen.tablet} {
+      @media ${(props) => props.theme.screen.tablet} {
         font-size:  ${rem('22px')};
       }
   }
@@ -57,10 +57,20 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  .MuiButton-root {
+    && {
+      color: ${(props) => props.theme.colors.navLinks};
+
+      &:hover {
+        background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
+      }
+    }
+  }
+
   .MuiButton-outlinedPrimary {
     && {
-      color: ${props => props.theme.colors.primaryThemeColor};
-      border: 1px solid ${props => props.theme.colors.primaryThemeColor};
+      color: ${(props) => props.theme.colors.primaryThemeColor};
+      border: 1px solid ${(props) => props.theme.colors.primaryThemeColor};
 
       &:hover {
         border: 1px solid #90caf9;
@@ -68,6 +78,15 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   } 
+
+  .MuiIconButton-root {
+    && {
+
+      &:hover {
+        background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
+      }
+    }
+  }
   
 `;
 
