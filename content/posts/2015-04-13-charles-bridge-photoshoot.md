@@ -1,9 +1,9 @@
 ---
-title: 'Charles Bridge Photoshoot'
+title: Charles Bridge Photoshoot
 date: '2015-04-13'
-cover: ''
-slug: 'Charles Bridge Photoshoot'
-category: 'Photography'
+cover: /images/harley-davidson-eetjkc_wz34-unsplash.jpg
+slug: Charles Bridge Photoshoot
+category: Photography
 tags:
   - photography
 ---
