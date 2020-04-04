@@ -3,13 +3,13 @@ backend:
   branch: master # Branch to update
   repo: 2c0/haikonguyen.eu # Repo for pushing new commits. Make sure to replace with your repo!
 
-media_folder: content/images
-public_folder: /images
+media_folder: static/images
+public_folder: images
 
 collections:
   - name: blog
     label: "Post"
-    folder: "content/posts"
+    folder: "static/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
