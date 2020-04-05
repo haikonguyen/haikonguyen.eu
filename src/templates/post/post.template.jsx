@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Layout from '../../components/layout/index';
+import Layout from '../../components/Layout/layout.component';
 import PostTags from '../../components/PostTags/PostTags';
 import SocialLinks from '../../components/SocialLinks/SocialLinks';
 import SEO from '../../components/SEO/SEO';

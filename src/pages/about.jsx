@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import config from '../../data/SiteConfig';
-import Layout from '../components/layout/index';
+import Layout from '../components/Layout/layout.component';
 
 class AboutPage extends Component {
   render() {
