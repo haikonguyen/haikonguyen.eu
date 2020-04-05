@@ -20,7 +20,8 @@ const LightTheme = {
     goUpBg: 'white',
     buttonHover: '#90caf9',
     buttonHOverBg: ' rgba(144, 202, 249, 0.08)',
-    heroContentBg: 'white'
+    heroContentBg: 'white',
+    MuiButtonRootHover: '#EAEAEA',
   },
 
   screen: {
@@ -30,8 +31,8 @@ const LightTheme = {
     tablet: '(min-width: 768px)',
     laptop: '(min-width: 1024px)',
     laptopL: '(min-width: 1440px)',
-    desktop: '(min-width: 2560px)'
-  }
+    desktop: '(min-width: 2560px)',
+  },
 };
 
 export default LightTheme;
