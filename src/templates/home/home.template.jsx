@@ -3,7 +3,7 @@ import { navigate } from '@reach/router';
 import CustomBtn from '../../components/MaterialUi/Button.component';
 import profileimg from '../../images/HaikoProfile.jpg';
 import Hero from '../../components/Hero/Hero.component';
-import Layout from '../../components/layout/index';
+import Layout from '../../components/Layout/layout.component';
 import PostListing from '../../components/PostListing/PostListing';
 import StyledMain from './home.style';
 

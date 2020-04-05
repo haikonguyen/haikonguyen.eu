@@ -3,7 +3,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
-import { navigate } from '@reach/router';
+import { Link } from 'gatsby';
 import CustomBtn from '../MaterialUi/Button.component';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
 import { NavLinks } from './Links';
@@ -23,13 +23,23 @@ const Nav = (props) => {
 
       <div className='destkopNav'>
         {NavLinks.map((link) => (
-          <CustomBtn
-            size='large'
-            onClick={() => navigate(link.href)}
+          <Link
+            className='navLinks'
             key={link.id}
-            text={link.name}
-            color='primary'
-          />
+            to={link.href}
+            activeClassName='navLinks--active'
+          >
+            <CustomBtn
+              className={
+                showOnScroll
+                  ? 'navLinks__btn navLinks__btn--scrolled'
+                  : 'navLinks__btn'
+              }
+              size='large'
+              text={link.name}
+              color='primary'
+            />
+          </Link>
         ))}
 
         <IconButton onClick={() => themeToggler()}>

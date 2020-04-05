@@ -8,7 +8,12 @@ const StyledAppBar = styled(AppBar)`
     box-shadow: ${(props) =>
       props.show ? `0 0.5rem 2rem rgba(0, 0, 0, 0.65)` : `none`};
     justify-content: center;
-    height: ${(props) => (props.show ? 'auto' : '70px')};
+    /* position: ${(props) => (props.show ? `fixed` : `relative`)};
+    transition: all 0.3s; */
+
+    @media ${(props) => props.theme.screen.tablet} {
+      height: ${(props) => (props.show ? 'auto' : '70px')};
+    }
   }
 
   .mobileNav {
@@ -39,36 +44,22 @@ const StyledAppBar = styled(AppBar)`
     }
 
     .navLinks {
-      color: ${(props) => props.theme.colors.navLinks};
-      cursor: pointer;
-      position: relative;
-      padding: ${rem('16px')};
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: bold;
+      button {
+        padding: 19px;
+        /* transition: padding 0.3s ease-in-out; */
 
+        &.navLinks__btn--scrolled {
+          padding: 8px 11px;
+          /* transition: padding 0.3s ease-in-out; */
+        }
+      }
       &--active {
-        color: ${(props) => props.theme.colors.navLinksActive};
-      }
+        border-bottom: ${rem('3px')} solid
+          ${(props) => props.theme.colors.navLinksActive};
 
-      &:after {
-        bottom: 0;
-        content: '';
-        display: block;
-        height: ${rem('3px')};
-        left: 50%;
-        position: absolute;
-        background: ${(props) => props.theme.colors.navLinksActive};
-        transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0;
-      }
-      &:hover:after {
-        width: 100%;
-        left: 0;
-      }
-
-      :not(:last-child) {
-        margin-right: ${rem('17px')};
+        .navLinks__btn {
+          color: ${(props) => props.theme.colors.navLinksActive};
+        }
       }
     }
 
