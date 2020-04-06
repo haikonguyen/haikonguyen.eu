@@ -49,7 +49,7 @@ a:-webkit-any-link {
 
 .MuiButton-root {
   && {
-    color: ${(props) => props.theme.colors.navLinks};
+    color: ${(props) => props.theme.colors.white};
 
     &:hover {
       background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
