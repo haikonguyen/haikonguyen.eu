@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typed from 'react-typed';
-import Typography from '@material-ui/core/Typography';
 import { rem } from 'polished';
 import CustomBtn from '../MaterialUi/Button.component';
-import bgSrc from '../../images/heroBg.jpg';
+import bgSrc from '../../images/PragueCastle01_opti.jpg';
+import profileImg from '../../images/HaikoProfile.jpg';
+import config from '../../../data/SiteConfig';
 
 const textLines = [`Web Developer`, `Fotographer`, `VLOGGER`];
 
@@ -13,36 +14,51 @@ const StyledBgWrap = styled.section`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 
-  .hero-content {
-    background: ${props => props.theme.colors.heroContentBg};
-    color: ${props => props.theme.colors.white};
+  @media ${(props) => props.theme.screen.tablet} {
+    height: 50vh;
+  }
+
+  .hero {
+    background: ${(props) => props.theme.colors.heroContentBg};
+    color: ${(props) => props.theme.colors.white};
     padding: ${rem('20px')};
     width: 100%;
-    border-left: ${rem('3px')} solid
-      ${props => props.theme.colors.primaryThemeColor};
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 
-    &__text {
-      font-size: ${rem('18px')};
-    }
+    &__profileWrap {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
 
-    &__highlight {
-      font-size: ${rem('38px')};
-      color: ${props => props.theme.colors.primaryThemeColor};
-      text-transform: uppercase;
-    }
+      &__header {
+        img {
+          border-radius: 50%;
+          height: 180px;
+          width: 180px;
+          border: 3px solid ${(props) => props.theme.colors.backgroundColor};
+        }
+      }
 
-    @media ${props => props.theme.screen.tablet} {
-      display: block;
-      width: ${rem('275px')};
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      border-radius: ${rem('15px')};
+      &__description {
+        color: white;
+        text-align: center;
+        h1 {
+          margin: 10px 0;
+        }
+      }
     }
   }
 `;
@@ -50,26 +66,30 @@ const StyledBgWrap = styled.section`
 const Hero = () => {
   return (
     <StyledBgWrap>
-      <div className='hero-content'>
-        <Typography component='div'>
-          <div className='hero-content__text'>Welcome, my name is</div>
-          <div className='hero-content__highlight'>Haiko Nguyen</div>
-          <div className='hero-content__text'>
-            I am a <br />
-            <Typed
+      <div className='hero'>
+        <div className='hero__profileWrap'>
+          <section className='hero__profileWrap__header'>
+            <img src={profileImg} alt='The Avatar' />
+          </section>
+          <section className='hero__profileWrap__description'>
+            <h1>{config.siteTitle}</h1>
+            <p>WEB DEVELOPER, PHOTOGRAPHER,&nbsp;VLOGGER</p>
+            {/* <Typed
               className='hero-content__highlight'
               strings={textLines}
               typeSpeed={100}
+            /> */}
+          </section>
+          <section className='hero__profileWrap__buttons'>
+            <CustomBtn
+              onClick={() => console.log('Do something later')}
+              text='Contact Me'
+              variant='contained'
+              size='large'
+              color='primary'
             />
-          </div>
-          <CustomBtn
-            onClick={() => console.log('Do something later')}
-            text='Contact Me'
-            variant='outlined'
-            size='large'
-            color='primary'
-          />
-        </Typography>
+          </section>
+        </div>
       </div>
     </StyledBgWrap>
   );
