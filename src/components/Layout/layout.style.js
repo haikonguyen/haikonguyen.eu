@@ -49,10 +49,20 @@ a:-webkit-any-link {
 
 .MuiButton-root {
   && {
-    color: ${(props) => props.theme.colors.navLinks};
+    color: ${(props) => props.theme.colors.white};
 
     &:hover {
       background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
+    }
+  }
+}
+
+.MuiButton-containedPrimary {
+  && {
+    background-color: ${(props) => props.theme.colors.primaryThemeColor};
+
+    &:hover {
+      background-color: #1156AA;
     }
   }
 }
@@ -69,14 +79,6 @@ a:-webkit-any-link {
   }
 } 
 
-.MuiIconButton-root {
-  && {
-    &:hover {
-      background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
-    }
-  }
-}
-
 .MuiAppBar-positionFixed {
   && {
     transition: all 0.3s;
@@ -84,7 +86,10 @@ a:-webkit-any-link {
   }
 }
 
-.MuiAppBar-positionRelative {
+.MuiIconButton-colorInherit {
+  && {
+    color: ${(props) => props.theme.colors.bodyTextColor};
+  }
 }
 
 @keyframes slide-down {

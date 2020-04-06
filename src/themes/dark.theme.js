@@ -19,7 +19,7 @@ const DarkTheme = {
     goUpBg: '#333',
     buttonHover: '#90caf9',
     buttonHOverBg: ' rgba(144, 202, 249, 0.08)',
-    heroContentBg: 'rgba(0, 0, 0, 0.65)',
+    heroContentBg: 'rgba(0, 0, 0, 0.5)',
     MuiButtonRootHover: 'rgba(255, 255, 255, 0.08)',
   },
 
