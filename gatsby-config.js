@@ -35,6 +35,11 @@ module.exports = {
       options: {
         plugins: [
           netlifyCmsPaths, // Including in your Remark plugins will transform any paths in your markdown body
+          // gatsby-remark-relative-images must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -72,12 +77,13 @@ module.exports = {
               maxWidth: 690,
             },
           },
+          'gatsby-plugin-sharp',
+          'gatsby-transformer-sharp',
           {
             resolve: 'gatsby-remark-responsive-iframe',
           },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-autolink-headers',
-          'gatsby-remark-prismjs',
         ],
       },
     },
@@ -99,8 +105,6 @@ module.exports = {
         color: config.themeColor,
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-twitter',
     'gatsby-plugin-sitemap',
