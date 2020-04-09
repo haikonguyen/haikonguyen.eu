@@ -2,8 +2,9 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import Img from 'gatsby-image';
 import { StyledContainer, StyledCard } from './PostListing.style';
+import placeHolder from '../../images/placeholder.png';
 
 const PostListing = () => {
   const data = useStaticQuery(graphql`
@@ -23,10 +24,15 @@ const PostListing = () => {
             frontmatter {
               title
               tags
-              cover
+              cover {
+                childImageSharp {
+                  fluid(maxWidth: 345, maxHeight: 140) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
               date
             }
-            id
           }
         }
       }
@@ -53,20 +59,28 @@ const PostListing = () => {
 
   const postList = getPostList();
 
+  console.log(postList);
+
   return (
     <StyledContainer>
       {postList.map((post) => {
+        let cover;
+        if (post.cover) {
+          cover = post.cover.childImageSharp.fluid;
+        }
+
         return (
           <Link key={post.id} className='styledLink' to={post.path}>
             <StyledCard>
-              <CardActionArea>
-                <CardMedia
-                  className='media'
-                  image={post.cover}
-                  title={post.title}
-                >
-                  <img src='' alt='' />
-                </CardMedia>
+              <CardActionArea className='cardActionArea'>
+                {cover ? (
+                  <Img fluid={cover} />
+                ) : (
+                  <div
+                    className='cardActionArea__placeholder'
+                    style={{ backgroundImage: `url(${placeHolder})` }}
+                  />
+                )}
                 <CardContent className='cardContent'>
                   <h2>{post.title}</h2>
                   <p>{post.excerpt}</p>

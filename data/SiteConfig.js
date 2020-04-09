@@ -26,22 +26,22 @@ const config = {
     {
       label: 'GitHub',
       url: 'https://github.com/2c0',
-      iconClassName: 'fa fa-github'
+      iconClassName: 'fa fa-github',
     },
     {
       label: 'Twitter',
       url: 'https://twitter.com/haicorp87',
-      iconClassName: 'fa fa-twitter'
+      iconClassName: 'fa fa-twitter',
     },
     {
       label: 'Email',
       url: 'mailto:haicorp87@gmail.com',
-      iconClassName: 'fa fa-envelope'
-    }
+      iconClassName: 'fa fa-envelope',
+    },
   ],
   copyright: 'Copyright © 2020. Haiko Nguyen', // Copyright string for the footer of the website and RSS feed.
-  themeColor: '#c62828', // Used for setting manifest and progress theme colors.
-  backgroundColor: '#e0e0e0' // Used for setting manifest background color.
+  themeColor: '#2e89ff', // Used for setting manifest and progress theme colors.
+  backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 };
 
 // Validate

@@ -7,7 +7,8 @@ import SocialLinks from '../../components/SocialLinks/SocialLinks';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import config from '../../../data/SiteConfig';
-import StyledContainer, { PostHeader } from './post.style';
+import StyledContainer, { PostHeader, StyledPlaceholder } from './post.style';
+import bgPlaceHolder from '../../images/bgMacPlaceholder.jpg';
 
 const PostTemplate = (props) => {
   const { data, pageContext } = props;
@@ -21,17 +22,28 @@ const PostTemplate = (props) => {
     post.category_id = config.postDefaultCategoryID;
   }
 
+  let cover;
+  if (post.cover) {
+    cover = post.cover.childImageSharp.fluid;
+  }
+
   return (
     <Layout>
       <Helmet>
         <title>{`${post.title} | ${config.siteTitle}`}</title>
       </Helmet>
       <SEO postPath={slug} postNode={postNode} postSEO />
-      <PostHeader style={{ backgroundImage: `url(${post.cover})` }}>
-        <div className='postHeaderWrap'>
-          <PostTags className='postHeaderWrap__tags' tags={post.tags} />
-        </div>
-      </PostHeader>
+      {cover ? (
+        <PostHeader Tag='section' fluid={cover}>
+          <div className='postHeaderWrap'>
+            <PostTags className='postHeaderWrap__tags' tags={post.tags} />
+          </div>
+        </PostHeader>
+      ) : (
+        <StyledPlaceholder
+          style={{ backgroundImage: `url(${bgPlaceHolder})` }}
+        />
+      )}
       <StyledContainer>
         <div className='contentWrapper'>
           <h1>{post.title}</h1>
@@ -53,14 +65,20 @@ export default PostTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       timeToRead
       excerpt
       frontmatter {
         title
-        cover
+        cover {
+          childImageSharp {
+            fluid(quality: 80, maxWidth: 2400) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
         date
         category
         tags
