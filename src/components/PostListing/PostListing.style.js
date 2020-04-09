@@ -5,28 +5,33 @@ import Card from '@material-ui/core/Card';
 export const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 1140px;
+  max-width: ${rem('1140px')};
   margin: 0 auto;
   grid-gap: 20px;
 
-  @media ${props => props.theme.screen.tablet} {
+  @media ${(props) => props.theme.screen.tablet} {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media ${props => props.theme.screen.laptopL} {
+  @media ${(props) => props.theme.screen.laptopL} {
     grid-template-columns: repeat(3, 1fr);
   }
 `;
 
 export const StyledCard = styled(Card)`
   && {
-    background-color: ${props => props.theme.colors.cardItemBg};
-    color: ${props => props.theme.colors.bodyTextColor};
-    box-shadow: ${props => props.theme.colors.cardItemShadow};
+    background-color: ${(props) => props.theme.colors.cardItemBg};
+    color: ${(props) => props.theme.colors.bodyTextColor};
+    box-shadow: ${(props) => props.theme.colors.cardItemShadow};
   }
 
-  .media {
-    height: ${rem('140px')};
+  .cardActionArea {
+    &__placeholder {
+      height: ${rem('150px')};
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
 
   .cardContent {
@@ -43,7 +48,7 @@ export const StyledCard = styled(Card)`
     }
   }
   .styledLink {
-    color: ${props => props.theme.colors.primaryThemeColor};
+    color: ${(props) => props.theme.colors.primaryThemeColor};
     text-decoration: none !important;
   }
 `;
