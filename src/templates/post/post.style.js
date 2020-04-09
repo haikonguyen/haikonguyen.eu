@@ -17,7 +17,7 @@ export const PostHeader = styled(BackgroundImage)`
 
     &__tags {
       position: absolute;
-      bottom: 60px;
+      bottom: 20%;
       left: 0;
       margin-left: ${rem('10px')};
 
@@ -41,7 +41,7 @@ export const PostHeader = styled(BackgroundImage)`
       }
 
       @media ${(props) => props.theme.screen.laptopL} {
-        bottom: ${rem('100px')};
+        bottom: 22%;
         margin-left: 0;
         margin-right: 0;
       }
@@ -52,7 +52,7 @@ export const PostHeader = styled(BackgroundImage)`
     }
 
     @media ${(props) => props.theme.screen.laptop} {
-      height: 80vh;
+      height: 100vh;
     }
   }
 
@@ -61,7 +61,7 @@ export const PostHeader = styled(BackgroundImage)`
   }
 
   @media ${(props) => props.theme.screen.laptop} {
-    height: 80vh;
+    height: 100vh;
   }
 `;
 
@@ -87,6 +87,15 @@ const StyledContainer = styled.main`
     margin-right: ${rem('10px')};
     position: relative;
 
+    a:-webkit-any-link {
+      color: ${(props) => props.theme.colors.primaryThemeColor};
+
+      &:hover {
+        border-bottom: 1px solid
+          ${(props) => props.theme.colors.primaryThemeColor};
+      }
+    }
+
     @media ${(props) => props.theme.screen.tablet} {
       padding: ${rem('30px')} ${rem('40px')};
       margin-top: ${rem('-140px')};
@@ -100,7 +109,7 @@ const StyledContainer = styled.main`
 
     @media ${(props) => props.theme.screen.laptopL} {
       padding: ${rem('50px')} ${rem('70px')};
-      margin-top: ${rem('-80px')};
+      margin-top: ${rem('-250px')};
       border-radius: ${rem('10px')};
       margin-left: 0;
       margin-right: 0;

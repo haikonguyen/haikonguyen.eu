@@ -9,6 +9,9 @@ body {
   color: ${(props) => props.theme.colors.bodyTextColor};
   outline: none;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 h1 {
