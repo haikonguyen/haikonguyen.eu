@@ -8,8 +8,6 @@ const StyledAppBar = styled(AppBar)`
     box-shadow: ${(props) =>
       props.show ? `0 0.5rem 2rem rgba(0, 0, 0, 0.65)` : `none`};
     justify-content: center;
-    /* position: ${(props) => (props.show ? `fixed` : `relative`)};
-    transition: all 0.3s; */
 
     @media ${(props) => props.theme.screen.tablet} {
       height: ${(props) => (props.show ? 'auto' : '70px')};
@@ -33,37 +31,47 @@ const StyledAppBar = styled(AppBar)`
   .destkopNav {
     display: none;
 
-    @media ${(props) => props.theme.screen.laptop} {
-      display: flex;
-      justify-content: flex-end;
+    &__logo {
+      img {
+        width: ${(props) => (props.show ? '30px' : '50px')};
+        height: ${(props) => (props.show ? '30px' : '50px')};
+      }
     }
 
-    @media ${(props) => props.theme.screen.laptopL} {
-      width: 1140px;
-      margin: 0 auto;
-    }
-
-    .navLinks {
+    &__links {
       button {
-        padding: 19px;
+        height: ${rem('50px')};
         color: ${(props) => props.theme.colors.white};
 
         &.navLinks__btn--scrolled {
-          padding: 8px 11px;
+          padding: ${rem('8px')} ${rem('11px')};
         }
       }
-      &--active {
-        border-bottom: ${rem('3px')} solid
-          ${(props) => props.theme.colors.navLinksActive};
 
+      &--active {
         .navLinks__btn {
           color: ${(props) => props.theme.colors.navLinksActive};
+          border-bottom: ${rem('3px')} solid
+            ${(props) => props.theme.colors.navLinksActive};
+          border-radius: 0;
         }
+      }
+
+      .themeToggleIcon {
+        color: ${(props) => props.theme.colors.themeToggleIcon};
       }
     }
 
-    .themeToggleIcon {
-      color: ${(props) => props.theme.colors.themeToggleIcon};
+    @media ${(props) => props.theme.screen.laptop} {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media ${(props) => props.theme.screen.laptopL} {
+      width: ${rem('1140px')};
+      margin: 0 auto;
     }
   }
 `;

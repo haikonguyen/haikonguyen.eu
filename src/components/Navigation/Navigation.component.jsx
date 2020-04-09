@@ -4,10 +4,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import { Link } from 'gatsby';
+import { navigate } from '@reach/router';
 import CustomBtn from '../MaterialUi/Button.component';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
 import { NavLinks } from './Links';
 import StyledAppBar from './Navigation.style';
+import mainLogo from '../../images/mainLogoOptimized.png';
 
 const Nav = (props) => {
   const { themeToggler, lightTheme, showOnScroll } = props;
@@ -22,33 +24,39 @@ const Nav = (props) => {
       </Toolbar>
 
       <div className='destkopNav'>
-        {NavLinks.map((link) => (
-          <Link
-            className='navLinks'
-            key={link.id}
-            to={link.href}
-            activeClassName='navLinks--active'
-          >
-            <CustomBtn
-              className={
-                showOnScroll
-                  ? 'navLinks__btn navLinks__btn--scrolled'
-                  : 'navLinks__btn'
-              }
-              size='large'
-              text={link.name}
-              color='primary'
-            />
-          </Link>
-        ))}
+        <section className='destkopNav__logo'>
+          <IconButton aria-label='menu' onClick={() => navigate('/')}>
+            <img src={mainLogo} alt='The logo' />
+          </IconButton>
+        </section>
 
-        <IconButton onClick={() => themeToggler()}>
-          {lightTheme ? (
-            <Brightness4Icon className='themeToggleIcon' />
-          ) : (
-            <Brightness7Icon className='themeToggleIcon' />
-          )}
-        </IconButton>
+        <section className='destkopNav__links'>
+          {NavLinks.map((link) => (
+            <Link
+              key={link.id}
+              to={link.href}
+              activeClassName='destkopNav__links--active'
+            >
+              <CustomBtn
+                className={
+                  showOnScroll
+                    ? 'navLinks__btn navLinks__btn--scrolled'
+                    : 'navLinks__btn'
+                }
+                size='large'
+                text={link.name}
+                color='primary'
+              />
+            </Link>
+          ))}
+          <IconButton onClick={() => themeToggler()}>
+            {lightTheme ? (
+              <Brightness4Icon className='themeToggleIcon' />
+            ) : (
+              <Brightness7Icon className='themeToggleIcon' />
+            )}
+          </IconButton>
+        </section>
       </div>
     </StyledAppBar>
   );

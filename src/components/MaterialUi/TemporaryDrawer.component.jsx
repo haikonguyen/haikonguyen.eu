@@ -8,13 +8,14 @@ import Brightness7Icon from '@material-ui/icons/Brightness7';
 import styled from 'styled-components';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { navigate } from '@reach/router';
+import { rem } from 'polished';
 import { NavLinks } from '../Navigation/Links';
+import mainLogo from '../../images/mainLogoOptimized.png';
 
 const StyledSideList = styled.div`
-  width: 250px;
+  width: ${rem('250px')};
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
@@ -24,6 +25,12 @@ const StyledDrawer = styled(Drawer)`
   .MuiDrawer-paperAnchorLeft {
     background: ${(props) => props.theme.colors.backgroundColor};
     color: ${(props) => props.theme.colors.bodyTextColor};
+
+    img {
+      height: ${rem('50px')};
+      width: ${rem('50px')};
+      margin-left: ${rem('12px')};
+    }
   }
 `;
 
@@ -53,14 +60,11 @@ export default function TemporaryDrawer(props) {
         onClick={toggleDrawer(side, false)}
         onKeyDown={toggleDrawer(side, false)}
       >
+        <img className='logo' src={mainLogo} alt='The logo' />
         <Divider />
-
         <List>
           {NavLinks.map((link) => (
             <ListItem key={link.id}>
-              {/* <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon> */}
               <ListItemText
                 onClick={() => navigate(link.href)}
                 primary={link.name}
@@ -68,7 +72,6 @@ export default function TemporaryDrawer(props) {
             </ListItem>
           ))}
         </List>
-        <Divider />
       </StyledSideList>
     );
   };
