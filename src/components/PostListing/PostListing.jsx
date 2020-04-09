@@ -33,6 +33,7 @@ const PostListing = () => {
               }
               date
             }
+            id
           }
         }
       }
@@ -58,8 +59,6 @@ const PostListing = () => {
   };
 
   const postList = getPostList();
-
-  console.log(postList);
 
   return (
     <StyledContainer>

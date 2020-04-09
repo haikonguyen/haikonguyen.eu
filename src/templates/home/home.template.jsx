@@ -56,7 +56,7 @@ const Home = () => {
         {/* Blog Section */}
         <section className='sections'>
           <div className='heading'>
-            <h1>About</h1>
+            <h1>Latest Posts</h1>
             <hr />
           </div>
           <PostListing />

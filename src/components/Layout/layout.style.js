@@ -9,6 +9,9 @@ body {
   color: ${(props) => props.theme.colors.bodyTextColor};
   outline: none;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 h1 {
@@ -82,7 +85,16 @@ a:-webkit-any-link {
       background-color: rgba(144, 202, 249, 0.08);
     }
   }
-} 
+}
+
+.MuiIconButton-root {
+  && {
+
+    &:hover {
+      background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
+    }
+  }
+}
 
 .MuiAppBar-positionFixed {
   && {
@@ -96,6 +108,12 @@ a:-webkit-any-link {
     color: ${(props) => props.theme.colors.bodyTextColor};
   }
 }
+
+.MuiDivider-root {
+    && {
+      background-color: ${(props) => props.theme.colors.bodyTextColor};
+    }
+  }
 
 @keyframes slide-down {
   0% {
