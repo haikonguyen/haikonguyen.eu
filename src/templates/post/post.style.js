@@ -17,7 +17,7 @@ export const PostHeader = styled(BackgroundImage)`
 
     &__tags {
       position: absolute;
-      bottom: 20%;
+      bottom: ${rem('60px')};
       left: 0;
       margin-left: ${rem('10px')};
 
@@ -41,9 +41,9 @@ export const PostHeader = styled(BackgroundImage)`
       }
 
       @media ${(props) => props.theme.screen.laptopL} {
-        bottom: 22%;
         margin-left: 0;
         margin-right: 0;
+        bottom: ${rem('280px')};
       }
     }
 
@@ -51,7 +51,7 @@ export const PostHeader = styled(BackgroundImage)`
       height: 60vh;
     }
 
-    @media ${(props) => props.theme.screen.laptop} {
+    @media ${(props) => props.theme.screen.laptopL} {
       height: 100vh;
     }
   }
@@ -60,7 +60,7 @@ export const PostHeader = styled(BackgroundImage)`
     height: 60vh;
   }
 
-  @media ${(props) => props.theme.screen.laptop} {
+  @media ${(props) => props.theme.screen.laptopL} {
     height: 100vh;
   }
 `;
