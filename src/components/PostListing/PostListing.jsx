@@ -60,8 +60,6 @@ const PostListing = () => {
 
   const postList = getPostList();
 
-  console.log(postList);
-
   return (
     <StyledContainer>
       {postList.map((post) => {

@@ -2,13 +2,6 @@ const urljoin = require('url-join');
 const path = require('path');
 const config = require('./data/SiteConfig');
 
-const netlifyCmsPaths = {
-  resolve: `gatsby-plugin-netlify-cms-paths`,
-  options: {
-    cmsConfig: `/static/admin/config.yml`,
-  },
-};
-
 module.exports = {
   pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
   siteMetadata: {
@@ -29,7 +22,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
     'babel-plugin-styled-components',
-    netlifyCmsPaths,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -50,11 +42,16 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          `gatsby-remark-relative-images`,
+          // {
+          //   resolve: 'gatsby-remark-relative-images',
+          //   options: {
+          //     name: 'upload-images',
+          //   },
+          // },
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 2048,
+              maxWidth: 800,
             },
           },
           {
@@ -66,10 +63,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        // Add any options here
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 500,
+            },
+          },
+        ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -96,18 +103,7 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'minimal-ui',
-        icons: [
-          {
-            src: '/logos/logo-192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/logos/logo-512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
+        icon: `src/images/mainLogoOptimized.png`,
       },
     },
     'gatsby-plugin-offline',

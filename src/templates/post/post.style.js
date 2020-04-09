@@ -96,15 +96,27 @@ const StyledContainer = styled.main`
       }
     }
 
+    img {
+      max-width: 280px;
+    }
+
     @media ${(props) => props.theme.screen.tablet} {
       padding: ${rem('30px')} ${rem('40px')};
       margin-top: ${rem('-140px')};
       margin-left: ${rem('30px')};
       margin-right: ${rem('30px')};
+
+      img {
+        max-width: 600px;
+      }
     }
 
     @media ${(props) => props.theme.screen.laptop} {
       margin-top: ${rem('-120px')};
+
+      img {
+        max-width: 800px;
+      }
     }
 
     @media ${(props) => props.theme.screen.laptopL} {
@@ -113,6 +125,10 @@ const StyledContainer = styled.main`
       border-radius: ${rem('10px')};
       margin-left: 0;
       margin-right: 0;
+
+      img {
+        max-width: 1000px;
+      }
     }
 
     &__social {
