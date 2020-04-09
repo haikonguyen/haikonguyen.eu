@@ -46,11 +46,10 @@ const StyledAppBar = styled(AppBar)`
     .navLinks {
       button {
         padding: 19px;
-        /* transition: padding 0.3s ease-in-out; */
+        color: ${(props) => props.theme.colors.white};
 
         &.navLinks__btn--scrolled {
           padding: 8px 11px;
-          /* transition: padding 0.3s ease-in-out; */
         }
       }
       &--active {

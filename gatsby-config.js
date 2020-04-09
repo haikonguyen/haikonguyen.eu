@@ -31,29 +31,6 @@ module.exports = {
     'babel-plugin-styled-components',
     netlifyCmsPaths,
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          netlifyCmsPaths, // Including in your Remark plugins will transform any paths in your markdown body
-          // gatsby-remark-relative-images must
-          // go before gatsby-remark-images
-          {
-            resolve: `gatsby-remark-relative-images`,
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 930,
-              backgroundColor: 'transparent', // required to display blurred image first
-            },
-          },
-        ],
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'upload-images',
@@ -67,18 +44,19 @@ module.exports = {
         path: `${__dirname}/static/posts`,
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          `gatsby-remark-relative-images`,
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 690,
+              maxWidth: 2048,
             },
           },
-          'gatsby-plugin-sharp',
-          'gatsby-transformer-sharp',
           {
             resolve: 'gatsby-remark-responsive-iframe',
           },
