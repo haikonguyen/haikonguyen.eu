@@ -33,6 +33,7 @@ const PostListing = () => {
               }
               date
             }
+            id
           }
         }
       }
