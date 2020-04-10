@@ -18,6 +18,6 @@ One day this guy just contacted me and asked me if I can take some pictures of h
 
 And here are some pictures we took, we did not have much time, because he was already planned a party at his beautiful flat, but at least I managed to snap something :-).
 
-![Old Friend 01](/images/dsc00774-1024x683.jpg "Old Friend 01")
+![Old Friend 01](/img/dsc00774-1024x683.jpg "Old Friend 01")
 
-![Old Friend 02](/images/dsc00776-1024x683.jpg "Old Friend 02")
+![Old Friend 02](/img/dsc00776-1024x683.jpg "Old Friend 02")
