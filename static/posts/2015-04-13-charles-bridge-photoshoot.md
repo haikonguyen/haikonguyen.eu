@@ -13,7 +13,7 @@ so the Spring already has come to Prague, but the weather is actually random (in
 
 Images:
 
-![Bridge01](/images/bridge01.jpg "Bridge01")
+![Bridge01](/img/bridge01.jpg "Bridge01")
 
 So I just invited some friends and we went shooting, it was fun as always and here are some example shots:
 
