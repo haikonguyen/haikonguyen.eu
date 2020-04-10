@@ -5,19 +5,21 @@ export const GlobalStyle = createGlobalStyle`
 body {
   padding: 0;
   margin: 0;
-  background-color: ${(props) => props.theme.colors.backgroundColor};
-  color: ${(props) => props.theme.colors.bodyTextColor};
+  background-color: ${props => props.theme.colors.backgroundColor};
+  color: ${props => props.theme.colors.bodyTextColor};
   outline: none;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 
   overflow-wrap: break-word;
   word-wrap: break-word;
+
+  outline: none;
 }
 
 h1 {
     font-size:  ${rem('25px')};
 
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       font-size:  ${rem('35px')};
     }
 }
@@ -25,7 +27,7 @@ h1 {
 h2 {
     font-size:  ${rem('22px')};
 
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       font-size:  ${rem('29px')};
     }
 }
@@ -33,7 +35,7 @@ h2 {
 h3 {
     font-size:  ${rem('20px')};
 
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       font-size:  ${rem('25px')};
     }
 }
@@ -41,7 +43,7 @@ h3 {
 h4 {
     font-size:  ${rem('18px')};
 
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       font-size:  ${rem('22px')};
     }
 }
@@ -54,20 +56,20 @@ a:-webkit-any-link {
   && {
 
     &:hover {
-      background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
+      background-color: ${props => props.theme.colors.MuiButtonRootHover}
     }
   }
 }
 
 .MuiButton-textPrimary {
   && {
-    color: ${(props) => props.theme.colors.bodyTextColor};
+    color: ${props => props.theme.colors.bodyTextColor};
   }
 }
 
 .MuiButton-containedPrimary {
   && {
-    background-color: ${(props) => props.theme.colors.primaryThemeColor};
+    background-color: ${props => props.theme.colors.primaryThemeColor};
 
     &:hover {
       background-color: #1156AA;
@@ -77,8 +79,8 @@ a:-webkit-any-link {
 
 .MuiButton-outlinedPrimary {
   && {
-    color: ${(props) => props.theme.colors.primaryThemeColor};
-    border: 1px solid ${(props) => props.theme.colors.primaryThemeColor};
+    color: ${props => props.theme.colors.primaryThemeColor};
+    border: 1px solid ${props => props.theme.colors.primaryThemeColor};
 
     &:hover {
       border: 1px solid #90caf9;
@@ -91,7 +93,7 @@ a:-webkit-any-link {
   && {
 
     &:hover {
-      background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
+      background-color: ${props => props.theme.colors.MuiButtonRootHover}
     }
   }
 }
@@ -105,13 +107,13 @@ a:-webkit-any-link {
 
 .MuiIconButton-colorInherit {
   && {
-    color: ${(props) => props.theme.colors.bodyTextColor};
+    color: ${props => props.theme.colors.bodyTextColor};
   }
 }
 
 .MuiDivider-root {
     && {
-      background-color: ${(props) => props.theme.colors.bodyTextColor};
+      background-color: ${props => props.theme.colors.MuiButtonRootHover};
     }
   }
 

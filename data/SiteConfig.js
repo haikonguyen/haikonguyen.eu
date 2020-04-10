@@ -24,19 +24,51 @@ const config = {
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
-      label: 'GitHub',
+      label: 'Facebook',
+      url: 'https://www.facebook.com/haikonguyen.eu/',
+      icon: 'FaFacebookF'
+    },
+    {
+      label: 'Instagram',
       url: 'https://github.com/2c0',
-      iconClassName: 'fa fa-github'
+      icon: 'FaInstagram'
     },
     {
       label: 'Twitter',
       url: 'https://twitter.com/haicorp87',
-      iconClassName: 'fa fa-twitter'
+      icon: 'FaTwitter'
     },
     {
-      label: 'Email',
-      url: 'mailto:haicorp87@gmail.com',
-      iconClassName: 'fa fa-envelope'
+      label: 'GitHub',
+      url: 'https://github.com/2c0',
+      icon: 'FaGithub'
+    }
+  ],
+  navLinks: [
+    {
+      id: 1,
+      href: '/',
+      name: 'Home'
+    },
+    {
+      id: 2,
+      href: '/about',
+      name: 'About'
+    },
+    {
+      id: 3,
+      href: '/blog',
+      name: 'Blog'
+    },
+    {
+      id: 4,
+      href: '/portfolio',
+      name: 'Portfolio'
+    },
+    {
+      id: 5,
+      href: '/contact',
+      name: 'Contact'
     }
   ],
   copyright: 'Copyright © 2020. Haiko Nguyen', // Copyright string for the footer of the website and RSS feed.

@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 import { navigate } from '@reach/router';
 import CustomBtn from '../MaterialUi/Button.component';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
-import { NavLinks } from './Links';
+import config from '../../../data/SiteConfig';
 import StyledAppBar from './Navigation.style';
 import mainLogo from '../../img/mainLogoOptimized.png';
 
@@ -31,7 +31,7 @@ const Nav = props => {
         </section>
 
         <section className='destkopNav__links'>
-          {NavLinks.map(link => (
+          {config.navLinks.map(link => (
             <Link
               key={link.id}
               to={link.href}

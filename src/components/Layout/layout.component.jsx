@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
+import Footer from '../Footer/Footer.component';
 import { ThemeContext } from '../../context/theme.context';
 import { UiContext } from '../../context/ui.context';
 import Nav from '../Navigation/Navigation.component';
@@ -41,6 +42,7 @@ const Layout = ({ children }) => {
       {/* Templates & Pages */}
       {children}
       <GoUp lightTheme={lightTheme} showOnScroll={showOnScroll} />
+      <Footer />
     </ThemeProvider>
   );
 };
