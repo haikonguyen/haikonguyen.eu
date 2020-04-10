@@ -1,7 +1,7 @@
 import React from 'react';
 import { navigate } from '@reach/router';
 import CustomBtn from '../../components/MaterialUi/Button.component';
-import profileimg from '../../images/HaikoProfile.jpg';
+import profileimg from '../../img/HaikoProfile.jpg';
 import Hero from '../../components/Hero/Hero.component';
 import Layout from '../../components/Layout/layout.component';
 import PostListing from '../../components/PostListing/PostListing';

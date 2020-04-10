@@ -2,7 +2,7 @@ const config = {
   siteTitle: 'Haiko Nguyen', // Site title.
   siteTitleShort: 'HN Blog', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: 'Hai Ha Nguyen', // Alternative site title for SEO.
-  siteLogo: '/static/images/mainLogoOptimized.png', // Logo used for SEO and manifest.
+  siteLogo: '/static/img/mainLogoOptimized.png', // Logo used for SEO and manifest.
   siteUrl: 'https://www.haikonguyen.eu/', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: 'A GatsbyJS stater with Advanced design in mind.', // Website description used for RSS feeds/meta description tag.
@@ -18,7 +18,7 @@ const config = {
   userEmail: 'haicorp87@gmail.com', // Email used for RSS feed's author segment
   userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: 'North Pole, Earth', // User location to display in the author segment.
-  userAvatar: '/static/images/HaikoProfile.jpg', // User avatar to display in the author segment.
+  userAvatar: '/static/img/HaikoProfile.jpg', // User avatar to display in the author segment.
   userDescription:
     'I am a Vietnamese foodie, vlogger and travel photographer based in Prague. I am passionate about photography, web development and movie creation.', // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
@@ -26,22 +26,22 @@ const config = {
     {
       label: 'GitHub',
       url: 'https://github.com/2c0',
-      iconClassName: 'fa fa-github',
+      iconClassName: 'fa fa-github'
     },
     {
       label: 'Twitter',
       url: 'https://twitter.com/haicorp87',
-      iconClassName: 'fa fa-twitter',
+      iconClassName: 'fa fa-twitter'
     },
     {
       label: 'Email',
       url: 'mailto:haicorp87@gmail.com',
-      iconClassName: 'fa fa-envelope',
-    },
+      iconClassName: 'fa fa-envelope'
+    }
   ],
   copyright: 'Copyright © 2020. Haiko Nguyen', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#2e89ff', // Used for setting manifest and progress theme colors.
-  backgroundColor: '#e0e0e0', // Used for setting manifest background color.
+  backgroundColor: '#e0e0e0' // Used for setting manifest background color.
 };
 
 // Validate

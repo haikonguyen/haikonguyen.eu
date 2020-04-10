@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Typed from 'react-typed';
 import { rem } from 'polished';
 import CustomBtn from '../MaterialUi/Button.component';
-import bgSrc from '../../images/PragueCastle01_opti.jpg';
-import profileImg from '../../images/HaikoProfile.jpg';
+import bgSrc from '../../img/PragueCastle01_opti.jpg';
+import profileImg from '../../img/HaikoProfile.jpg';
 import config from '../../../data/SiteConfig';
 
 const textLines = [`Web Developer`, `Fotographer`, `VLOGGER`];
@@ -19,13 +19,13 @@ const StyledBgWrap = styled.section`
   align-items: flex-end;
   justify-content: center;
 
-  @media ${(props) => props.theme.screen.tablet} {
+  @media ${props => props.theme.screen.tablet} {
     height: 50vh;
   }
 
   .hero {
-    background: ${(props) => props.theme.colors.heroContentBg};
-    color: ${(props) => props.theme.colors.white};
+    background: ${props => props.theme.colors.heroContentBg};
+    color: ${props => props.theme.colors.white};
     padding: ${rem('20px')};
     width: 100%;
     height: 100%;
@@ -48,7 +48,7 @@ const StyledBgWrap = styled.section`
           border-radius: 50%;
           height: 180px;
           width: 180px;
-          border: 3px solid ${(props) => props.theme.colors.backgroundColor};
+          border: 3px solid ${props => props.theme.colors.backgroundColor};
         }
       }
 

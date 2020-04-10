@@ -12,7 +12,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { navigate } from '@reach/router';
 import { rem } from 'polished';
 import { NavLinks } from '../Navigation/Links';
-import mainLogo from '../../images/mainLogoOptimized.png';
+import mainLogo from '../../img/mainLogoOptimized.png';
 
 const StyledSideList = styled.div`
   width: ${rem('250px')};
@@ -23,8 +23,8 @@ const StyledSideList = styled.div`
 
 const StyledDrawer = styled(Drawer)`
   .MuiDrawer-paperAnchorLeft {
-    background: ${(props) => props.theme.colors.backgroundColor};
-    color: ${(props) => props.theme.colors.bodyTextColor};
+    background: ${props => props.theme.colors.backgroundColor};
+    color: ${props => props.theme.colors.bodyTextColor};
 
     img {
       height: ${rem('50px')};
@@ -40,10 +40,10 @@ export default function TemporaryDrawer(props) {
     top: false,
     left: false,
     bottom: false,
-    right: false,
+    right: false
   });
 
-  const toggleDrawer = (side, open) => (event) => {
+  const toggleDrawer = (side, open) => event => {
     if (
       event.type === 'keydown' &&
       (event.key === 'Tab' || event.key === 'Shift')
@@ -53,7 +53,7 @@ export default function TemporaryDrawer(props) {
     setState({ ...state, [side]: open });
   };
 
-  const sideList = (side) => {
+  const sideList = side => {
     return (
       <StyledSideList
         role='presentation'
@@ -63,7 +63,7 @@ export default function TemporaryDrawer(props) {
         <img className='logo' src={mainLogo} alt='The logo' />
         <Divider />
         <List>
-          {NavLinks.map((link) => (
+          {NavLinks.map(link => (
             <ListItem key={link.id}>
               <ListItemText
                 onClick={() => navigate(link.href)}
