@@ -8,9 +8,9 @@ import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import config from '../../../data/SiteConfig';
 import StyledContainer, { PostHeader, StyledPlaceholder } from './post.style';
-import bgPlaceHolder from '../../images/bgMacPlaceholder.jpg';
+import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
 
-const PostTemplate = (props) => {
+const PostTemplate = props => {
   const { data, pageContext } = props;
   const { slug } = pageContext;
   const postNode = data.markdownRemark;

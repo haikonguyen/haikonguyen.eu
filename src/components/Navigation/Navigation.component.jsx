@@ -9,9 +9,9 @@ import CustomBtn from '../MaterialUi/Button.component';
 import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
 import { NavLinks } from './Links';
 import StyledAppBar from './Navigation.style';
-import mainLogo from '../../images/mainLogoOptimized.png';
+import mainLogo from '../../img/mainLogoOptimized.png';
 
-const Nav = (props) => {
+const Nav = props => {
   const { themeToggler, lightTheme, showOnScroll } = props;
 
   return (
@@ -31,7 +31,7 @@ const Nav = (props) => {
         </section>
 
         <section className='destkopNav__links'>
-          {NavLinks.map((link) => (
+          {NavLinks.map(link => (
             <Link
               key={link.id}
               to={link.href}

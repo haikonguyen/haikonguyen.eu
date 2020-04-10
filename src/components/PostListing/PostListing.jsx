@@ -4,7 +4,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Img from 'gatsby-image';
 import { StyledContainer, StyledCard } from './PostListing.style';
-import placeHolder from '../../images/placeholder.png';
+import placeHolder from '../../img/placeholder.png';
 
 const PostListing = () => {
   const data = useStaticQuery(graphql`
@@ -43,7 +43,7 @@ const PostListing = () => {
   const getPostList = () => {
     const postEdges = data.allMarkdownRemark.edges;
     const postList = [];
-    postEdges.forEach((postEdge) => {
+    postEdges.forEach(postEdge => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -52,7 +52,7 @@ const PostListing = () => {
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
-        id: postEdge.node.id,
+        id: postEdge.node.id
       });
     });
     return postList;
@@ -62,7 +62,7 @@ const PostListing = () => {
 
   return (
     <StyledContainer>
-      {postList.map((post) => {
+      {postList.map(post => {
         let cover;
         if (post.cover) {
           cover = post.cover.childImageSharp.fluid;
