@@ -5,7 +5,6 @@ import Layout from '../../components/Layout/layout.component';
 import PostTags from '../../components/PostTags/PostTags';
 import SocialLinks from '../../components/SocialLinks/SocialLinks';
 import SEO from '../../components/SEO/SEO';
-import Footer from '../../components/Footer/Footer';
 import config from '../../../data/SiteConfig';
 import StyledContainer, { PostHeader, StyledPlaceholder } from './post.style';
 import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
@@ -51,12 +50,13 @@ const PostTemplate = props => {
           <div className='contentWrapper__social'>
             <div>
               <h4>Share this post:</h4>
-              <SocialLinks postPath={slug} postNode={postNode} />
+              {/* FIXME: Move to Post Header 
+                <SocialLinks postPath={slug} postNode={postNode} /> 
+              */}
             </div>
           </div>
         </div>
       </StyledContainer>
-      <Footer config={config} />
     </Layout>
   );
 };

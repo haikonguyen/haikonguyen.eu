@@ -11,7 +11,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { navigate } from '@reach/router';
 import { rem } from 'polished';
-import { NavLinks } from '../Navigation/Links';
+import config from '../../../data/SiteConfig';
 import mainLogo from '../../img/mainLogoOptimized.png';
 
 const StyledSideList = styled.div`
@@ -30,6 +30,7 @@ const StyledDrawer = styled(Drawer)`
       height: ${rem('50px')};
       width: ${rem('50px')};
       margin-left: ${rem('12px')};
+      padding: ${rem('10px')} 0;
     }
   }
 `;
@@ -63,7 +64,7 @@ export default function TemporaryDrawer(props) {
         <img className='logo' src={mainLogo} alt='The logo' />
         <Divider />
         <List>
-          {NavLinks.map(link => (
+          {config.navLinks.map(link => (
             <ListItem key={link.id}>
               <ListItemText
                 onClick={() => navigate(link.href)}
