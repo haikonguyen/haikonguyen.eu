@@ -19,8 +19,15 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true
+        }
+      }
+    },
     `gatsby-plugin-styled-components`,
-    'babel-plugin-styled-components',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -71,9 +78,6 @@ module.exports = {
           'gatsby-remark-autolink-headers'
         ]
       }
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
