@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../components/layout/layout.component';
+import Soon from '../components/comingsoon/soon.component';
 import config from '../../data/SiteConfig';
+import Layout from '../components/layout/layout.component';
 
-const Blog = () => (
-  <Layout>
-    <div className='about-container'>
-      <Helmet title={`About | ${config.siteTitle}`} />
-      test
-    </div>
-  </Layout>
-);
+class Portfolio extends Component {
+  render() {
+    return (
+      <Layout>
+        <div className='blog-container'>
+          <Helmet title={`Blog | ${config.siteTitle}`} />
+          <Soon />
+        </div>
+      </Layout>
+    );
+  }
+}
 
-export default Blog;
+export default Portfolio;

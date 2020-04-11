@@ -4,12 +4,12 @@ import Soon from '../components/comingsoon/soon.component';
 import config from '../../data/SiteConfig';
 import Layout from '../components/layout/layout.component';
 
-class AboutPage extends Component {
+class Portfolio extends Component {
   render() {
     return (
       <Layout>
-        <div className='about-container'>
-          <Helmet title={`About | ${config.siteTitle}`} />
+        <div className='portfolio-container'>
+          <Helmet title={`Portfolio | ${config.siteTitle}`} />
           <Soon />
         </div>
       </Layout>
@@ -17,4 +17,4 @@ class AboutPage extends Component {
   }
 }
 
-export default AboutPage;
+export default Portfolio;
