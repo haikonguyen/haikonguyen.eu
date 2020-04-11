@@ -4,7 +4,7 @@ import Soon from '../components/comingsoon/soon.component';
 import config from '../../data/SiteConfig';
 import Layout from '../components/layout/layout.component';
 
-class Portfolio extends Component {
+class PortfolioPage extends Component {
   render() {
     return (
       <Layout>
@@ -17,4 +17,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default PortfolioPage;

@@ -4,12 +4,12 @@ import Soon from '../components/comingsoon/soon.component';
 import config from '../../data/SiteConfig';
 import Layout from '../components/layout/layout.component';
 
-class AboutPage extends Component {
+class ContactPage extends Component {
   render() {
     return (
       <Layout>
         <div className='contact-container'>
-          <Helmet title={`Contatct | ${config.siteTitle}`} />
+          <Helmet title={`Contact | ${config.siteTitle}`} />
           <Soon />
         </div>
       </Layout>
@@ -17,4 +17,4 @@ class AboutPage extends Component {
   }
 }
 
-export default AboutPage;
+export default ContactPage;
