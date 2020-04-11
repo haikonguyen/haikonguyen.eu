@@ -25,42 +25,30 @@ const StyledMain = styled.main`
     }
   }
 
-  .hero {
-    .contentWrap {
-      background: ${props => props.theme.colors.heroContentBg};
-      color: ${props => props.theme.colors.white};
-      padding: ${rem('20px')};
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
+  .homeHero {
+    &__profileWrap {
+      width: 80%;
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      padding: 0;
-      margin: 0;
+      flex-direction: column;
 
-      &__profileWrap {
-        width: 80%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-
-        &__header {
-          img {
-            border-radius: 50%;
-            height: 180px;
-            width: 180px;
-            border: 3px solid ${props => props.theme.colors.backgroundColor};
-          }
+      &__header {
+        img {
+          border-radius: 50%;
+          height: ${rem('180px')};
+          width: ${rem('180px')};
+          border: ${rem('3px')} solid
+            ${props => props.theme.colors.backgroundColor};
         }
+      }
 
-        &__description {
-          color: white;
-          text-align: center;
-          h1 {
-            margin: ${rem('10px')} 0;
-          }
+      &__description {
+        color: white;
+        text-align: center;
+        h1 {
+          margin: ${rem('10px')} 0;
         }
       }
     }
