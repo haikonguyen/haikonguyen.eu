@@ -1,18 +1,40 @@
 import React from 'react';
 import { navigate } from '@reach/router';
 import CustomBtn from '../../components/MaterialUi/Button.component';
-import profileimg from '../../img/HaikoProfile.jpg';
+import profileImg from '../../img/HaikoProfile.jpg';
+import profileImg2 from '../../img/HaikoProfile2.jpg';
 import Hero from '../../components/Hero/Hero.component';
 import Layout from '../../components/Layout/layout.component';
 import PostListing from '../../components/PostListing/PostListing';
 import StyledMain from './home.style';
+import config from '../../../data/SiteConfig';
+import bgSrc from '../../img/PragueCastle01_opti.jpg';
 
 const Home = () => {
   return (
     <Layout>
       <StyledMain>
         {/* Hero Section */}
-        <Hero />
+        <Hero bgImage={bgSrc} className='homeHero'>
+          <div className='homeHero__profileWrap'>
+            <section className='homeHero__profileWrap__header'>
+              <img src={profileImg} alt='The Avatar' />
+            </section>
+            <section className='homeHero__profileWrap__description'>
+              <h1>{config.siteTitle}</h1>
+              <p>WEB DEVELOPER, PHOTOGRAPHER,&nbsp;VLOGGER</p>
+            </section>
+            <section className='homeHero__profileWrap__buttons'>
+              <CustomBtn
+                onClick={() => console.log('Do something later')}
+                text='Contact Me'
+                variant='contained'
+                size='large'
+                color='primary'
+              />
+            </section>
+          </div>
+        </Hero>
         {/* About Section */}
         <section className='sections'>
           <div className='heading'>
@@ -24,7 +46,7 @@ const Home = () => {
               <div className='profilePictureWrap'>
                 <img
                   className='profilePicture'
-                  src={profileimg}
+                  src={profileImg2}
                   alt='profile avatar'
                 />
                 <div className='profilePicture--designElement' />

@@ -55,7 +55,8 @@
     "react-typed": "^1.2.0",
     "styled-components": "^5.1.0",
     "url-join": "^4.0.0",
-    "use-persisted-state": "^0.3.0"
+    "use-persisted-state": "^0.3.0",
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.7",

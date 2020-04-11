@@ -25,6 +25,35 @@ const StyledMain = styled.main`
     }
   }
 
+  .homeHero {
+    &__profileWrap {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      &__header {
+        img {
+          border-radius: 50%;
+          height: ${rem('180px')};
+          width: ${rem('180px')};
+          border: ${rem('3px')} solid
+            ${props => props.theme.colors.backgroundColor};
+        }
+      }
+
+      &__description {
+        color: white;
+        text-align: center;
+        h1 {
+          margin: ${rem('10px')} 0;
+        }
+      }
+    }
+  }
+
   .about {
     display: grid;
     grid-gap: ${rem('50px')};

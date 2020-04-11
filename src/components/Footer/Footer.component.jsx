@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import IconButton from '@material-ui/core/IconButton';
 import { FaFacebookF, FaInstagram, FaTwitter, FaGithub } from 'react-icons/fa';
+import { v1 as uuidv1 } from 'uuid';
 import config from '../../../data/SiteConfig';
 
 const StyledFooter = styled.footer`
@@ -17,7 +18,7 @@ const StyledFooter = styled.footer`
     flex-direction: column;
 
     &__socialIcons {
-      height: 100px;
+      height: ${rem('100px')};
       display: flex;
       align-items: center;
       justify-content: center;
@@ -28,13 +29,14 @@ const StyledFooter = styled.footer`
     }
 
     &__copyright {
-      border-top: 1px solid ${props => props.theme.colors.MuiButtonRootHover};
-      height: 50px;
+      border-top: ${rem('1px')} solid
+        ${props => props.theme.colors.MuiButtonRootHover};
+      height: ${rem('50px')};
       display: flex;
       align-items: center;
       justify-content: center;
       color: ${props => props.theme.colors.bodyTextColor};
-      padding: 10px 0;
+      padding: ${rem('10px')} 0;
     }
   }
 `;
@@ -64,7 +66,7 @@ const Footer = () => {
       <div className='footerWrap'>
         <div className='footerWrap__socialIcons'>
           {userLinks.map(userLink => (
-            <a href={userLink.url} target='blank'>
+            <a key={uuidv1()} href={userLink.url} target='blank'>
               <IconButton>{renderIcons(userLink.icon)}</IconButton>
             </a>
           ))}
