@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { Link } from 'gatsby';
-import CustomBtn from '../MaterialUi/Button.component';
+import CustomBtn from '../materialui/button.component';
 
 class PostTags extends Component {
   render() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import PostListing from '../components/PostListing/PostListing';
+import PostListing from '../components/post-listing/post-listing.component';
 import config from '../../data/SiteConfig';
-import Layout from '../components/Layout/layout.component';
+import Layout from '../components/layout/layout.component';
 
 export default class CategoryTemplate extends React.Component {
   render() {

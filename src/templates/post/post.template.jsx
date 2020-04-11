@@ -1,9 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Layout from '../../components/Layout/layout.component';
-import PostTags from '../../components/PostTags/PostTags';
-import SocialLinks from '../../components/SocialLinks/SocialLinks';
+import Layout from '../../components/layout/layout.component';
+import PostTags from '../../components/post-tags/post-tags';
 import SEO from '../../components/SEO/SEO';
 import config from '../../../data/SiteConfig';
 import StyledContainer, { PostHeader, StyledPlaceholder } from './post.style';

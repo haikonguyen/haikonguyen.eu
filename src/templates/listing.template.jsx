@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Layout from '../layout';
-import './listing.css';
-import PostListing from '../components/PostListing/PostListing';
+import PostListing from '../components/post-listing/post-listing.component';
 
 class Listing extends React.Component {
   renderPaging() {

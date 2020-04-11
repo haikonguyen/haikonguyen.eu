@@ -5,10 +5,10 @@ import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import { Link } from 'gatsby';
 import { navigate } from '@reach/router';
-import CustomBtn from '../MaterialUi/Button.component';
-import TemporaryDrawer from '../MaterialUi/TemporaryDrawer.component';
+import CustomBtn from '../materialui/button.component';
+import TemporaryDrawer from '../materialui/drawer.component';
 import config from '../../../data/SiteConfig';
-import StyledAppBar from './Navigation.style';
+import StyledAppBar from './navigation.style';
 import mainLogo from '../../img/mainLogoOptimized.png';
 
 const Nav = props => {

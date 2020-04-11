@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Img from 'gatsby-image';
-import { StyledContainer, StyledCard } from './PostListing.style';
+import { StyledContainer, StyledCard } from './post-listing.style';
 import placeHolder from '../../img/placeholder.png';
 
 const PostListing = () => {

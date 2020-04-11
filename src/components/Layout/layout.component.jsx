@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
-import Footer from '../Footer/Footer.component';
+import Footer from '../footer/footer.component';
 import { ThemeContext } from '../../context/theme.context';
 import { UiContext } from '../../context/ui.context';
-import Nav from '../Navigation/Navigation.component';
+import Nav from '../navigation/navigation.component';
 import GoUp from '../Navigation/goup.component';
 import DarkTheme from '../../themes/dark.theme';
 import LightTheme from '../../themes/light.theme';

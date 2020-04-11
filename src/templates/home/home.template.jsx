@@ -1,11 +1,11 @@
 import React from 'react';
 import { navigate } from '@reach/router';
-import CustomBtn from '../../components/MaterialUi/Button.component';
+import CustomBtn from '../../components/materialui/button.component';
 import profileImg from '../../img/HaikoProfile.jpg';
 import profileImg2 from '../../img/HaikoProfile2.jpg';
-import Hero from '../../components/Hero/Hero.component';
-import Layout from '../../components/Layout/layout.component';
-import PostListing from '../../components/PostListing/PostListing';
+import Hero from '../../components/hero/hero.component';
+import Layout from '../../components/layout/layout.component';
+import PostListing from '../../components/post-listing/post-listing.component';
 import StyledMain from './home.style';
 import config from '../../../data/SiteConfig';
 import bgSrc from '../../img/PragueCastle01_opti.jpg';
