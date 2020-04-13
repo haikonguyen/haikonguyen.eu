@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import DarkTheme from '../themes/dark.theme';
 
 const FourOFourWrap = styled.div`
   background: linear-gradient(
@@ -9,11 +10,9 @@ const FourOFourWrap = styled.div`
 
   height: 85vh;
 
-  @media ${props => props.theme.screen.laptopL} {
-    @keyframes rocket-movement {
-      100% {
-        transform: translate(60px, -100px);
-      }
+  @keyframes rocket-movement {
+    100% {
+      transform: translate(60px, -100px);
     }
   }
 
@@ -74,7 +73,7 @@ const FourOFourWrap = styled.div`
         font-size: 80px;
         margin: 0;
 
-        @media ${props => props.theme.screen.tablet} {
+        @media ${DarkTheme.screen.tablet} {
           font-size: 120px;
         }
       }
@@ -119,7 +118,7 @@ const FourOFourWrap = styled.div`
       .object_rocket {
         display: none;
 
-        @media ${props => props.theme.screen.laptopL} {
+        @media ${DarkTheme.screen.laptopL} {
           z-index: 95;
           position: absolute;
           transform: translateX(-1000px);
@@ -142,6 +141,19 @@ const FourOFourWrap = styled.div`
         position: absolute;
         top: 12%;
         left: 25%;
+      }
+
+      .box_astronaut {
+        z-index: 110 !important;
+        position: absolute;
+        top: 60%;
+        right: 20%;
+        will-change: transform;
+        animation: move-astronaut 50s infinite linear both alternate;
+
+        .object_astronaut {
+          animation: rotate-astronaut 200s infinite linear both alternate;
+        }
       }
     }
 
@@ -180,24 +192,11 @@ const FourOFourWrap = styled.div`
       left: 50%;
       animation: glow-star 2s infinite ease-in-out alternate 9s;
     }
-
-    .object_astronaut {
-      animation: rotate-astronaut 200s infinite linear both alternate;
-    }
-
-    .box_astronaut {
-      z-index: 110 !important;
-      position: absolute;
-      top: 60%;
-      right: 20%;
-      will-change: transform;
-      animation: move-astronaut 50s infinite linear both alternate;
-    }
   }
 
   @media only screen and (max-width: 600px) {
     .box_astronaut {
-      top: 70%;
+      display: none;
     }
 
     .content {
