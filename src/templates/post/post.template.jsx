@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../../components/layout/layout.component';
 import PostTags from '../../components/post-tags/post-tags';
-import SEO from '../../components/SEO/SEO';
+import SEO from '../../components/seo/seo';
 import config from '../../../data/SiteConfig';
 import StyledContainer, { PostHeader, StyledPlaceholder } from './post.style';
 import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
@@ -47,12 +47,9 @@ const PostTemplate = props => {
           <h1>{post.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className='contentWrapper__social'>
-            <div>
-              <h4>Share this post:</h4>
-              {/* FIXME: Move to Post Header 
+            {/* FIXME: Move to Post Header 
                 <SocialLinks postPath={slug} postNode={postNode} /> 
               */}
-            </div>
           </div>
         </div>
       </StyledContainer>
