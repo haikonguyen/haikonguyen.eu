@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Layout from '../components/layout/layout.component';
 import FourOFourWrap from './404.style';
+import astronaut from '../img/astronaut.svg';
+import earth from '../img/earth.svg';
+import moon from '../img/moon.svg';
+import rocket from '../img/rocket.svg';
 
 const FourOFourPage = () => {
   return (
@@ -18,20 +22,20 @@ const FourOFourPage = () => {
           <section className='objects'>
             <img
               className='object_rocket'
-              src='http://salehriaz.com/404Page/img/rocket.svg'
+              src={rocket}
               width='40px'
               alt='Rocket'
             />
             <div className='earth-moon'>
               <img
                 className='object_earth'
-                src='http://salehriaz.com/404Page/img/earth.svg'
+                src={earth}
                 width='100px'
                 alt='earth img'
               />
               <img
                 className='object_moon'
-                src='http://salehriaz.com/404Page/img/moon.svg'
+                src={moon}
                 width='80px'
                 alt='moon img'
               />
@@ -39,7 +43,7 @@ const FourOFourPage = () => {
             <div className='box_astronaut'>
               <img
                 className='object_astronaut'
-                src='http://salehriaz.com/404Page/img/astronaut.svg'
+                src={astronaut}
                 width='140px'
                 alt='astronaut'
               />

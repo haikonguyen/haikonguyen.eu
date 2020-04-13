@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import DarkTheme from '../themes/dark.theme';
+import starsOverlay from '../img/overlay_stars.svg';
 
 const FourOFourWrap = styled.div`
   background: linear-gradient(
@@ -57,7 +58,7 @@ const FourOFourWrap = styled.div`
   }
 
   .starsWrap {
-    background: url(http://salehriaz.com/404Page/img/overlay_stars.svg);
+    background: url(${starsOverlay});
     background-repeat: repeat;
     background-size: contain;
     background-position: center;
