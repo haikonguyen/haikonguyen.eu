@@ -41,7 +41,7 @@ const Home = () => {
             <h1>About</h1>
             <hr />
           </div>
-          <div className='about'>
+          <div className='about container--fixed'>
             <div>
               <div className='profilePictureWrap'>
                 <img

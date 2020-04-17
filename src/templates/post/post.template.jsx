@@ -8,7 +8,7 @@ import config from '../../../data/SiteConfig';
 import StyledContainer, { PostHeader, StyledPlaceholder } from './post.style';
 import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
 
-const PostTemplate = props => {
+const PostTemplate = (props) => {
   const { data, pageContext } = props;
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
@@ -33,7 +33,7 @@ const PostTemplate = props => {
       <SEO postPath={slug} postNode={postNode} postSEO />
       {cover ? (
         <PostHeader Tag='section' fluid={cover}>
-          <div className='postHeaderWrap'>
+          <div className='postHeaderWrap container--fixed'>
             <PostTags className='postHeaderWrap__tags' tags={post.tags} />
           </div>
         </PostHeader>
@@ -42,7 +42,7 @@ const PostTemplate = props => {
           style={{ backgroundImage: `url(${bgPlaceHolder})` }}
         />
       )}
-      <StyledContainer>
+      <StyledContainer className='container--fixed'>
         <div className='contentWrapper'>
           <h1>{post.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />

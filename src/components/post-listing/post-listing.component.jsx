@@ -58,7 +58,7 @@ const PostListing = () => {
   const postList = getPostList();
 
   return (
-    <StyledContainer>
+    <StyledContainer className='container--fixed'>
       {postList.map((post) => {
         let cover;
         if (post.cover) {

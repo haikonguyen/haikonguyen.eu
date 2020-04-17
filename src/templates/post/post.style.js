@@ -10,8 +10,6 @@ export const PostHeader = styled(BackgroundImage)`
   background-position: center;
 
   .postHeaderWrap {
-    max-width: ${rem('1140px')};
-    margin: 0 auto;
     height: 25vh;
     position: relative;
 
@@ -31,36 +29,36 @@ export const PostHeader = styled(BackgroundImage)`
         }
       }
 
-      @media ${props => props.theme.screen.tablet} {
+      @media ${(props) => props.theme.screen.tablet} {
         bottom: ${rem('160px')};
         margin-left: ${rem('30px')};
       }
 
-      @media ${props => props.theme.screen.laptop} {
+      @media ${(props) => props.theme.screen.laptop} {
         bottom: ${rem('140px')};
       }
 
-      @media ${props => props.theme.screen.laptopL} {
+      @media ${(props) => props.theme.screen.laptopL} {
         margin-left: 0;
         margin-right: 0;
         bottom: ${rem('280px')};
       }
     }
 
-    @media ${props => props.theme.screen.tablet} {
+    @media ${(props) => props.theme.screen.tablet} {
       height: 60vh;
     }
 
-    @media ${props => props.theme.screen.laptopL} {
+    @media ${(props) => props.theme.screen.laptopL} {
       height: 100vh;
     }
   }
 
-  @media ${props => props.theme.screen.tablet} {
+  @media ${(props) => props.theme.screen.tablet} {
     height: 60vh;
   }
 
-  @media ${props => props.theme.screen.laptopL} {
+  @media ${(props) => props.theme.screen.laptopL} {
     height: 100vh;
   }
 `;
@@ -74,12 +72,10 @@ export const StyledPlaceholder = styled.section`
 `;
 
 const StyledContainer = styled.main`
-  max-width: ${rem('1140px')};
-  margin: 0 auto;
-  box-shadow: ${props => props.theme.colors.cardItemShadow};
+  box-shadow: ${(props) => props.theme.colors.cardItemShadow};
 
   .contentWrapper {
-    background-color: ${props => props.theme.colors.cardItemBg};
+    background-color: ${(props) => props.theme.colors.cardItemBg};
     padding: ${rem('20px')} ${rem('10px')};
     margin-top: ${rem('-40px')};
     border-radius: ${rem('5px')};
@@ -88,11 +84,11 @@ const StyledContainer = styled.main`
     position: relative;
 
     a:-webkit-any-link {
-      color: ${props => props.theme.colors.primaryThemeColor};
+      color: ${(props) => props.theme.colors.primaryThemeColor};
 
       &:hover {
         border-bottom: 1px solid
-          ${props => props.theme.colors.primaryThemeColor};
+          ${(props) => props.theme.colors.primaryThemeColor};
       }
     }
 
@@ -101,18 +97,18 @@ const StyledContainer = styled.main`
       height: auto;
     }
 
-    @media ${props => props.theme.screen.tablet} {
+    @media ${(props) => props.theme.screen.tablet} {
       padding: ${rem('30px')} ${rem('40px')};
       margin-top: ${rem('-140px')};
       margin-left: ${rem('30px')};
       margin-right: ${rem('30px')};
     }
 
-    @media ${props => props.theme.screen.laptop} {
+    @media ${(props) => props.theme.screen.laptop} {
       margin-top: ${rem('-120px')};
     }
 
-    @media ${props => props.theme.screen.laptopL} {
+    @media ${(props) => props.theme.screen.laptopL} {
       padding: ${rem('50px')} ${rem('70px')};
       margin-top: ${rem('-250px')};
       border-radius: ${rem('10px')};

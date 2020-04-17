@@ -9,7 +9,7 @@ const StyledMain = styled.main`
       padding-bottom: ${rem('70px')};
 
       h1 {
-        color: ${props => props.theme.colors.white};
+        color: ${(props) => props.theme.colors.white};
         text-align: center;
         margin: 0;
         text-transform: uppercase;
@@ -17,7 +17,7 @@ const StyledMain = styled.main`
 
       hr {
         border: ${rem('1px')} solid
-          ${props => props.theme.colors.primaryThemeColor};
+          ${(props) => props.theme.colors.primaryThemeColor};
         width: ${rem('100px')};
         margin: 0 auto;
         margin-top: ${rem('10px')};
@@ -40,7 +40,7 @@ const StyledMain = styled.main`
           height: ${rem('180px')};
           width: ${rem('180px')};
           border: ${rem('3px')} solid
-            ${props => props.theme.colors.backgroundColor};
+            ${(props) => props.theme.colors.backgroundColor};
         }
       }
 
@@ -59,8 +59,6 @@ const StyledMain = styled.main`
     grid-gap: ${rem('50px')};
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    max-width: ${rem('1140px')};
-    margin: 0 auto;
     align-items: flex-start;
 
     img {
@@ -70,7 +68,7 @@ const StyledMain = styled.main`
       border-radius: ${rem('10px')};
     }
 
-    @media ${props => props.theme.screen.tablet} {
+    @media ${(props) => props.theme.screen.tablet} {
       grid-template-columns: repeat(2, 1fr);
     }
   }
