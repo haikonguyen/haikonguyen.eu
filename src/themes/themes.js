@@ -4,7 +4,38 @@
  * @author Hai Ha Nguyen
  */
 
-const LightTheme = {
+export const DarkTheme = {
+  colors: {
+    navBarColor: '#333',
+    backgroundColor: '#212121',
+    bodyTextColor: 'white',
+    containerBg: '#333333',
+    primaryThemeColor: '#2e89ff',
+    cardItemBg: '#424242',
+    themeToggleIcon: '#ECC400',
+    navLinks: 'white',
+    navLinksActive: '#2e89ff',
+    cardItemShadow: 'none',
+    goUpBg: '#333',
+    buttonHover: '#90caf9',
+    buttonHOverBg: ' rgba(144, 202, 249, 0.08)',
+    heroContentBg: 'rgba(0, 0, 0, 0.5)',
+    MuiButtonRootHover: 'rgba(255, 255, 255, 0.08)',
+    footerBg: '#18191a',
+  },
+
+  screen: {
+    mobileS: '(min-width: 320px)',
+    mobileM: '(min-width: 375px)',
+    mobileL: '(min-width: 579px)',
+    tablet: '(min-width: 768px)',
+    laptop: '(min-width: 1024px)',
+    laptopL: '(min-width: 1440px)',
+    desktop: '(min-width: 2560px)',
+  },
+};
+
+export const LightTheme = {
   colors: {
     navBarColor: 'white',
     backgroundColor: 'white',
@@ -22,7 +53,7 @@ const LightTheme = {
     buttonHOverBg: ' rgba(144, 202, 249, 0.08)',
     heroContentBg: 'rgba(0, 0, 0, 0.5)',
     MuiButtonRootHover: '#EAEAEA',
-    footerBg: '#F2F2F2'
+    footerBg: '#F2F2F2',
   },
 
   screen: {
@@ -32,8 +63,6 @@ const LightTheme = {
     tablet: '(min-width: 768px)',
     laptop: '(min-width: 1024px)',
     laptopL: '(min-width: 1440px)',
-    desktop: '(min-width: 2560px)'
-  }
+    desktop: '(min-width: 2560px)',
+  },
 };
-
-export default LightTheme;

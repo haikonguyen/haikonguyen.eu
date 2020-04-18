@@ -53,6 +53,8 @@ a:-webkit-any-link {
 }
 
 .container {
+  padding: ${rem('70px')} ${rem('15px')};
+
   &--fluid {
     width: 100%;
   }
@@ -60,73 +62,15 @@ a:-webkit-any-link {
   &--fixed {
     margin: 0 auto;
     max-width: ${rem('1140px')};
-  }
-}
 
-.MuiButton-root {
-  && {
-
-    &:hover {
-      background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
-    }
   }
 }
 
 .MuiButton-textPrimary {
   && {
-    color: ${(props) => props.theme.colors.bodyTextColor};
+  color: ${(props) => props.theme.colors.bodyTextColor};
   }
 }
-
-.MuiButton-containedPrimary {
-  && {
-    background-color: ${(props) => props.theme.colors.primaryThemeColor};
-
-    &:hover {
-      background-color: #1156AA;
-    }
-  }
-}
-
-.MuiButton-outlinedPrimary {
-  && {
-    color: ${(props) => props.theme.colors.primaryThemeColor};
-    border: 1px solid ${(props) => props.theme.colors.primaryThemeColor};
-
-    &:hover {
-      border: 1px solid #90caf9;
-      background-color: rgba(144, 202, 249, 0.08);
-    }
-  }
-}
-
-.MuiIconButton-root {
-  && {
-
-    &:hover {
-      background-color: ${(props) => props.theme.colors.MuiButtonRootHover}
-    }
-  }
-}
-
-.MuiAppBar-positionFixed {
-  && {
-    transition: all 0.3s;
-    animation: slide-down 0.7s;
-  }
-}
-
-.MuiIconButton-colorInherit {
-  && {
-    color: ${(props) => props.theme.colors.bodyTextColor};
-  }
-}
-
-.MuiDivider-root {
-    && {
-      background-color: ${(props) => props.theme.colors.MuiButtonRootHover};
-    }
-  }
 
 @keyframes slide-down {
   0% {

@@ -66,9 +66,13 @@ const PostListing = () => {
         }
 
         return (
-          <Link key={post.id} className='styledLink' to={post.path}>
-            <PostItem cover={cover} title={post.title} excerpt={post.excerpt} />
-          </Link>
+          <PostItem
+            key={post.id}
+            path={post.path}
+            cover={cover}
+            title={post.title}
+            excerpt={post.excerpt}
+          />
         );
       })}
     </StyledContainer>

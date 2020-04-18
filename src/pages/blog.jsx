@@ -1,13 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import Img from 'gatsby-image';
+import { useStaticQuery, graphql } from 'gatsby';
+import TextField from '@material-ui/core/TextField';
 import Layout from '../components/layout/layout.component';
-import placeHolder from '../img/placeholder.png';
 import Hero from '../components/hero/hero.component';
 import config from '../../data/SiteConfig';
+import PostItem from '../components/post-item/post-item.component';
+import StyledMain, { StyledSearch } from './blog.style';
+import blogHero from '../img/blogPage.jpg';
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -62,10 +62,36 @@ const BlogPage = () => {
 
   return (
     <Layout>
-      <div className='blog-container'>
-        <Helmet title={`Blog | ${config.siteTitle}`} />
-        <Hero />
-      </div>
+      <Helmet title={`Blog | ${config.siteTitle}`} />
+      <Hero bgImage={blogHero}>
+        <h1>Blog</h1>
+      </Hero>
+      <StyledSearch className='container container--fixed'>
+        <TextField
+          id='outlined-search'
+          label='Search'
+          type='search'
+          variant='outlined'
+        />
+      </StyledSearch>
+      <StyledMain className='container container--fixed'>
+        {postList.map((post) => {
+          let cover;
+          if (post.cover) {
+            cover = post.cover.childImageSharp.fluid;
+          }
+
+          return (
+            <PostItem
+              key={post.id}
+              path={post.path}
+              cover={cover}
+              title={post.title}
+              excerpt={post.excerpt}
+            />
+          );
+        })}
+      </StyledMain>
     </Layout>
   );
 };

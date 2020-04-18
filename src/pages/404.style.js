@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import DarkTheme from '../themes/dark.theme';
+import { DarkTheme } from '../themes/themes';
 import starsOverlay from '../img/overlay_stars.svg';
 
 const FourOFourWrap = styled.div`
