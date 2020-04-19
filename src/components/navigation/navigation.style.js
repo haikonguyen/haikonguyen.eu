@@ -23,8 +23,8 @@ const StyledAppBar = styled(AppBar)`
       display: none;
     }
 
-    .themeToggleIcon {
-      color: ${(props) => props.theme.colors.themeToggleIcon};
+    .MuiIconButton-edgeStart {
+      color: ${(props) => props.theme.colors.bodyTextColor};
     }
   }
 

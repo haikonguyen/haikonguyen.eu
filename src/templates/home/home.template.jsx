@@ -1,6 +1,7 @@
 import React from 'react';
 import { navigate } from '@reach/router';
 import { graphql } from 'gatsby';
+import Divider from '@material-ui/core/Divider';
 import CustomBtn from '../../components/materialui/button.component';
 import profileImg from '../../img/HaikoProfile.jpg';
 import profileImg2 from '../../img/HaikoProfile2.jpg';
@@ -70,9 +71,10 @@ const Home = ({ data }) => {
             </div>
           </div>
         </section>
+        <Divider className='container--fixed' />
         {/* Blog Section */}
         <section className='sections sections__blog'>
-          <div className='container container--fixed sections__heading'>
+          <div className='sections__heading'>
             <h1>Latest Posts</h1>
             <hr />
           </div>

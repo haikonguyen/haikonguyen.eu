@@ -1,21 +1,27 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import PostListing from '../components/post-listing/post-listing.component';
-import config from '../../data/SiteConfig';
-import Layout from '../components/layout/layout.component';
+import PostListing from '../../components/post-listing/post-listing.component';
+import config from '../../../data/SiteConfig';
+import Layout from '../../components/layout/layout.component';
+import StyledCategoryWrap from './category.style';
+import Hero from '../../components/hero/hero.component';
+import blogHero from '../../img/blogPage.jpg';
 
 const CategoryTemplate = ({ data, pageContext }) => {
   const { category } = pageContext;
   const postEdges = data.allMarkdownRemark.edges;
   return (
     <Layout>
-      <div className='category-container'>
+      <Hero bgImage={blogHero}>
+        <h1>{category}</h1>
+      </Hero>
+      <StyledCategoryWrap className='container container--fixed'>
         <Helmet
           title={`Posts in category "${category}" | ${config.siteTitle}`}
         />
         <PostListing postEdges={postEdges} />
-      </div>
+      </StyledCategoryWrap>
     </Layout>
   );
 };
@@ -49,6 +55,7 @@ export const pageQuery = graphql`
               }
             }
           }
+          id
         }
       }
     }

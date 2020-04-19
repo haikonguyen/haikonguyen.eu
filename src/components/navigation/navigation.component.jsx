@@ -11,7 +11,7 @@ import config from '../../../data/SiteConfig';
 import StyledAppBar from './navigation.style';
 import mainLogo from '../../img/mainLogoOptimized.png';
 
-const Nav = props => {
+const Nav = (props) => {
   const { themeToggler, lightTheme, showOnScroll } = props;
 
   return (
@@ -31,7 +31,7 @@ const Nav = props => {
         </section>
 
         <section className='destkopNav__links'>
-          {config.navLinks.map(link => (
+          {config.navLinks.map((link) => (
             <Link
               key={link.id}
               to={link.href}
@@ -45,7 +45,6 @@ const Nav = props => {
                 }
                 size='large'
                 text={link.name}
-                color='primary'
               />
             </Link>
           ))}

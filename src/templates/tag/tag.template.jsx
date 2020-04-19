@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout/layout.component';
-import PostListing from '../components/post-listing/post-listing.component';
-import config from '../../data/SiteConfig';
+import Layout from '../../components/layout/layout.component';
+import PostListing from '../../components/post-listing/post-listing.component';
+import config from '../../../data/SiteConfig';
 
 export default class TagTemplate extends React.Component {
   render() {

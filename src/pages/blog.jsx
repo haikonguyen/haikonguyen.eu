@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import TextField from '@material-ui/core/TextField';
+import { navigate } from '@reach/router';
 import Layout from '../components/layout/layout.component';
 import Hero from '../components/hero/hero.component';
 import config from '../../data/SiteConfig';
 import { StyledSearchSection } from './blog.style';
 import blogHero from '../img/blogPage.jpg';
 import PostListing from '../components/post-listing/post-listing.component';
+import CustomBtn from '../components/materialui/button.component';
 
 const BlogPage = ({ data }) => {
   const postEdges = data.allMarkdownRemark.edges;
@@ -26,6 +28,8 @@ const BlogPage = ({ data }) => {
       .includes(searchField.toLowerCase())
   );
 
+  const filteredCount = filteredPosts.length;
+
   return (
     <Layout>
       <Helmet title={`Blog | ${config.siteTitle}`} />
@@ -33,28 +37,33 @@ const BlogPage = ({ data }) => {
         <h1>Blog</h1>
       </Hero>
       <StyledSearchSection className='container container--fixed'>
-        <TextField
-          id='outlined-search'
-          label='Search'
-          type='search'
-          variant='outlined'
-          onChange={() => handleChange(event)}
-        />
-        <div className='category-container'>
+        <div className='searchSection'>
+          <TextField
+            id='outlined-search'
+            label='Search'
+            type='search'
+            variant='outlined'
+            onChange={() => handleChange(event)}
+          />
+          <span>{filteredCount}</span>
+        </div>
+
+        <div className='categorySection'>
           {categories.map((category) => {
             return (
-              <Link
-                to={`/categories/${category.fieldValue.toLowerCase()}`}
-                className='category-filter'
+              <CustomBtn
+                onClick={() =>
+                  navigate(`/categories/${category.fieldValue.toLowerCase()}`)
+                }
+                text={category.fieldValue}
+                size='small'
                 key={category.fieldValue}
-              >
-                {category.fieldValue}
-              </Link>
+              />
             );
           })}
         </div>
+        <PostListing postEdges={filteredPosts} />
       </StyledSearchSection>
-      <PostListing postEdges={filteredPosts} />
     </Layout>
   );
 };
@@ -89,7 +98,6 @@ export const pageQuery = graphql`
     category: allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___category) {
         fieldValue
-        totalCount
       }
     }
   }

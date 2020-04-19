@@ -68,6 +68,7 @@ a:-webkit-any-link {
     max-width: ${rem('1140px')};
 
   }
+
 }
 
 .MuiButton-textPrimary {
