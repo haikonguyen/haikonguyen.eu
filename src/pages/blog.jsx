@@ -1,64 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import TextField from '@material-ui/core/TextField';
 import Layout from '../components/layout/layout.component';
 import Hero from '../components/hero/hero.component';
 import config from '../../data/SiteConfig';
-import PostItem from '../components/post-item/post-item.component';
-import StyledMain, { StyledSearch } from './blog.style';
+import { StyledSearchSection } from './blog.style';
 import blogHero from '../img/blogPage.jpg';
+import PostListing from '../components/post-listing/post-listing.component';
 
-const BlogPage = () => {
-  const data = useStaticQuery(graphql`
-    query BlogQuery {
-      allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
-        edges {
-          node {
-            fields {
-              slug
-              date
-            }
-            excerpt
-            timeToRead
-            frontmatter {
-              title
-              tags
-              cover {
-                childImageSharp {
-                  fluid(maxWidth: 345, maxHeight: 140) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-              date
-            }
-            id
-          }
-        }
-      }
-    }
-  `);
+const BlogPage = ({ data }) => {
+  const postEdges = data.allMarkdownRemark.edges;
+  const categories = data.category.group;
+  const [searchField, setSearchField] = useState('');
 
-  const getPostList = () => {
-    const postEdges = data.allMarkdownRemark.edges;
-    const postList = [];
-    postEdges.forEach((postEdge) => {
-      postList.push({
-        path: postEdge.node.fields.slug,
-        tags: postEdge.node.frontmatter.tags,
-        cover: postEdge.node.frontmatter.cover,
-        title: postEdge.node.frontmatter.title,
-        date: postEdge.node.fields.date,
-        excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead,
-        id: postEdge.node.id,
-      });
-    });
-    return postList;
+  const handleChange = (event) => {
+    const { value } = event.target;
+
+    setSearchField(value);
   };
 
-  const postList = getPostList();
+  const filteredPosts = postEdges.filter((post) =>
+    post.node.frontmatter.title
+      .toLowerCase()
+      .includes(searchField.toLowerCase())
+  );
 
   return (
     <Layout>
@@ -66,34 +32,67 @@ const BlogPage = () => {
       <Hero bgImage={blogHero}>
         <h1>Blog</h1>
       </Hero>
-      <StyledSearch className='container container--fixed'>
+      <StyledSearchSection className='container container--fixed'>
         <TextField
           id='outlined-search'
           label='Search'
           type='search'
           variant='outlined'
+          onChange={() => handleChange(event)}
         />
-      </StyledSearch>
-      <StyledMain className='container container--fixed'>
-        {postList.map((post) => {
-          let cover;
-          if (post.cover) {
-            cover = post.cover.childImageSharp.fluid;
-          }
-
-          return (
-            <PostItem
-              key={post.id}
-              path={post.path}
-              cover={cover}
-              title={post.title}
-              excerpt={post.excerpt}
-            />
-          );
-        })}
-      </StyledMain>
+        <div className='category-container'>
+          {categories.map((category) => {
+            return (
+              <Link
+                to={`/categories/${category.fieldValue.toLowerCase()}`}
+                className='category-filter'
+                key={category.fieldValue}
+              >
+                {category.fieldValue}
+              </Link>
+            );
+          })}
+        </div>
+      </StyledSearchSection>
+      <PostListing postEdges={filteredPosts} />
     </Layout>
   );
 };
+
+export const pageQuery = graphql`
+  query BlogQuery {
+    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 345, maxHeight: 140) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            date
+          }
+          id
+        }
+      }
+    }
+    category: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___category) {
+        fieldValue
+        totalCount
+      }
+    }
+  }
+`;
 
 export default BlogPage;

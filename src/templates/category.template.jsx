@@ -5,22 +5,20 @@ import PostListing from '../components/post-listing/post-listing.component';
 import config from '../../data/SiteConfig';
 import Layout from '../components/layout/layout.component';
 
-export default class CategoryTemplate extends React.Component {
-  render() {
-    const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
-    return (
-      <Layout>
-        <div className='category-container'>
-          <Helmet
-            title={`Posts in category "${category}" | ${config.siteTitle}`}
-          />
-          <PostListing postEdges={postEdges} />
-        </div>
-      </Layout>
-    );
-  }
-}
+const CategoryTemplate = ({ data, pageContext }) => {
+  const { category } = pageContext;
+  const postEdges = data.allMarkdownRemark.edges;
+  return (
+    <Layout>
+      <div className='category-container'>
+        <Helmet
+          title={`Posts in category "${category}" | ${config.siteTitle}`}
+        />
+        <PostListing postEdges={postEdges} />
+      </div>
+    </Layout>
+  );
+};
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -43,9 +41,18 @@ export const pageQuery = graphql`
             title
             tags
             date
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 345, maxHeight: 140) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }
     }
   }
 `;
+
+export default CategoryTemplate;

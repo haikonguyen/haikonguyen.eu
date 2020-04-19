@@ -1,44 +1,9 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
 import { StyledContainer } from './post-listing.style';
 import PostItem from '../post-item/post-item.component';
 
-const PostListing = () => {
-  const data = useStaticQuery(graphql`
-    query ListingQuery {
-      allMarkdownRemark(
-        sort: { fields: [fields___date], order: DESC }
-        limit: 3
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-              date
-            }
-            excerpt
-            timeToRead
-            frontmatter {
-              title
-              tags
-              cover {
-                childImageSharp {
-                  fluid(maxWidth: 345, maxHeight: 140) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-              date
-            }
-            id
-          }
-        }
-      }
-    }
-  `);
-
+const PostListing = ({ postEdges }) => {
   const getPostList = () => {
-    const postEdges = data.allMarkdownRemark.edges;
     const postList = [];
     postEdges.forEach((postEdge) => {
       postList.push({

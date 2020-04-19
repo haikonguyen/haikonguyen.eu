@@ -76,7 +76,6 @@ export const pageQuery = graphql`
           }
         }
         date
-        category
         tags
       }
       fields {

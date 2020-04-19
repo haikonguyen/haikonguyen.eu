@@ -1,5 +1,6 @@
 import React from 'react';
 import { navigate } from '@reach/router';
+import { graphql } from 'gatsby';
 import CustomBtn from '../../components/materialui/button.component';
 import profileImg from '../../img/HaikoProfile.jpg';
 import profileImg2 from '../../img/HaikoProfile2.jpg';
@@ -10,7 +11,8 @@ import StyledMain from './home.style';
 import config from '../../../data/SiteConfig';
 import bgSrc from '../../img/PragueCastle01_opti.jpg';
 
-const Home = () => {
+const Home = ({ data }) => {
+  const postEdges = data.allMarkdownRemark.edges;
   return (
     <Layout>
       <StyledMain>
@@ -37,7 +39,7 @@ const Home = () => {
         </Hero>
         {/* About Section */}
         <section className='sections'>
-          <div className='heading'>
+          <div className='sections__heading'>
             <h1>About</h1>
             <hr />
           </div>
@@ -55,16 +57,9 @@ const Home = () => {
             <div>
               <h2>HI, I'M HAIKO</h2>
               <p>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less
-                normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem
-                Ipsum as their default model text, and a search for 'lorem
-                ipsum' will uncover many web sites still in their infancy.
-                Various versions have evolved over the years, sometimes by
-                accident, sometimes on purpose (injected humour and the like).
+                Hello there! Welcome to my personal blog. I am a Web Developer,
+                Vlogger and Travel photographer based in Prague. I am passionate
+                about photography, web development and movie creation.
               </p>
               <CustomBtn
                 onClick={() => navigate('/about')}
@@ -76,16 +71,58 @@ const Home = () => {
           </div>
         </section>
         {/* Blog Section */}
-        <section className='sections'>
-          <div className='heading'>
+        <section className='sections sections__blog'>
+          <div className='container container--fixed sections__heading'>
             <h1>Latest Posts</h1>
             <hr />
           </div>
-          <PostListing />
+          <PostListing postEdges={postEdges} />
+
+          <div className='container container--fixed sections__blog__btn'>
+            <CustomBtn
+              onClick={() => navigate('/blog')}
+              text='Read More'
+              variant='outlined'
+              color='primary'
+            />
+          </div>
         </section>
       </StyledMain>
     </Layout>
   );
 };
+
+export const pageQuery = graphql`
+  query HomeQuery {
+    allMarkdownRemark(
+      sort: { fields: [fields___date], order: DESC }
+      limit: 3
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 345, maxHeight: 140) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            date
+          }
+          id
+        }
+      }
+    }
+  }
+`;
 
 export default Home;

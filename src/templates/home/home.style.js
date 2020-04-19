@@ -5,7 +5,7 @@ const StyledMain = styled.main`
   .sections {
     padding: ${rem('70px')} ${rem('15px')};
 
-    .heading {
+    &__heading {
       padding-bottom: ${rem('70px')};
 
       h1 {
@@ -21,6 +21,13 @@ const StyledMain = styled.main`
         width: ${rem('100px')};
         margin: 0 auto;
         margin-top: ${rem('10px')};
+      }
+    }
+
+    &__blog {
+      &__btn {
+        display: flex;
+        justify-content: center;
       }
     }
   }
