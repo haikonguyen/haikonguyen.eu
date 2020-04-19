@@ -17,35 +17,39 @@ body {
 }
 
 h1 {
-    font-size:  ${rem('25px')};
+  font-size: ${rem('25px')};
 
-    @media ${(props) => props.theme.screen.tablet} {
-      font-size:  ${rem('35px')};
-    }
+  @media ${(props) => props.theme.screen.tablet} {
+    font-size: ${rem('35px')};
+  }
 }
 
 h2 {
-    font-size:  ${rem('22px')};
+  font-size: ${rem('22px')};
 
-    @media ${(props) => props.theme.screen.tablet} {
-      font-size:  ${rem('29px')};
-    }
+  @media ${(props) => props.theme.screen.tablet} {
+    font-size: ${rem('29px')};
+  }
 }
 
 h3 {
-    font-size:  ${rem('20px')};
+  font-size: ${rem('20px')};
 
-    @media ${(props) => props.theme.screen.tablet} {
-      font-size:  ${rem('25px')};
-    }
+  @media ${(props) => props.theme.screen.tablet} {
+    font-size: ${rem('25px')};
+  }
 }
 
 h4 {
-    font-size:  ${rem('18px')};
+  font-size: ${rem('18px')};
 
-    @media ${(props) => props.theme.screen.tablet} {
-      font-size:  ${rem('22px')};
-    }
+  @media ${(props) => props.theme.screen.tablet} {
+    font-size: ${rem('22px')};
+  }
+}
+
+p {
+  line-height: ${rem('22px')};
 }
 
 a:-webkit-any-link {

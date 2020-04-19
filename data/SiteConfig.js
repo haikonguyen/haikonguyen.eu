@@ -26,54 +26,54 @@ const config = {
     {
       label: 'Facebook',
       url: 'https://www.facebook.com/haikonguyen.eu/',
-      icon: 'FaFacebookF'
+      icon: 'FaFacebookF',
     },
     {
       label: 'Instagram',
-      url: 'https://github.com/2c0',
-      icon: 'FaInstagram'
+      url: 'https://www.instagram.com/haikonguyen.eu/',
+      icon: 'FaInstagram',
     },
     {
       label: 'Twitter',
-      url: 'https://twitter.com/haicorp87',
-      icon: 'FaTwitter'
+      url: 'https://twitter.com/haikonguyeneu',
+      icon: 'FaTwitter',
     },
     {
       label: 'GitHub',
-      url: 'https://github.com/2c0',
-      icon: 'FaGithub'
-    }
+      url: 'https://github.com/haikonguyen',
+      icon: 'FaGithub',
+    },
   ],
   navLinks: [
     {
       id: 1,
       href: '/',
-      name: 'Home'
+      name: 'Home',
     },
     {
       id: 2,
       href: '/about',
-      name: 'About'
+      name: 'About',
     },
     {
       id: 3,
       href: '/blog',
-      name: 'Blog'
+      name: 'Blog',
     },
     {
       id: 4,
       href: '/portfolio',
-      name: 'Portfolio'
+      name: 'Portfolio',
     },
     {
       id: 5,
       href: '/contact',
-      name: 'Contact'
-    }
+      name: 'Contact',
+    },
   ],
   copyright: 'Copyright © 2020. Haiko Nguyen', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#2e89ff', // Used for setting manifest and progress theme colors.
-  backgroundColor: '#e0e0e0' // Used for setting manifest background color.
+  backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 };
 
 // Validate
