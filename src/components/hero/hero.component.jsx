@@ -6,33 +6,34 @@ const StyledHero = styled.section`
   background-size: cover;
   background-position: center top;
   width: 100%;
-  height: 70vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  height: ${(props) => (props.isHome ? '70vh' : '40vh')};
 
-  @media ${props => props.theme.screen.tablet} {
+  @media ${(props) => props.theme.screen.tablet} {
     height: 50vh;
   }
 
   .contentWrap {
-    background-color: ${props => props.theme.colors.heroContentBg};
-    color: ${props => props.theme.colors.white};
+    background-color: ${(props) => props.theme.colors.heroContentBg};
+    color: ${(props) => props.theme.colors.white};
     padding: ${rem('20px')};
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
   }
 `;
 
-const Hero = ({ children, className, bgImage }) => {
+const Hero = (props) => {
+  const { children, className, bgImage, isHome } = props;
+
   return (
     <StyledHero
       style={{ backgroundImage: `url(${bgImage})` }}
       className={className}
+      isHome={isHome}
     >
       <div className='contentWrap'>{children}</div>
     </StyledHero>

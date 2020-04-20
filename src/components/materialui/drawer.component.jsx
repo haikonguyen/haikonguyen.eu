@@ -23,8 +23,8 @@ const StyledSideList = styled.div`
 
 const StyledDrawer = styled(Drawer)`
   .MuiDrawer-paperAnchorLeft {
-    background: ${props => props.theme.colors.backgroundColor};
-    color: ${props => props.theme.colors.bodyTextColor};
+    background: ${(props) => props.theme.colors.backgroundColor};
+    color: ${(props) => props.theme.colors.bodyTextColor};
 
     img {
       height: ${rem('50px')};
@@ -41,10 +41,10 @@ export default function TemporaryDrawer(props) {
     top: false,
     left: false,
     bottom: false,
-    right: false
+    right: false,
   });
 
-  const toggleDrawer = (side, open) => event => {
+  const toggleDrawer = (side, open) => (event) => {
     if (
       event.type === 'keydown' &&
       (event.key === 'Tab' || event.key === 'Shift')
@@ -54,7 +54,7 @@ export default function TemporaryDrawer(props) {
     setState({ ...state, [side]: open });
   };
 
-  const sideList = side => {
+  const sideList = (side) => {
     return (
       <StyledSideList
         role='presentation'
@@ -64,7 +64,7 @@ export default function TemporaryDrawer(props) {
         <img className='logo' src={mainLogo} alt='The logo' />
         <Divider />
         <List>
-          {config.navLinks.map(link => (
+          {config.navLinks.map((link) => (
             <ListItem key={link.id}>
               <ListItemText
                 onClick={() => navigate(link.href)}
