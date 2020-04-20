@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledSearchSection = styled.main`
+const StyledSearchSection = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,3 +20,5 @@ export const StyledSearchSection = styled.main`
     margin: 30px 0;
   }
 `;
+
+export default StyledSearchSection;

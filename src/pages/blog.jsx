@@ -6,7 +6,7 @@ import { navigate } from '@reach/router';
 import Layout from '../components/layout/layout.component';
 import Hero from '../components/hero/hero.component';
 import config from '../../data/SiteConfig';
-import { StyledSearchSection } from './blog.style';
+import StyledSearchSection from './blog.style';
 import blogHero from '../img/blogPage.jpg';
 import PostListing from '../components/post-listing/post-listing.component';
 import CustomBtn from '../components/materialui/button.component';
