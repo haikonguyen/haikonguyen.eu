@@ -11,7 +11,7 @@ export const UiContext = createContext(initialState);
 const UiContextProvider = (props) => {
   const { children } = props;
   const [showOnScroll, setShowOnScroll] = useState(false);
-  const [isHome, setIsHome] = useState(false);
+  const [isHome, setIsHome] = useState(true);
 
   useScrollPosition(({ currPos }) => {
     currPos.y < -150 ? setShowOnScroll(true) : setShowOnScroll(false);

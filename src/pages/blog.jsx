@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import TextField from '@material-ui/core/TextField';
@@ -37,7 +37,9 @@ const BlogPage = (props) => {
 
   const filteredCount = filteredPosts.length;
 
-  isHomePage(pathname);
+  useEffect(() => {
+    isHomePage(pathname);
+  });
 
   return (
     <Layout>

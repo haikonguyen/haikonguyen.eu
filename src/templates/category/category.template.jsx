@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import PostListing from '../../components/post-listing/post-listing.component';
@@ -15,7 +15,9 @@ const CategoryTemplate = ({ data, pageContext, location: { pathname } }) => {
   const uiContext = useContext(UiContext);
   const { isHome, isHomePage } = uiContext;
 
-  isHomePage(pathname);
+  useEffect(() => {
+    isHomePage(pathname);
+  });
 
   return (
     <Layout>

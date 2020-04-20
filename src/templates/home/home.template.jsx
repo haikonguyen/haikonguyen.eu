@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { navigate } from '@reach/router';
 import { graphql } from 'gatsby';
 import Divider from '@material-ui/core/Divider';
@@ -18,7 +18,9 @@ const Home = ({ data, location: { pathname } }) => {
   const uiContext = useContext(UiContext);
   const { isHome, isHomePage } = uiContext;
 
-  isHomePage(pathname);
+  useEffect(() => {
+    isHomePage(pathname);
+  });
 
   return (
     <Layout>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Hero from '../../components/hero/hero.component';
@@ -15,7 +15,9 @@ const TagTemplate = ({ data, pageContext, location: { pathname } }) => {
   const uiContext = useContext(UiContext);
   const { isHome, isHomePage } = uiContext;
 
-  isHomePage(pathname);
+  useEffect(() => {
+    isHomePage(pathname);
+  });
 
   return (
     <Layout>
