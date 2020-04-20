@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { navigate } from '@reach/router';
 import { graphql } from 'gatsby';
 import Divider from '@material-ui/core/Divider';
+import { UiContext } from '../../context/ui.context';
 import CustomBtn from '../../components/materialui/button.component';
 import profileImg from '../../img/HaikoProfile.jpg';
 import profileImg2 from '../../img/HaikoProfile2.jpg';
@@ -12,13 +13,18 @@ import StyledMain from './home.style';
 import config from '../../../data/SiteConfig';
 import bgSrc from '../../img/PragueCastle01_opti.jpg';
 
-const Home = ({ data }) => {
+const Home = ({ data, location: { pathname } }) => {
   const postEdges = data.allMarkdownRemark.edges;
+  const uiContext = useContext(UiContext);
+  const { isHome, isHomePage } = uiContext;
+
+  isHomePage(pathname);
+
   return (
     <Layout>
       <StyledMain>
         {/* Hero Section */}
-        <Hero bgImage={bgSrc} className='homeHero'>
+        <Hero isHome={isHome} bgImage={bgSrc} className='homeHero'>
           <div className='homeHero__profileWrap'>
             <section className='homeHero__profileWrap__header'>
               <img src={profileImg} alt='The Avatar' />
@@ -29,7 +35,7 @@ const Home = ({ data }) => {
             </section>
             <section className='homeHero__profileWrap__buttons'>
               <CustomBtn
-                onClick={() => console.log('Do something later')}
+                onClick={() => isHomePage(pathname)}
                 text='Contact Me'
                 variant='contained'
                 size='large'

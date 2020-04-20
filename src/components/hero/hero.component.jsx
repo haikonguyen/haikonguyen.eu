@@ -6,7 +6,7 @@ const StyledHero = styled.section`
   background-size: cover;
   background-position: center top;
   width: 100%;
-  height: 70vh;
+  height: ${(props) => (props.isHome ? '70vh' : '40vh')};
 
   @media ${(props) => props.theme.screen.tablet} {
     height: 50vh;
@@ -26,11 +26,14 @@ const StyledHero = styled.section`
   }
 `;
 
-const Hero = ({ children, className, bgImage }) => {
+const Hero = (props) => {
+  const { children, className, bgImage, isHome } = props;
+
   return (
     <StyledHero
       style={{ backgroundImage: `url(${bgImage})` }}
       className={className}
+      isHome={isHome}
     >
       <div className='contentWrap'>{children}</div>
     </StyledHero>

@@ -13,7 +13,8 @@ import config from '../../../data/SiteConfig';
 import SEO from '../seo/seo';
 import { GlobalStyle } from './layout.style';
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
+  const { children } = props;
   const themeContext = useContext(ThemeContext);
   const { lightTheme, themeToggler } = themeContext;
   const uiContext = useContext(UiContext);
