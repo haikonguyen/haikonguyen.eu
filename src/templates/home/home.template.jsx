@@ -32,8 +32,8 @@ const Home = ({ data, location: { pathname } }) => {
               <img src={profileImg} alt='The Avatar' />
             </section>
             <section className='homeHero__profileWrap__description'>
-              <h1>{config.siteTitle}</h1>
-              <p>WEB DEVELOPER, PHOTOGRAPHER,&nbsp;VLOGGER</p>
+              <h1>{config.siteTitleAlt}</h1>
+              <p>FRONT-END DEVELOPER, PHOTOGRAPHER,&nbsp;VLOGGER</p>
             </section>
             <section className='homeHero__profileWrap__buttons'>
               <CustomBtn
@@ -66,9 +66,23 @@ const Home = ({ data, location: { pathname } }) => {
             <div>
               <h2>HI, I'M HAIKO</h2>
               <p>
-                Hello there! Welcome to my personal blog. I am a Web Developer,
-                Vlogger and Travel photographer based in Prague. I am passionate
-                about photography, web development and movie creation.
+                Hello dear friend! Welcome to my personal blog. On this site you
+                you can find my latest post primarly about things that are
+                dearest to my heart.
+              </p>
+              <p>
+                The main topics are usually tech related, such as DEVELOPMENT
+                (mostly Web, because I'm a web-developer), PHOTOGRAPHY, TRAVEL,
+                VLOGS, GAMING and my personal stories.
+              </p>
+              <p>
+                As I am self-taught developer and photographer, I would like to
+                share throughout my writings my personal experience, and maybe
+                inspire more people to learn in our SUPER FAST PACE WORLD :-).
+              </p>
+              <p>
+                If you want to find out more about my story, be sure to click on
+                the button below.
               </p>
               <CustomBtn
                 onClick={() => navigate('/about')}

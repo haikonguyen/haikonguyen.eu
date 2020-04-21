@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import TextField from '@material-ui/core/TextField';
@@ -12,16 +12,10 @@ import PostListing from '../components/post-listing/post-listing.component';
 import CustomBtn from '../components/materialui/button.component';
 import { UiContext } from '../context/ui.context';
 
-const BlogPage = (props) => {
-  const {
-    data,
-    location: { pathname },
-  } = props;
+const BlogPage = ({ data }) => {
   const postEdges = data.allMarkdownRemark.edges;
   const categories = data.category.group;
   const [searchField, setSearchField] = useState('');
-  const uiContext = useContext(UiContext);
-  const { isHome, isHomePage } = uiContext;
 
   const handleChange = (event) => {
     const { value } = event.target;
@@ -37,14 +31,10 @@ const BlogPage = (props) => {
 
   const filteredCount = filteredPosts.length;
 
-  useEffect(() => {
-    isHomePage(pathname);
-  });
-
   return (
     <Layout>
       <Helmet title={`Blog | ${config.siteTitle}`} />
-      <Hero isHome={isHome} bgImage={blogHero}>
+      <Hero isHome={false} bgImage={blogHero}>
         <h1>BLOG</h1>
       </Hero>
       <StyledSearchSection className='container container--fixed'>

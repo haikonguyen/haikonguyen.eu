@@ -1,11 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import Article from '../../components/article/article.component';
 import Layout from '../../components/layout/layout.component';
 import PostTags from '../../components/post-tags/post-tags';
 import SEO from '../../components/seo/seo';
 import config from '../../../data/SiteConfig';
-import StyledContainer, { PostHeader, StyledPlaceholder } from './post.style';
+import PostHeader, { StyledPlaceholder } from './post.style';
 import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
 
 const PostTemplate = (props) => {
@@ -42,17 +43,7 @@ const PostTemplate = (props) => {
           style={{ backgroundImage: `url(${bgPlaceHolder})` }}
         />
       )}
-      <StyledContainer className='container--fixed'>
-        <div className='contentWrapper'>
-          <h1>{post.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div className='contentWrapper__social'>
-            {/* FIXME: Move to Post Header 
-                <SocialLinks postPath={slug} postNode={postNode} /> 
-              */}
-          </div>
-        </div>
-      </StyledContainer>
+      <Article title={post.title} postHtml={postNode.html} />
     </Layout>
   );
 };

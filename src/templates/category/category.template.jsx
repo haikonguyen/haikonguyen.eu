@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import PostListing from '../../components/post-listing/post-listing.component';
@@ -7,21 +7,14 @@ import Layout from '../../components/layout/layout.component';
 import StyledCategoryWrap from './category.style';
 import Hero from '../../components/hero/hero.component';
 import blogHero from '../../img/blogPage.jpg';
-import { UiContext } from '../../context/ui.context';
 
-const CategoryTemplate = ({ data, pageContext, location: { pathname } }) => {
+const CategoryTemplate = ({ data, pageContext }) => {
   const { category } = pageContext;
   const postEdges = data.allMarkdownRemark.edges;
-  const uiContext = useContext(UiContext);
-  const { isHome, isHomePage } = uiContext;
-
-  useEffect(() => {
-    isHomePage(pathname);
-  });
 
   return (
     <Layout>
-      <Hero isHome={isHome} bgImage={blogHero}>
+      <Hero isHome={false} bgImage={blogHero}>
         <h1>{category.toUpperCase()}</h1>
       </Hero>
       <StyledCategoryWrap className='container container--fixed'>

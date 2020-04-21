@@ -1,7 +1,7 @@
 const config = {
-  siteTitle: 'Haiko Nguyen', // Site title.
+  siteTitle: 'Haiko Nguyen - FE Developer, Photographer, Vlogger', // Site title.
   siteTitleShort: 'HN Blog', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteTitleAlt: 'Hai Ha Nguyen', // Alternative site title for SEO.
+  siteTitleAlt: 'Haiko Nguyen', // Alternative site title for SEO.
   siteLogo: '/static/img/mainLogoOptimized.png', // Logo used for SEO and manifest.
   siteUrl: 'https://www.haikonguyen.eu/', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
