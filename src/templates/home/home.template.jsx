@@ -134,6 +134,7 @@ export const pageQuery = graphql`
               }
             }
             date
+            category
           }
           id
         }

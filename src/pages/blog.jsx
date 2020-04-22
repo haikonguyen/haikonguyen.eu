@@ -10,7 +10,6 @@ import StyledSearchSection from './blog.style';
 import blogHero from '../img/blogPage.jpg';
 import PostListing from '../components/post-listing/post-listing.component';
 import CustomBtn from '../components/materialui/button.component';
-import { UiContext } from '../context/ui.context';
 
 const BlogPage = ({ data }) => {
   const postEdges = data.allMarkdownRemark.edges;
@@ -91,6 +90,7 @@ export const pageQuery = graphql`
               }
             }
             date
+            category
           }
           id
         }

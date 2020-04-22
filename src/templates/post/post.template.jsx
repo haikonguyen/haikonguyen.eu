@@ -8,12 +8,14 @@ import SEO from '../../components/seo/seo';
 import config from '../../../data/SiteConfig';
 import PostHeader, { StyledPlaceholder } from './post.style';
 import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
+import { formatDate, editOnGithub } from '../../utils/global';
 
 const PostTemplate = (props) => {
   const { data, pageContext } = props;
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
+  const { timeToRead } = data.markdownRemark;
   if (!post.id) {
     post.id = slug;
   }
@@ -25,6 +27,9 @@ const PostTemplate = (props) => {
   if (post.cover) {
     cover = post.cover.childImageSharp.fluid;
   }
+
+  const date = formatDate(post.date);
+  // const githubLink = editOnGithub(post);
 
   return (
     <Layout>
@@ -43,7 +48,13 @@ const PostTemplate = (props) => {
           style={{ backgroundImage: `url(${bgPlaceHolder})` }}
         />
       )}
-      <Article title={post.title} postHtml={postNode.html} />
+      <Article
+        date={date}
+        title={post.title}
+        postHtml={postNode.html}
+        timeToRead={timeToRead}
+        meta
+      />
     </Layout>
   );
 };

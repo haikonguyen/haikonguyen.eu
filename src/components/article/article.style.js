@@ -46,12 +46,51 @@ const StyledArticle = styled.article`
       margin-right: 0;
     }
 
-    &__social {
-      display: flex;
-      justify-content: center;
+    &__meta {
+      font-size: 14px;
 
-      h4 {
-        text-align: center;
+      &__avatar {
+        margin-right: 15px;
+      }
+
+      &__text {
+        width: 100%;
+        max-width: 600px;
+
+        div:first-child {
+          display: none;
+
+          @media ${(props) => props.theme.screen.tablet} {
+            display: inline-block;
+          }
+        }
+
+        svg {
+          margin: 0 10px 0 0;
+          height: 20px;
+          width: 20px;
+        }
+
+        div {
+          flex-basis: 100%;
+
+          @media ${(props) => props.theme.screen.tablet} {
+            flex-basis: auto;
+            margin-right: 20px;
+          }
+        }
+      }
+
+      .MuiAvatar-circle {
+        cursor: pointer;
+      }
+    }
+
+    &__content {
+      margin-top: 30px;
+
+      @media ${(props) => props.theme.screen.laptopL} {
+        margin-top: 60px;
       }
     }
 
