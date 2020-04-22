@@ -40,7 +40,7 @@ const BlogPage = ({ data }) => {
         <div className='searchSection'>
           <TextField
             id='outlined-search'
-            label='Search'
+            label='Search field'
             type='search'
             variant='outlined'
             onChange={() => handleChange(event)}
