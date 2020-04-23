@@ -47,10 +47,6 @@ const PostListing = ({ postEdges }) => {
           />
         );
       })}
-
-      {/* {postList.map((post) => {
-        console.log(post.category);
-      })} */}
     </StyledContainer>
   );
 };

@@ -46,6 +46,7 @@ export const pageQuery = graphql`
             title
             tags
             date
+            category
             cover {
               childImageSharp {
                 fluid(maxWidth: 345, maxHeight: 140) {
