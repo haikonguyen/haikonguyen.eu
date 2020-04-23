@@ -46,8 +46,7 @@ const StyledMain = styled.main`
           border-radius: 50%;
           height: ${rem('180px')};
           width: ${rem('180px')};
-          border: ${rem('3px')} solid
-            ${(props) => props.theme.colors.backgroundColor};
+          border: ${rem('3px')} solid ${(props) => props.theme.colors.footerBg};
         }
       }
 
