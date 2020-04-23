@@ -6,7 +6,8 @@
 
 export const DarkTheme = {
   colors: {
-    navBarColor: '#333',
+    navBarColorAbs: 'rgba(0, 0, 0, 0.3)',
+    navBarColorFixed: '#333',
     backgroundColor: '#212121',
     bodyTextColor: 'white',
     containerBg: '#333333',
@@ -37,8 +38,8 @@ export const DarkTheme = {
 
 export const LightTheme = {
   colors: {
-    navBarColor: 'white',
-    backgroundColor: 'white',
+    navBarColorAbs: 'rgba(255, 255, 255, 0.5)',
+    navBarColorFixed: 'white',
     bodyTextColor: 'rgba(0, 0, 0, 0.87)',
     containerBg: '#333333',
     primaryThemeColor: '#2e89ff',

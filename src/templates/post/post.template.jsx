@@ -1,18 +1,21 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import Article from '../../components/article/article.component';
 import Layout from '../../components/layout/layout.component';
 import PostTags from '../../components/post-tags/post-tags';
 import SEO from '../../components/seo/seo';
 import config from '../../../data/SiteConfig';
-import StyledContainer, { PostHeader, StyledPlaceholder } from './post.style';
+import PostHeader, { StyledPlaceholder } from './post.style';
 import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
+import { formatDate, editOnGithub } from '../../utils/global';
 
 const PostTemplate = (props) => {
   const { data, pageContext } = props;
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
+  const { timeToRead } = data.markdownRemark;
   if (!post.id) {
     post.id = slug;
   }
@@ -24,6 +27,9 @@ const PostTemplate = (props) => {
   if (post.cover) {
     cover = post.cover.childImageSharp.fluid;
   }
+
+  const date = formatDate(post.date);
+  // const githubLink = editOnGithub(post);
 
   return (
     <Layout>
@@ -42,17 +48,13 @@ const PostTemplate = (props) => {
           style={{ backgroundImage: `url(${bgPlaceHolder})` }}
         />
       )}
-      <StyledContainer className='container--fixed'>
-        <div className='contentWrapper'>
-          <h1>{post.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div className='contentWrapper__social'>
-            {/* FIXME: Move to Post Header 
-                <SocialLinks postPath={slug} postNode={postNode} /> 
-              */}
-          </div>
-        </div>
-      </StyledContainer>
+      <Article
+        date={date}
+        title={post.title}
+        postHtml={postNode.html}
+        timeToRead={timeToRead}
+        meta
+      />
     </Layout>
   );
 };

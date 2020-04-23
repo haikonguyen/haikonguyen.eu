@@ -46,8 +46,7 @@ const StyledMain = styled.main`
           border-radius: 50%;
           height: ${rem('180px')};
           width: ${rem('180px')};
-          border: ${rem('3px')} solid
-            ${(props) => props.theme.colors.backgroundColor};
+          border: ${rem('3px')} solid ${(props) => props.theme.colors.footerBg};
         }
       }
 
@@ -68,11 +67,21 @@ const StyledMain = styled.main`
     grid-template-rows: 1fr;
     align-items: flex-start;
 
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      border-radius: ${rem('10px')};
+    p {
+      text-align: justify;
+    }
+
+    .profilePictureWrap {
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+        border-radius: ${rem('10px')};
+      }
     }
 
     @media ${(props) => props.theme.screen.tablet} {

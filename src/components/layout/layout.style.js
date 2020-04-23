@@ -49,7 +49,11 @@ h4 {
 }
 
 p {
-  line-height: ${rem('22px')};
+  line-height: ${rem('24px')};
+
+  @media ${(props) => props.theme.screen.tablet} {
+    line-height: ${rem('26px')};
+  }
 }
 
 a:-webkit-any-link {

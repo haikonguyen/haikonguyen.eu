@@ -16,7 +16,8 @@
     "import/prefer-default-export": "off",
     "no-unused-expressions": ["error", { "allowTernary": true }],
     "react/jsx-props-no-spreading": "off",
-    "no-restricted-globals": "off"
+    "no-restricted-globals": "off",
+    "react/jsx-one-expression-per-line": "off"
   },
   "settings": {
     "import/core-modules": []

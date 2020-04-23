@@ -1,7 +1,10 @@
+const d = new Date();
+const footerYear = d.getFullYear();
+
 const config = {
-  siteTitle: 'Haiko Nguyen', // Site title.
+  siteTitle: 'Haiko Nguyen - FE Developer, Photographer, Vlogger', // Site title.
   siteTitleShort: 'HN Blog', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteTitleAlt: 'Hai Ha Nguyen', // Alternative site title for SEO.
+  siteTitleAlt: 'Haiko Nguyen', // Alternative site title for SEO.
   siteLogo: '/static/img/mainLogoOptimized.png', // Logo used for SEO and manifest.
   siteUrl: 'https://www.haikonguyen.eu/', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
@@ -71,7 +74,7 @@ const config = {
       name: 'Contact',
     },
   ],
-  copyright: 'Copyright © 2020. Haiko Nguyen', // Copyright string for the footer of the website and RSS feed.
+  copyright: `Copyright © ${footerYear}. Haiko Nguyen`, // Copyright string for the footer of the website and RSS feed.
   themeColor: '#2e89ff', // Used for setting manifest and progress theme colors.
   backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 };

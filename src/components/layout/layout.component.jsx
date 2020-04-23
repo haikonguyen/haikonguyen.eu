@@ -33,7 +33,7 @@ const Layout = (props) => {
           />
           <link
             rel='stylesheet'
-            href='https://fonts.googleapis.com/icon?family=Material+Icons'
+            href='https://unpkg.com/tachyons@4/css/tachyons.min.css'
           />
         </Helmet>
         <SEO />

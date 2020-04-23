@@ -1,10 +1,8 @@
 backend:
   name: github # Refer to https://www.netlifycms.org/docs/authentication-backends/ for auth backend list and instructions
   branch: master # Branch to update
-  repo: 2c0/haikonguyen.eu # Repo for pushing new commits. Make sure to replace with your repo!
-  accept_roles: #optional - accepts all users if left out
-    - admin
-    - editor
+  repo: haikonguyen/haikonguyen.eu # Repo for pushing new commits. Make sure to replace with your repo!
+  site_domain: https://www.haikonguyen.eu/admin
 
 media_folder: static/img
 public_folder: /img
@@ -12,15 +10,57 @@ publish_mode: editorial_workflow
 
 collections:
   - name: blog
-    label: 'Post'
-    folder: 'static/posts'
+    label: "Post"
+    folder: "static/posts"
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Cover Image', name: 'cover', widget: 'image' }
-      - { label: 'Slug', name: 'slug', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'string' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Cover Image", name: "cover", widget: "image" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Hero Image, name: heroImage, widget: image }
+          - { label: Profile Image, name: profileImage, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: About Section,
+              name: aboutSection,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                ],
+            }
+      - file: "src/pages/about/index.md"
+        label: "About Page"
+        name: "aboutPage"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Hero Image", name: "aboutHero", widget: "image" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }

@@ -14,7 +14,6 @@ const StyledHero = styled.section`
 
   .contentWrap {
     background-color: ${(props) => props.theme.colors.heroContentBg};
-    color: ${(props) => props.theme.colors.white};
     padding: ${rem('20px')};
     width: 100%;
     height: 100%;
@@ -23,6 +22,10 @@ const StyledHero = styled.section`
     align-items: center;
     padding: 0;
     margin: 0;
+
+    h1 {
+      color: white;
+    }
   }
 `;
 

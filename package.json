@@ -48,6 +48,7 @@
     "netlify-cms-media-library-uploadcare": "^0.5.2",
     "polished": "^3.4.4",
     "prismjs": "^1.16.0",
+    "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-helmet": "^5.2.1",

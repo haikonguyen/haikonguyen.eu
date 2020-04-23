@@ -4,14 +4,21 @@ import { rem } from 'polished';
 
 const StyledAppBar = styled(AppBar)`
   && {
-    background: ${(props) => props.theme.colors.navBarColor};
+    /* background: ${(props) => props.theme.colors.navBarColor}; */
+    background: ${(props) =>
+      props.showonscroll
+        ? props.theme.colors.navBarColorFixed
+        : props.theme.colors.navBarColorAbs}};
     box-shadow: ${(props) =>
-      props.show ? `0 0.5rem 2rem rgba(0, 0, 0, 0.65)` : `none`};
+      props.showonscroll ? `0 0.5rem 2rem rgba(0, 0, 0, 0.65)` : `none`};
     justify-content: center;
 
     @media ${(props) => props.theme.screen.tablet} {
-      height: ${(props) => (props.show ? 'auto' : '70px')};
+      height: ${(props) => (props.showonscroll ? 'auto' : '70px')};
     }
+
+    transition: background .3s ease-in-out, height .3s ease-in-out;
+
   }
 
   .mobileNav {
@@ -23,9 +30,9 @@ const StyledAppBar = styled(AppBar)`
       display: none;
     }
 
-    .MuiIconButton-edgeStart {
-      color: ${(props) => props.theme.colors.bodyTextColor};
-    }
+    .themeToggleIcon {
+        color: ${(props) => props.theme.colors.themeToggleIcon};
+      }
   }
 
   .destkopNav {
@@ -33,8 +40,8 @@ const StyledAppBar = styled(AppBar)`
 
     &__logo {
       img {
-        width: ${(props) => (props.show ? '30px' : '50px')};
-        height: ${(props) => (props.show ? '30px' : '50px')};
+        width: ${(props) => (props.showonscroll ? '30px' : '50px')};
+        height: ${(props) => (props.showonscroll ? '30px' : '50px')};
       }
     }
 

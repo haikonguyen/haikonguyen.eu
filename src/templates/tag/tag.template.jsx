@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Hero from '../../components/hero/hero.component';
@@ -7,21 +7,14 @@ import PostListing from '../../components/post-listing/post-listing.component';
 import config from '../../../data/SiteConfig';
 import StyledTagWrap from './tag.style';
 import blogHero from '../../img/blogPage.jpg';
-import { UiContext } from '../../context/ui.context';
 
-const TagTemplate = ({ data, pageContext, location: { pathname } }) => {
+const TagTemplate = ({ data, pageContext }) => {
   const { tag } = pageContext;
   const postEdges = data.allMarkdownRemark.edges;
-  const uiContext = useContext(UiContext);
-  const { isHome, isHomePage } = uiContext;
-
-  useEffect(() => {
-    isHomePage(pathname);
-  });
 
   return (
     <Layout>
-      <Hero isHome={isHome} bgImage={blogHero}>
+      <Hero isHome={false} bgImage={blogHero}>
         <h1>{tag.toUpperCase()}</h1>
       </Hero>
       <StyledTagWrap className='container'>

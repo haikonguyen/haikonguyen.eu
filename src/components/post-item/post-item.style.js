@@ -19,7 +19,7 @@ export const StyledCard = styled(Card)`
   }
 
   .cardContent {
-    min-height: ${rem('172px')};
+    min-height: ${rem('120px')};
 
     h2 {
       font-size: ${rem('24px')};

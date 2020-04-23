@@ -16,8 +16,8 @@ const Nav = (props) => {
 
   return (
     <StyledAppBar
-      position={showOnScroll ? 'fixed' : 'relative'}
-      show={showOnScroll ? 1 : 0}
+      position={showOnScroll ? 'fixed' : 'absolute'}
+      showonscroll={showOnScroll ? 1 : 0}
     >
       <Toolbar className='mobileNav' variant='dense'>
         <TemporaryDrawer themeToggler={themeToggler} lightTheme={lightTheme} />
