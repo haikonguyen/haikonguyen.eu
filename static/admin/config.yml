@@ -10,31 +10,31 @@ publish_mode: editorial_workflow
 
 collections:
   - name: blog
-    label: "Post"
-    folder: "static/posts"
+    label: 'Post'
+    folder: 'static/posts'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Cover Image", name: "cover", widget: "image" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Category", name: "category", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Cover Image', name: 'cover', widget: 'image' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
+      - file: 'static/pages/index.md'
+        label: 'Landing Page'
+        name: 'index'
         fields:
           - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'index-page',
             }
           - { label: Hero Image, name: heroImage, widget: image }
           - { label: Profile Image, name: profileImage, widget: image }
@@ -48,19 +48,25 @@ collections:
                 [
                   { label: Image, name: image, widget: image },
                   { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Description, name: description, widget: 'markdown' },
                 ],
             }
-      - file: "src/pages/about/index.md"
-        label: "About Page"
-        name: "aboutPage"
+          - {
+              label: Latest Section,
+              name: latestSection,
+              widget: object,
+              fields: [{ label: Title, name: title, widget: string }],
+            }
+      - file: 'static/pages/about/about.md'
+        label: 'About Page'
+        name: 'aboutPage'
         fields:
           - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'about-page',
             }
-          - { label: "Hero Image", name: "aboutHero", widget: "image" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: 'Hero Image', name: 'aboutHero', widget: 'image' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
