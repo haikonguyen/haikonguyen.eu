@@ -57,7 +57,7 @@ collections:
               widget: object,
               fields: [{ label: Title, name: title, widget: string }],
             }
-      - file: 'static/pages/about/about.md'
+      - file: 'static/pages/about.md'
         label: 'About Page'
         name: 'aboutPage'
         fields:
