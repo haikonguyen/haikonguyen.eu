@@ -70,7 +70,10 @@ const BlogPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query BlogQuery {
-    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [fields___date], order: DESC }
+      filter: { frontmatter: { templateKey: { eq: "post" } } }
+    ) {
       edges {
         node {
           fields {

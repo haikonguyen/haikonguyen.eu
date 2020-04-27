@@ -1,4 +1,5 @@
 ---
+templateKey: index-page
 heroImage: /img/praguecastle01_opti.jpg
 profileImage: /img/HaikoProfile.jpg
 heading: Haiko Nguyen

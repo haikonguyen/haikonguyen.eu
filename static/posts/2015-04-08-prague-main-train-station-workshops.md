@@ -1,4 +1,5 @@
 ---
+templateKey: post
 title: Prague Main Train Station Photoshoot
 date: '2015-04-08'
 cover: /images/2c0-10.jpg

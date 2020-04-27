@@ -1,4 +1,5 @@
 ---
+templateKey: post
 title: Switching from Canon to Sony
 date: '2015-03-29'
 cover: >-

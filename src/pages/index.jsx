@@ -2,18 +2,21 @@ import React from 'react';
 import { navigate } from '@reach/router';
 import { graphql } from 'gatsby';
 import Divider from '@material-ui/core/Divider';
-import CustomBtn from '../../components/materialui/button.component';
-import profileImg from '../../img/HaikoProfile.jpg';
-import profileImg2 from '../../img/HaikoProfile2.jpg';
-import Hero from '../../components/hero/hero.component';
-import Layout from '../../components/layout/layout.component';
-import PostListing from '../../components/post-listing/post-listing.component';
+import CustomBtn from '../components/materialui/button.component';
+import profileImg from '../img/HaikoProfile.jpg';
+import profileImg2 from '../img/HaikoProfile2.jpg';
+import Hero from '../components/hero/hero.component';
+import Layout from '../components/layout/layout.component';
+import PostListing from '../components/post-listing/post-listing.component';
 import StyledMain from './home.style';
-import config from '../../../data/SiteConfig';
-import bgSrc from '../../img/PragueCastle01_opti.jpg';
+import config from '../../data/SiteConfig';
+import bgSrc from '../img/PragueCastle01_opti.jpg';
 
 const Home = ({ data }) => {
-  const postEdges = data.allMarkdownRemark.edges;
+  const postEdges = data.posts.edges;
+  const homeEdges = data.home.edges;
+
+  console.log('home', homeEdges);
 
   return (
     <Layout>
@@ -111,9 +114,10 @@ const Home = ({ data }) => {
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allMarkdownRemark(
+    posts: allMarkdownRemark(
       sort: { fields: [fields___date], order: DESC }
       limit: 3
+      filter: { frontmatter: { templateKey: { eq: "post" } } }
     ) {
       edges {
         node {
@@ -137,6 +141,44 @@ export const pageQuery = graphql`
             category
           }
           id
+        }
+      }
+    }
+    home: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "index-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            heroImage {
+              childImageSharp {
+                fluid(maxWidth: 2400) {
+                  src
+                }
+              }
+            }
+            profileImage {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  src
+                }
+              }
+            }
+            heading
+            subheading
+            aboutSection {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 400) {
+                    src
+                  }
+                }
+              }
+              title
+              description
+            }
+          }
         }
       }
     }

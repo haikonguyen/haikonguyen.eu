@@ -9,9 +9,9 @@ public_folder: /img
 publish_mode: editorial_workflow
 
 collections:
-  - name: blog
+  - name: 'blog'
     label: 'Post'
-    folder: 'static/posts'
+    folder: 'static/pages/posts'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
@@ -29,13 +29,9 @@ collections:
       - file: 'static/pages/index.md'
         label: 'Landing Page'
         name: 'index'
+        default: 'IndexPage'
         fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'index-page',
-            }
+          - { label: 'Template Key', name: 'templateKey', default: 'IndexPage' }
           - { label: Hero Image, name: heroImage, widget: image }
           - { label: Profile Image, name: profileImage, widget: image }
           - { label: Heading, name: heading, widget: string }
@@ -60,6 +56,7 @@ collections:
       - file: 'static/pages/about.md'
         label: 'About Page'
         name: 'aboutPage'
+        default: 'AboutPage'
         fields:
           - {
               label: 'Template Key',

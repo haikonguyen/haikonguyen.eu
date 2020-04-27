@@ -101,21 +101,21 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Paging
-  const { postsPerPage } = siteConfig;
-  const pageCount = Math.ceil(postsEdges.length / postsPerPage);
+  // const { postsPerPage } = siteConfig;
+  // const pageCount = Math.ceil(postsEdges.length / postsPerPage);
 
-  [...Array(pageCount)].forEach((_val, pageNum) => {
-    createPage({
-      path: pageNum === 0 ? `/` : `/${pageNum + 1}/`,
-      component: homePage,
-      context: {
-        limit: postsPerPage,
-        skip: pageNum * postsPerPage,
-        pageCount,
-        currentPageNum: pageNum + 1,
-      },
-    });
-  });
+  // [...Array(pageCount)].forEach((_val, pageNum) => {
+  //   createPage({
+  //     path: pageNum === 0 ? `/` : `/${pageNum + 1}/`,
+  //     component: homePage,
+  //     context: {
+  //       limit: postsPerPage,
+  //       skip: pageNum * postsPerPage,
+  //       pageCount,
+  //       currentPageNum: pageNum + 1,
+  //     },
+  //   });
+  // });
 
   // Post page creating
   postsEdges.forEach((edge, index) => {

@@ -8,7 +8,7 @@ import SEO from '../../components/seo/seo';
 import config from '../../../data/SiteConfig';
 import PostHeader, { StyledPlaceholder } from './post.style';
 import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
-import { formatDate, editOnGithub } from '../../utils/global';
+import { formatDate } from '../../utils/global';
 
 const PostTemplate = (props) => {
   const { data, pageContext } = props;
@@ -29,7 +29,6 @@ const PostTemplate = (props) => {
   }
 
   const date = formatDate(post.date);
-  // const githubLink = editOnGithub(post);
 
   return (
     <Layout>

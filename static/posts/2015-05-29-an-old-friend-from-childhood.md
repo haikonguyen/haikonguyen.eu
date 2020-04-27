@@ -1,4 +1,5 @@
 ---
+templateKey: post
 title: An old friend from childhood
 date: '2015-05-29'
 cover: /images/dsc00764.jpg

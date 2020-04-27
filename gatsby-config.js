@@ -14,8 +14,8 @@ module.exports = {
         config.siteUrl,
         config.pathPrefix
       )}/logos/logo-512.png`,
-      copyright: config.copyright
-    }
+      copyright: config.copyright,
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -23,9 +23,9 @@ module.exports = {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         stylesProvider: {
-          injectFirst: true
-        }
-      }
+          injectFirst: true,
+        },
+      },
     },
     `gatsby-plugin-styled-components`,
     {
@@ -33,22 +33,29 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img`,
-        name: 'uploads'
-      }
+        name: 'uploads',
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/posts`,
-        name: 'posts'
-      }
+        name: 'posts',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/pages`,
+        name: 'pages',
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
-        name: 'images'
-      }
+        name: 'images',
+      },
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -59,8 +66,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-relative-images`,
             option: {
-              name: `uploads`
-            }
+              name: `uploads`,
+            },
           },
           {
             resolve: 'gatsby-remark-images',
@@ -68,28 +75,28 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 1000
-            }
+              maxWidth: 1000,
+            },
           },
           {
-            resolve: 'gatsby-remark-responsive-iframe'
+            resolve: 'gatsby-remark-responsive-iframe',
           },
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-autolink-headers'
-        ]
-      }
+          'gatsby-remark-autolink-headers',
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: config.googleAnalyticsID
-      }
+        trackingId: config.googleAnalyticsID,
+      },
     },
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: config.themeColor
-      }
+        color: config.themeColor,
+      },
     },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-twitter',
@@ -104,16 +111,16 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'minimal-ui',
-        icon: `src/img/mainLogoOptimized.png`
-      }
+        icon: `src/img/mainLogoOptimized.png`,
+      },
     },
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`
-      }
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
     },
-    'gatsby-plugin-netlify' // make sure to keep it last in the array
-  ]
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
+  ],
 };
