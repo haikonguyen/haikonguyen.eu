@@ -9,7 +9,7 @@ const StyledMain = styled.main`
       padding-bottom: ${rem('70px')};
 
       h1 {
-        color: ${(props) => props.theme.colors.white};
+        color: white;
         text-align: center;
         margin: 0;
         text-transform: uppercase;
@@ -75,13 +75,13 @@ const StyledMain = styled.main`
       display: flex;
       justify-content: flex-end;
 
-      /* img {
+      img {
         object-fit: cover;
         width: 100%;
         height: 100%;
         max-width: 400px;
         border-radius: ${rem('10px')};
-      } */
+      }
     }
 
     @media ${(props) => props.theme.screen.tablet} {
