@@ -16,7 +16,6 @@ const PostListing = ({ postEdges }) => {
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
         id: postEdge.node.id,
-        category: postEdge.node.frontmatter.category,
       });
     });
     return postList;
@@ -43,7 +42,7 @@ const PostListing = ({ postEdges }) => {
             excerpt={post.excerpt}
             date={date}
             timeToRead={post.timeToRead}
-            category={post.category}
+            tags={post.tags}
           />
         );
       })}

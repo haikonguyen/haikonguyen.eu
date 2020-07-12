@@ -7,13 +7,14 @@ import Layout from '../components/layout/layout.component';
 import aboutBg from '../img/aboutPageOptimal.jpg';
 import Hero from '../components/hero/hero.component';
 
-const AboutPage = ({ location: { pathname } }) => {
+const AboutPage = ({ location: { pathname }, data }) => {
   const uiContext = useContext(UiContext);
   const { isHome, isHomePage } = uiContext;
 
   useEffect(() => {
     isHomePage(pathname);
-  });
+  }, []);
+
   return (
     <Layout>
       <div className='about-container'>

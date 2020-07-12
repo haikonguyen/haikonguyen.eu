@@ -1,6 +1,6 @@
 ---
 aboutHero: /img/bgMacPlaceholder.jpg
-title: ABOUT
+title: ABOUT2
 ---
 
 # Introduction

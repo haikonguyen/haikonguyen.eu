@@ -46,10 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve('src/templates/post/post.template.jsx');
   const tagPage = path.resolve('src/templates/tag/tag.template.jsx');
-  const categoryPage = path.resolve(
-    'src/templates/category/category.template.jsx'
-  );
-  const homePage = path.resolve('src/templates/home/home.template.jsx');
+  const homePage = path.resolve('src/templates/pages/pages.template.jsx');
 
   // Get a full list of markdown posts
   const markdownQueryResult = await graphql(`
@@ -63,7 +60,6 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
               tags
-              category
               date
             }
           }
@@ -78,7 +74,6 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const tagSet = new Set();
-  const categorySet = new Set();
 
   const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
 
@@ -126,11 +121,6 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     }
 
-    // Generate a list of categories
-    if (edge.node.frontmatter.category) {
-      categorySet.add(edge.node.frontmatter.category);
-    }
-
     // Create post pages
     const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
     const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1;
@@ -159,12 +149,4 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // Create category pages
-  categorySet.forEach((category) => {
-    createPage({
-      path: `/categories/${_.kebabCase(category)}/`,
-      component: categoryPage,
-      context: { category },
-    });
-  });
 };

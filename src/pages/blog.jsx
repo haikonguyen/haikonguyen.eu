@@ -13,7 +13,7 @@ import CustomBtn from '../components/materialui/button.component';
 
 const BlogPage = ({ data }) => {
   const postEdges = data.allMarkdownRemark.edges;
-  const categories = data.category.group;
+  const tags = data.tags.group;
   const [searchField, setSearchField] = useState('');
 
   const handleChange = (event) => {
@@ -49,15 +49,14 @@ const BlogPage = ({ data }) => {
         </div>
 
         <div className='categorySection'>
-          {categories.map((category) => {
+          {tags.map((tag) => {
             return (
               <CustomBtn
                 onClick={() =>
-                  navigate(`/categories/${category.fieldValue.toLowerCase()}`)
-                }
-                text={category.fieldValue}
+                  navigate(`/categories/${tag.fieldValue.toLowerCase()}`)}
+                text={tag.fieldValue}
                 size='small'
-                key={category.fieldValue}
+                key={tag.fieldValue}
               />
             );
           })}
@@ -90,14 +89,13 @@ export const pageQuery = graphql`
               }
             }
             date
-            category
           }
           id
         }
       }
     }
-    category: allMarkdownRemark(limit: 2000) {
-      group(field: frontmatter___category) {
+    tags: allMarkdownRemark(limit: 1000) {
+      group(field: frontmatter___tags) {
         fieldValue
       }
     }

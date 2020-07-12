@@ -8,7 +8,7 @@ import profileImg2 from '../../img/HaikoProfile2.jpg';
 import Hero from '../../components/hero/hero.component';
 import Layout from '../../components/layout/layout.component';
 import PostListing from '../../components/post-listing/post-listing.component';
-import StyledMain from './home.style';
+import StyledMain from './pages.style';
 import config from '../../../data/SiteConfig';
 import bgSrc from '../../img/PragueCastle01_opti.jpg';
 
@@ -134,7 +134,6 @@ export const pageQuery = graphql`
               }
             }
             date
-            category
           }
           id
         }

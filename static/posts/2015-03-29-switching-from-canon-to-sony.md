@@ -4,7 +4,6 @@ date: '2015-03-29'
 cover: >-
   /images/sony-a6000-mirrorless-camera-officially-revealed-features-world-s-fastest-af-426154-4.jpg
 slug: Switching from Canon to Sony
-category: Review
 tags:
   - review
   - photography

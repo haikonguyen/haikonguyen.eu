@@ -3,7 +3,6 @@ title: Prague Main Train Station Photoshoot
 date: '2015-04-08'
 cover: /images/2c0-10.jpg
 slug: Prague Main Train Station Photoshoot
-category: Photo
 tags:
   - photography
   - workshop
