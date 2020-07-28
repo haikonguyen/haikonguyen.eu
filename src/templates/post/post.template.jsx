@@ -32,18 +32,17 @@ const PostTemplate = (props) => {
       <Helmet>
         <title>{`${post.title} | ${config.siteTitle}`}</title>
       </Helmet>
-      <SEO postPath={slug} postNode={postNode} postSEO />
       {cover ? (
         <PostHeader Tag='section' fluid={cover}>
           <div className='postHeaderWrap container--fixed'>
             <PostTags className='postHeaderWrap__tags' tags={post.tags} />
           </div>
         </PostHeader>
-      ) : (
-        <StyledPlaceholder
-          style={{ backgroundImage: `url(${bgPlaceHolder})` }}
-        />
-      )}
+       ) : (
+         <StyledPlaceholder
+           style={{ backgroundImage: `url(${bgPlaceHolder})` }}
+         />
+       )}
       <Article
         date={date}
         title={post.title}
@@ -59,8 +58,8 @@ export default PostTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query BlogPostBySlug($id: String) {
+    markdownRemark(id: { eq: $id } ) {
       html
       timeToRead
       excerpt
@@ -78,7 +77,6 @@ export const pageQuery = graphql`
       }
       fields {
         slug
-        date
       }
     }
   }

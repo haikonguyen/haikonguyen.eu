@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 import Helmet from 'react-helmet';
-import Article from '../components/article/article.component';
-import { UiContext } from '../context/ui.context';
-import config from '../../data/SiteConfig';
-import Layout from '../components/layout/layout.component';
-import aboutBg from '../img/aboutPageOptimal.jpg';
-import Hero from '../components/hero/hero.component';
+import Article from '../../components/article/article.component';
+import { UiContext } from '../../context/ui.context';
+import config from '../../../data/SiteConfig';
+import Layout from '../../components/layout/layout.component';
+import aboutBg from '../../img/aboutPageOptimal.jpg';
+import Hero from '../../components/hero/hero.component';
 
 const AboutPage = ({ location: { pathname }, data }) => {
   const uiContext = useContext(UiContext);

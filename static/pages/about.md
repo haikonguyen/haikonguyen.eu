@@ -1,4 +1,5 @@
 ---
+templateKey: about
 aboutHero: /img/bgMacPlaceholder.jpg
 title: ABOUT2
 ---

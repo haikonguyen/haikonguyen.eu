@@ -1,21 +1,19 @@
-const urljoin = require('url-join');
+// const urljoin = require('url-join');
 const config = require('./data/SiteConfig');
 
 module.exports = {
   pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
   siteMetadata: {
-    siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    rssMetadata: {
-      site_url: urljoin(config.siteUrl, config.pathPrefix),
-      feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
-      title: config.siteTitle,
-      description: config.siteDescription,
-      image_url: `${urljoin(
-        config.siteUrl,
-        config.pathPrefix
-      )}/logos/logo-512.png`,
-      copyright: config.copyright
-    }
+    title: 'Haiko Nguyen',
+    author: {
+      name: 'Haiko Nguyen',
+    },
+    pathPrefix: '/',
+    siteUrl: 'https://www.haikonguyen.eu/',
+    description:
+        'FRONT-END DEVELOPER, PHOTOGRAPHER, VLOGGER',
+    feedUrl: 'https://www.haikonguyen.eu//rss.xml',
+    logo: 'https://www.haikonguyen.eu/logo.png',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -41,6 +39,13 @@ module.exports = {
       options: {
         path: `${__dirname}/static/posts`,
         name: 'posts'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/pages`,
+        name: 'pages'
       }
     },
     {

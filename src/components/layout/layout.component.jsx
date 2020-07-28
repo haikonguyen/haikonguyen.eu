@@ -36,7 +36,7 @@ const Layout = (props) => {
             href='https://unpkg.com/tachyons@4/css/tachyons.min.css'
           />
         </Helmet>
-        <SEO />
+        {/* <SEO /> */}
         <Nav
           showOnScroll={showOnScroll}
           lightTheme={lightTheme}

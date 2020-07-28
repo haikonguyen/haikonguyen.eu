@@ -26,7 +26,7 @@ collections:
     label: 'Pages'
     files:
       - file: 'static/pages/index.md'
-        label: 'Landing Page'
+        label: 'Pages'
         name: 'index'
         fields:
           - {
@@ -58,7 +58,7 @@ collections:
             }
       - file: 'static/pages/about.md'
         label: 'About Page'
-        name: 'aboutPage'
+        name: 'about'
         fields:
           - {
               label: 'Template Key',

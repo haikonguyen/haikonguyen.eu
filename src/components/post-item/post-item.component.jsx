@@ -37,12 +37,12 @@ const PostItem = ({ path, cover, title, excerpt, date, tags }) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          {tags.map((tag) => {
-            return(
-              <Chip key={uuidv1()} label={tag} color='primary' />
-            )
-          }
-          )}
+          {/* {tags && tags.map((tag) => { */}
+          {/*  return( */}
+          {/*    <Chip key={uuidv1()} label={tag} color='primary' /> */}
+          {/*  ) */}
+          {/* } */}
+          {/* )} */}
         </CardActions>
       </StyledCard>
     </Link>

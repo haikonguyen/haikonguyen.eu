@@ -12,7 +12,7 @@ const PostListing = ({ postEdges }) => {
         tags: postEdge.node.frontmatter.tags,
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
-        date: postEdge.node.fields.date,
+        date: postEdge.node.frontmatter.date,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
         id: postEdge.node.id,

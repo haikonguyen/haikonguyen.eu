@@ -5,7 +5,7 @@ import Hero from '../../components/hero/hero.component';
 import Layout from '../../components/layout/layout.component';
 import PostListing from '../../components/post-listing/post-listing.component';
 import config from '../../../data/SiteConfig';
-import StyledTagWrap from './tag.style';
+import StyledTagWrap from './tags.style';
 import blogHero from '../../img/blogPage.jpg';
 
 const TagTemplate = ({ data, pageContext }) => {
@@ -30,7 +30,7 @@ export const pageQuery = graphql`
   query TagPage($tag: String) {
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: [fields___slug], order: DESC }
       filter: { frontmatter: { tags: { eq: $tag } } }
     ) {
       totalCount
@@ -38,7 +38,6 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
-            date
           }
           excerpt
           timeToRead

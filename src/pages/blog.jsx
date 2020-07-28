@@ -69,12 +69,11 @@ const BlogPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query BlogQuery {
-    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
+    allMarkdownRemark(sort: {fields: [fields___slug], order: DESC}, filter: {frontmatter: {templateKey: {eq: "post"}}}) {
       edges {
         node {
           fields {
             slug
-            date
           }
           excerpt
           timeToRead
