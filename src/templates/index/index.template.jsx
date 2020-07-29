@@ -62,7 +62,7 @@ const Home = ({data}) => {
                 </div>
               </div>
               <div>
-                <div dangerouslySetInnerHTML={{ __html: aboutSection.description }} />
+                <p dangerouslySetInnerHTML={{ __html: aboutSection.description }} />
                 <CustomBtn
                   onClick={() => navigate('/about')}
                   text='Read My Story'

@@ -1,7 +1,7 @@
 ---
 templateKey: about
 aboutHero: /img/bgMacPlaceholder.jpg
-title: ABOUT2
+title: ABOUT
 ---
 
 # Introduction
