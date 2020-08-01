@@ -7,13 +7,14 @@ import CardActions from '@material-ui/core/CardActions';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
-import { navigate } from '@reach/router';
+import {v1 as uuidv1} from "uuid";
 import { StyledCard } from './post-item.style';
 import placeHolder from '../../img/placeholder.png';
 import avatar from '../../img/HaikoAvatarMini.jpg';
 import config from '../../../data/SiteConfig';
 
-const PostItem = ({ path, cover, title, excerpt, date, category }) => {
+const PostItem = ({ path, cover, title, excerpt, date, tags }) => {
+
   return (
     <Link className='styledLink' to={path}>
       <StyledCard>
@@ -36,7 +37,12 @@ const PostItem = ({ path, cover, title, excerpt, date, category }) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Chip label={category} color='primary' />
+          {/* {tags && tags.map((tag) => { */}
+          {/*  return( */}
+          {/*    <Chip key={uuidv1()} label={tag} color='primary' /> */}
+          {/*  ) */}
+          {/* } */}
+          {/* )} */}
         </CardActions>
       </StyledCard>
     </Link>

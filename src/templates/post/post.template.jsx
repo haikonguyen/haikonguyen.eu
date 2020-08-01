@@ -8,7 +8,7 @@ import SEO from '../../components/seo/seo';
 import config from '../../../data/SiteConfig';
 import PostHeader, { StyledPlaceholder } from './post.style';
 import bgPlaceHolder from '../../img/bgMacPlaceholder.jpg';
-import { formatDate, editOnGithub } from '../../utils/global';
+import { formatDate } from '../../utils/global';
 
 const PostTemplate = (props) => {
   const { data, pageContext } = props;
@@ -19,9 +19,6 @@ const PostTemplate = (props) => {
   if (!post.id) {
     post.id = slug;
   }
-  if (!post.category_id) {
-    post.category_id = config.postDefaultCategoryID;
-  }
 
   let cover;
   if (post.cover) {
@@ -29,25 +26,23 @@ const PostTemplate = (props) => {
   }
 
   const date = formatDate(post.date);
-  // const githubLink = editOnGithub(post);
 
   return (
     <Layout>
       <Helmet>
         <title>{`${post.title} | ${config.siteTitle}`}</title>
       </Helmet>
-      <SEO postPath={slug} postNode={postNode} postSEO />
       {cover ? (
         <PostHeader Tag='section' fluid={cover}>
           <div className='postHeaderWrap container--fixed'>
             <PostTags className='postHeaderWrap__tags' tags={post.tags} />
           </div>
         </PostHeader>
-      ) : (
-        <StyledPlaceholder
-          style={{ backgroundImage: `url(${bgPlaceHolder})` }}
-        />
-      )}
+       ) : (
+         <StyledPlaceholder
+           style={{ backgroundImage: `url(${bgPlaceHolder})` }}
+         />
+       )}
       <Article
         date={date}
         title={post.title}
@@ -63,8 +58,8 @@ export default PostTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query BlogPostBySlug($id: String) {
+    markdownRemark(id: { eq: $id } ) {
       html
       timeToRead
       excerpt
@@ -82,7 +77,6 @@ export const pageQuery = graphql`
       }
       fields {
         slug
-        date
       }
     }
   }
