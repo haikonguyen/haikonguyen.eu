@@ -16,16 +16,6 @@ module.exports = {
     logo: 'https://www.haikonguyen.eu/logo.png',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true
-        }
-      }
-    },
-    `gatsby-plugin-styled-components`,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -55,6 +45,16 @@ module.exports = {
         name: 'images'
       }
     },
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true
+        }
+      }
+    },
+    `gatsby-plugin-styled-components`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

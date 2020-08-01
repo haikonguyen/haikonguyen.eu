@@ -35,7 +35,7 @@ collections:
               widget: 'hidden',
               default: 'index-page',
             }
-          - { label: Hero Image, name: heroImage, widget: image }
+          - { label: 'Hero Image', name: 'heroCover', widget: 'image' }
           - { label: Profile Image, name: profileImage, widget: image }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }

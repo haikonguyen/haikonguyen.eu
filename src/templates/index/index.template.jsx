@@ -1,30 +1,25 @@
 import React from 'react';
 import { navigate } from '@reach/router';
-import {  graphql } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import Divider from '@material-ui/core/Divider';
 import CustomBtn from '../../components/materialui/button.component';
-import profileImg from '../../img/HaikoProfile.jpg';
-import profileImg2 from '../../img/HaikoProfile2.jpg';
 import Hero from '../../components/hero/hero.component';
 import Layout from '../../components/layout/layout.component';
 import PostListing from '../../components/post-listing/post-listing.component';
 import StyledMain from './index.style';
 import config from '../../../data/SiteConfig';
-import bgSrc from '../../img/PragueCastle01_opti.jpg';
 
 
 const Home = ({data}) => {
-    const {latest: {edges: postEdges}, home: {edges: homeEdge}} = data;
-    const {node: {frontmatter: {aboutSection, heroImage, latestSection, profileImage, subheading}}} = homeEdge[0]
-
-    console.log('home', homeEdge[0])
+    const {latest: {edges: postEdges}, home: {edges: homeEdge}, hero} = data;
+    const {node: {frontmatter: {aboutSection, latestSection, profileImage, subheading}}} = homeEdge[0]
 
     return (
       <Layout>
         <StyledMain>
           {/* Hero Section */}
-          <Hero isHome bgImage={bgSrc} className='homeHero'>
+          <Hero isHome fluid={hero.childImageSharp.fluid} className='homeHero'>
             <div className='homeHero__profileWrap'>
               <section className='homeHero__profileWrap__header'>
                 <Img fixed={profileImage.childImageSharp.fixed} alt='The Avatar' />
@@ -52,14 +47,12 @@ const Home = ({data}) => {
             </div>
             <div className='about container--fixed'>
               <div>
-                <div className='profilePictureWrap'>
-                  <img
-                    className='profilePicture'
-                    src={profileImg2}
-                    alt='profile avatar'
-                  />
-                  <div className='profilePicture--designElement' />
-                </div>
+                <Img
+                  className='profilePicture'
+                  fluid={aboutSection.image.childImageSharp.fluid}
+                  alt='profile avatar'
+                />
+                <div className='profilePicture--designElement' />
               </div>
               <div>
                 <p dangerouslySetInnerHTML={{ __html: aboutSection.description }} />
@@ -76,7 +69,7 @@ const Home = ({data}) => {
           {/* Blog Section */}
           <section className='sections sections__blog'>
             <div className='sections__heading'>
-              <h1>Latest Posts</h1>
+              <h1>{latestSection.title}</h1>
               <hr />
             </div>
             <PostListing postEdges={postEdges} />
@@ -124,13 +117,6 @@ export const pageQuery = graphql`
             edges {
                 node {
                     frontmatter {
-                        heroImage {
-                            childImageSharp {
-                                fluid(maxWidth: 2600, maxHeight: 1200) {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                }
-                            }
-                        }
                         profileImage {
                             childImageSharp {
                                 fixed(width: 150, height: 150) {
@@ -142,7 +128,7 @@ export const pageQuery = graphql`
                         aboutSection {
                             image {
                                 childImageSharp {
-                                    fluid(maxWidth: 400, maxHeight: 400) {
+                                    fluid(maxWidth: 300, maxHeight: 300) {
                                         ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
@@ -157,6 +143,13 @@ export const pageQuery = graphql`
                 }
             }
         }
+        hero: file(relativePath: {eq: "PragueCastle01_opti.jpg"}) {
+            childImageSharp {
+                fluid(maxWidth: 2600, maxHeight: 1200) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+            }
+        },
     }
 `;
 

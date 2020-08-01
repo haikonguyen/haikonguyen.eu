@@ -4,7 +4,7 @@ import { rem } from 'polished';
 
 const StyledAppBar = styled(AppBar)`
   && {
-    /* background: ${(props) => props.theme.colors.navBarColor}; */
+     ${(props) => props.theme.colors.navBarColor}; 
     background: ${(props) =>
       props.showonscroll
         ? props.theme.colors.navBarColorFixed
@@ -30,12 +30,12 @@ const StyledAppBar = styled(AppBar)`
       display: none;
     }
 
-    .themeToggleIcon {
+    svg {
         color: ${(props) => props.theme.colors.themeToggleIcon};
-      }
+    }
   }
 
-  .destkopNav {
+  .desktopNav {
     display: none;
 
     &__logo {

@@ -23,8 +23,8 @@ const Nav = (props) => {
         <TemporaryDrawer themeToggler={themeToggler} lightTheme={lightTheme} />
       </Toolbar>
 
-      <div className='destkopNav'>
-        <section className='destkopNav__logo'>
+      <div className='desktopNav'>
+        <section className='desktopNav__logo'>
           <IconButton aria-label='menu' onClick={() => navigate('/')}>
             <img src={mainLogo} alt='The logo' />
           </IconButton>

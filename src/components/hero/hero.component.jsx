@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import BackgroundImage from 'gatsby-background-image';
 import { rem } from 'polished';
 
-const StyledHero = styled.section`
+const StyledHero = styled(BackgroundImage)`
   background-size: cover;
   background-position: center top;
   width: 100%;
@@ -20,7 +21,6 @@ const StyledHero = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
     margin: 0;
 
     h1 {
@@ -30,13 +30,13 @@ const StyledHero = styled.section`
 `;
 
 const Hero = (props) => {
-  const { children, className, bgImage, isHome } = props;
+  const { children, className, fluid, isHome } = props;
 
   return (
     <StyledHero
-      style={{ backgroundImage: `url(${bgImage})` }}
       className={className}
       isHome={isHome}
+      fluid={fluid}
     >
       <div className='contentWrap'>{children}</div>
     </StyledHero>

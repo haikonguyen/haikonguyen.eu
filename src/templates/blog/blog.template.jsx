@@ -3,17 +3,17 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import TextField from '@material-ui/core/TextField';
 import { navigate } from '@reach/router';
-import Layout from '../components/layout/layout.component';
-import Hero from '../components/hero/hero.component';
-import config from '../../data/SiteConfig';
+import Layout from '../../components/layout/layout.component';
+import Hero from '../../components/hero/hero.component';
+import config from '../../../data/SiteConfig';
 import StyledSearchSection from './blog.style';
-import blogHero from '../img/blogPage.jpg';
-import PostListing from '../components/post-listing/post-listing.component';
-import CustomBtn from '../components/materialui/button.component';
+import PostListing from '../../components/post-listing/post-listing.component';
+import CustomBtn from '../../components/materialui/button.component';
 
 const BlogPage = ({ data }) => {
-  const postEdges = data.allMarkdownRemark.edges;
-  const tags = data.tags.group;
+  const {blog: {edges: postEdges, group}, hero} = data;
+
+   const tags = group;
   const [searchField, setSearchField] = useState('');
 
   const handleChange = (event) => {
@@ -33,7 +33,7 @@ const BlogPage = ({ data }) => {
   return (
     <Layout>
       <Helmet title={`Blog | ${config.siteTitle}`} />
-      <Hero isHome={false} bgImage={blogHero}>
+      <Hero isHome={false} fluid={hero.childImageSharp.fluid}>
         <h1>BLOG</h1>
       </Hero>
       <StyledSearchSection className='container container--fixed'>
@@ -69,7 +69,7 @@ const BlogPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query BlogQuery {
-    allMarkdownRemark(sort: {fields: [fields___slug], order: DESC}, filter: {frontmatter: {templateKey: {eq: "post"}}}) {
+    blog: allMarkdownRemark(sort: {fields: [fields___slug], order: DESC}, filter: {frontmatter: {templateKey: {eq: "post"}}}) {
       edges {
         node {
           fields {
@@ -92,10 +92,16 @@ export const pageQuery = graphql`
           id
         }
       }
-    }
-    tags: allMarkdownRemark(limit: 1000) {
       group(field: frontmatter___tags) {
         fieldValue
+      }
+    }
+    
+    hero: file(relativePath: {eq: "blogPage.jpg"}) {
+      childImageSharp {
+        fluid(maxWidth: 2600, maxHeight: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
       }
     }
   }

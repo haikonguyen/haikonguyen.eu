@@ -5,7 +5,6 @@ import Article from '../../components/article/article.component';
 import { UiContext } from '../../context/ui.context';
 import config from '../../../data/SiteConfig';
 import Layout from '../../components/layout/layout.component';
-import aboutBg from '../../img/aboutPageOptimal.jpg';
 import Hero from '../../components/hero/hero.component';
 
 const AboutPage = ({ location: { pathname }, data }) => {
@@ -18,13 +17,11 @@ const AboutPage = ({ location: { pathname }, data }) => {
     isHomePage(pathname);
   }, []);
 
-  console.log('dataAbout', data)
-
   return (
     <Layout>
       <div className='about-container'>
         <Helmet title={`About | ${config.siteTitle}`} />
-        <Hero isHome={isHome} bgImage={aboutBg}>
+        <Hero isHome={isHome} fluid={aboutHero.childImageSharp.fluid}>
           <h1>{title}</h1>
         </Hero>
         <Article aboutStyle>
@@ -45,7 +42,7 @@ export const pageQuery = graphql`
             aboutHero {
               childImageSharp {
                 fluid(maxWidth: 2600, maxHeight: 1200) {
-                  src
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

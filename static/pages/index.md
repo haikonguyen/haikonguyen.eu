@@ -1,6 +1,6 @@
 ---
 templateKey: index
-heroImage: /img/praguecastle01_opti.jpg
+heroCover: /img/PragueCastle01_opti.jpg
 profileImage: /img/HaikoProfile.jpg
 heading: Haiko Nguyen
 subheading: FRONT-END DEVELOPER, PHOTOGRAPHER, VLOGGER
