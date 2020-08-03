@@ -1,4 +1,5 @@
 ---
+templateKey: post
 title: Charles Bridge Photoshoot
 date: '2015-04-13'
 cover: /img/charlesbridgesworkshop.jpg
