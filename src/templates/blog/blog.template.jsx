@@ -1,28 +1,31 @@
-import React, { useState } from 'react';
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
-import TextField from '@material-ui/core/TextField';
-import { navigate } from '@reach/router';
-import Layout from '../../components/layout/layout.component';
-import Hero from '../../components/hero/hero.component';
-import config from '../../../data/SiteConfig';
-import StyledSearchSection from './blog.style';
-import PostListing from '../../components/post-listing/post-listing.component';
-import CustomBtn from '../../components/materialui/button.component';
+import React, { useState } from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import TextField from "@material-ui/core/TextField";
+import { navigate } from "@reach/router";
+import Layout from "../../components/layout/layout.component";
+import Hero from "../../components/hero/hero.component";
+import config from "../../../data/SiteConfig";
+import StyledSearchSection from "./blog.style";
+import PostListing from "../../components/post-listing/post-listing.component";
+import CustomBtn from "../../components/materialui/button.component";
 
 const BlogPage = ({ data }) => {
-  const {blog: {edges: postEdges, group}, hero} = data;
+  const {
+    blog: { edges: postEdges, group },
+    hero
+  } = data;
 
-   const tags = group;
-  const [searchField, setSearchField] = useState('');
+  const tags = group;
+  const [searchField, setSearchField] = useState("");
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     const { value } = event.target;
 
     setSearchField(value);
   };
 
-  const filteredPosts = postEdges.filter((post) =>
+  const filteredPosts = postEdges.filter(post =>
     post.node.frontmatter.title
       .toLowerCase()
       .includes(searchField.toLowerCase())
@@ -36,26 +39,27 @@ const BlogPage = ({ data }) => {
       <Hero isHome={false} fluid={hero.childImageSharp.fluid}>
         <h1>BLOG</h1>
       </Hero>
-      <StyledSearchSection className='container container--fixed'>
-        <div className='searchSection'>
+      <StyledSearchSection className="container container--fixed">
+        <div className="searchSection">
           <TextField
-            id='outlined-search'
-            label='Search field'
-            type='search'
-            variant='outlined'
+            id="outlined-search"
+            label="Search field"
+            type="search"
+            variant="outlined"
             onChange={() => handleChange(event)}
           />
           <span>{filteredCount}</span>
         </div>
 
-        <div className='categorySection'>
-          {tags.map((tag) => {
+        <div className="categorySection">
+          {tags.map(tag => {
             return (
               <CustomBtn
                 onClick={() =>
-                  navigate(`/categories/${tag.fieldValue.toLowerCase()}`)}
+                  navigate(`/tags/${tag.fieldValue.toLowerCase()}`)
+                }
                 text={tag.fieldValue}
-                size='small'
+                size="small"
                 key={tag.fieldValue}
               />
             );
@@ -69,7 +73,10 @@ const BlogPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query BlogQuery {
-    blog: allMarkdownRemark(sort: {fields: [fields___slug], order: DESC}, filter: {frontmatter: {templateKey: {eq: "post"}}}) {
+    blog: allMarkdownRemark(
+      sort: { fields: [fields___slug], order: DESC }
+      filter: { frontmatter: { templateKey: { eq: "post" } } }
+    ) {
       edges {
         node {
           fields {
@@ -96,8 +103,8 @@ export const pageQuery = graphql`
         fieldValue
       }
     }
-    
-    hero: file(relativePath: {eq: "blogPage.jpg"}) {
+
+    hero: file(relativePath: { eq: "blogPage.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2600, maxHeight: 1200) {
           ...GatsbyImageSharpFluid_withWebp
