@@ -1,15 +1,14 @@
 /* eslint "no-console": "off" */
 
-const path = require('path');
-const _ = require('lodash');
-const moment = require('moment');
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
-const { createFilePath } = require('gatsby-source-filesystem')
-const siteConfig = require('./data/SiteConfig');
-
+const path = require("path");
+const _ = require("lodash");
+const moment = require("moment");
+const { fmImagesToRelative } = require("gatsby-remark-relative-images");
+const { createFilePath } = require("gatsby-source-filesystem");
+const siteConfig = require("./data/SiteConfig");
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return graphql(`
     {
@@ -30,24 +29,24 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then((result) => {
+  `).then(result => {
     if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()))
-      return Promise.reject(result.errors)
+      result.errors.forEach(e => console.error(e.toString()));
+      return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges;
 
     // Sort posts
     posts.sort((postA, postB) => {
       const dateA = moment(
-          postA.node.frontmatter.date,
-          siteConfig.dateFromFormat
+        postA.node.frontmatter.date,
+        siteConfig.dateFromFormat
       );
 
       const dateB = moment(
-          postB.node.frontmatter.date,
-          siteConfig.dateFromFormat
+        postB.node.frontmatter.date,
+        siteConfig.dateFromFormat
       );
 
       if (dateA.isBefore(dateB)) return 1;
@@ -57,68 +56,62 @@ exports.createPages = ({ actions, graphql }) => {
     });
 
     // Paging
-    const { postsPerPage } = siteConfig;
-    const pageCount = Math.ceil(posts.length / postsPerPage);
-
-    posts.forEach((edge) => {
-      const {id} = edge.node
+    posts.forEach(edge => {
+      const { id } = edge.node;
       createPage({
-        path: edge.node.fields.slug,
+        path:
+          edge.node.frontmatter.templateKey === "post"
+            ? `/blog${String(edge.node.fields.slug)}`
+            : edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}/${String(edge.node.frontmatter.templateKey)}.template.jsx`
+          `src/templates/${String(edge.node.frontmatter.templateKey)}/${String(
+            edge.node.frontmatter.templateKey
+          )}.template.jsx`
         ),
         // additional data can be passed via context
         context: {
-          id,
-        },
-      })
-    })
+          id
+        }
+      });
+    });
 
     // Tag pages:
-    let tags = []
+    let tags = [];
     // Iterate through each post, putting all found tags into `tags`
-    posts.forEach((edge) => {
+    posts.forEach(edge => {
       if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
+        tags = tags.concat(edge.node.frontmatter.tags);
       }
-    })
+    });
     // Eliminate duplicate tags
-    tags = _.uniq(tags)
+    tags = _.uniq(tags);
 
     // Make tag pages
-    tags.forEach((tag) => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
+    tags.forEach(tag => {
+      const tagPath = `/tags/${_.kebabCase(tag)}/`;
 
       createPage({
         path: tagPath,
         component: path.resolve(`src/templates/tags/tags.template.jsx`),
         context: {
-          tag,
-        },
-      })
-    })
-  })
-}
+          tag
+        }
+      });
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
+  const { createNodeField } = actions;
+  fmImagesToRelative(node); // convert image paths for gatsby images
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
-      value,
-    })
+      value
+    });
   }
-}
-
-// if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
-//   const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
-//   if (!date.isValid)
-//     console.warn(`WARNING: Invalid date.`, node.frontmatter);
-//
-//   createNodeField({ node, name: 'date', value: date.toISOString() });
-// }
+};
