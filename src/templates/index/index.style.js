@@ -1,26 +1,25 @@
-import styled from 'styled-components';
-import { rem } from 'polished';
+import styled from "styled-components";
+import { rem } from "polished";
 
 const StyledMain = styled.main`
   .sections {
-    padding: ${rem('70px')} ${rem('15px')};
+    padding: ${rem("70px")} ${rem("15px")};
 
     &__heading {
-      padding-bottom: ${rem('70px')};
+      padding-bottom: ${rem("70px")};
 
       h1 {
-        color: ${(props) => props.theme.colors.white};
+        color: ${props => props.theme.colors.white};
         text-align: center;
         margin: 0;
         text-transform: uppercase;
       }
 
       hr {
-        border: ${rem('1px')} solid
-          ${(props) => props.theme.colors.primaryThemeColor};
-        width: ${rem('100px')};
-        margin: 0 auto;
-        margin-top: ${rem('10px')};
+        border: ${rem("1px")} solid
+          ${props => props.theme.colors.primaryThemeColor};
+        width: ${rem("100px")};
+        margin: ${rem("10px")} auto 0;
       }
     }
 
@@ -51,7 +50,7 @@ const StyledMain = styled.main`
         color: white;
         text-align: center;
         h1 {
-          margin: ${rem('10px')} 0;
+          margin: ${rem("10px")} 0;
         }
       }
     }
@@ -59,7 +58,7 @@ const StyledMain = styled.main`
 
   .about {
     display: grid;
-    grid-gap: ${rem('50px')};
+    grid-gap: ${rem("50px")};
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     align-items: flex-start;
@@ -77,11 +76,11 @@ const StyledMain = styled.main`
         width: 100%;
         height: 100%;
         max-width: 400px;
-        border-radius: ${rem('10px')};
+        border-radius: ${rem("10px")};
       }
     }
 
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       grid-template-columns: repeat(2, 1fr);
     }
   }
