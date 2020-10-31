@@ -5,7 +5,6 @@ const StyledForm = styled.section`
     display: flex;
     align-items: center;
     flex-direction: column;
-    //min-width: 250px;
     max-width: 600px;
     padding: 20px;
 
