@@ -40,7 +40,7 @@ const Home = ({ data }) => {
             </section>
             <section className="homeHero__profileWrap__buttons">
               <CustomBtn
-                onClick={() => console.log("click works")}
+                onClick={() => navigate("/contact")}
                 text="Contact Me"
                 variant="contained"
                 size="large"

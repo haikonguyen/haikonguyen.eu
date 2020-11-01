@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { rem } from "polished";
 
 const StyledForm = styled.section`
   .formWrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 600px;
-    padding: 20px;
+    max-width: ${rem("600px")};
+    padding: ${rem("20px")};
 
     .contactInput {
-      margin-bottom: 20px;
+      margin-bottom: ${rem("20px")};
       width: 100%;
 
       textarea {
@@ -19,14 +20,25 @@ const StyledForm = styled.section`
 
     .textAreaWrapper {
       label {
-        color: rgba(255, 255, 255, 0.7);
+        color: ${props => props.theme.colors.formTextColor};
       }
       textarea {
         resize: none;
-        min-height: 180px;
+        min-height: ${rem("180px")};
         background: none;
-        color: white;
         outline: none;
+        color: ${props => props.theme.colors.formTextColor};
+      }
+
+      .text-left {
+        color: ${props => props.theme.colors.formTextColor};
+      }
+
+      .error {
+        color: ${props => props.theme.colors.error};
+      }
+      .errorTextarea {
+        border: 1px solid ${props => props.theme.colors.error};
       }
     }
   }

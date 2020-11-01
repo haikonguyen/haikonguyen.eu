@@ -1,24 +1,24 @@
-import styled from 'styled-components';
-import { rem } from 'polished';
+import styled from "styled-components";
+import { rem } from "polished";
 
 const StyledArticle = styled.article`
-  box-shadow: ${(props) => props.theme.colors.cardItemShadow};
+  box-shadow: ${props => props.theme.colors.cardItemShadow};
 
   .contentWrapper {
-    background-color: ${(props) => props.theme.colors.cardItemBg};
-    padding: ${rem('20px')} ${rem('10px')};
-    margin-top: ${rem('-40px')};
-    border-radius: ${rem('5px')};
-    margin-left: ${rem('10px')};
-    margin-right: ${rem('10px')};
+    background-color: ${props => props.theme.colors.cardItemBg};
+    padding: ${rem("20px")} ${rem("10px")};
+    margin-top: ${rem("-40px")};
+    border-radius: ${rem("5px")};
+    margin-left: ${rem("10px")};
+    margin-right: ${rem("10px")};
     position: relative;
 
     a:-webkit-any-link {
-      color: ${(props) => props.theme.colors.primaryThemeColor};
+      color: ${props => props.theme.colors.primaryThemeColor};
 
       &:hover {
         border-bottom: 1px solid
-          ${(props) => props.theme.colors.primaryThemeColor};
+          ${props => props.theme.colors.primaryThemeColor};
       }
     }
 
@@ -27,21 +27,21 @@ const StyledArticle = styled.article`
       height: auto;
     }
 
-    @media ${(props) => props.theme.screen.tablet} {
-      padding: ${rem('30px')} ${rem('40px')};
-      margin-top: ${rem('-140px')};
-      margin-left: ${rem('30px')};
-      margin-right: ${rem('30px')};
+    @media ${props => props.theme.screen.tablet} {
+      padding: ${rem("30px")} ${rem("40px")};
+      margin-top: ${rem("-140px")};
+      margin-left: ${rem("30px")};
+      margin-right: ${rem("30px")};
     }
 
-    @media ${(props) => props.theme.screen.laptop} {
-      margin-top: ${rem('-120px')};
+    @media ${props => props.theme.screen.laptop} {
+      margin-top: ${rem("-120px")};
     }
 
-    @media ${(props) => props.theme.screen.laptopL} {
-      padding: ${rem('50px')} ${rem('70px')};
-      margin-top: ${rem('-250px')};
-      border-radius: ${rem('10px')};
+    @media ${props => props.theme.screen.laptopL} {
+      padding: ${rem("50px")} ${rem("70px")};
+      margin-top: ${rem("-250px")};
+      border-radius: ${rem("10px")};
       margin-left: 0;
       margin-right: 0;
     }
@@ -60,7 +60,7 @@ const StyledArticle = styled.article`
         div:first-child {
           display: none;
 
-          @media ${(props) => props.theme.screen.tablet} {
+          @media ${props => props.theme.screen.tablet} {
             display: inline-block;
           }
         }
@@ -74,7 +74,7 @@ const StyledArticle = styled.article`
         div {
           flex-basis: 100%;
 
-          @media ${(props) => props.theme.screen.tablet} {
+          @media ${props => props.theme.screen.tablet} {
             flex-basis: auto;
             margin-right: 20px;
           }
@@ -89,14 +89,14 @@ const StyledArticle = styled.article`
     &__content {
       margin-top: 30px;
 
-      @media ${(props) => props.theme.screen.laptopL} {
+      @media ${props => props.theme.screen.laptopL} {
         margin-top: 60px;
       }
     }
 
     &--about {
-      @media ${(props) => props.theme.screen.laptopL} {
-        margin: ${rem('70px')} 0;
+      @media ${props => props.theme.screen.laptopL} {
+        margin: ${rem("70px")} 0;
       }
     }
   }

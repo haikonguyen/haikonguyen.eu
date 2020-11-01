@@ -1,10 +1,9 @@
 // libs
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import { Form, Field } from "react-final-form";
 import * as Yup from "yup";
-import { navigate } from "gatsby-link";
 
 // components
 import { TextField, makeValidate } from "mui-rff";
@@ -12,6 +11,7 @@ import Paper from "@material-ui/core/Paper";
 import config from "../../data/SiteConfig";
 import Layout from "../components/layout/layout.component";
 import Hero from "../components/hero/hero.component";
+import CustomizedDialogs from "../components/materialui/dialog.component";
 
 // others
 import { UiContext } from "../context/ui.context";
@@ -24,7 +24,17 @@ const encode = data => {
     .join("&");
 };
 
-const ContactPage = ({ data }) => {
+const ContactPage = props => {
+  const { data } = props;
+  const [open, setOpen] = React.useState(false);
+
+  const handleModalOpen = () => {
+    setOpen(true);
+  };
+  const handleModalClose = () => {
+    setOpen(false);
+  };
+
   const {
     allMarkdownRemark: { edges }
   } = data;
@@ -47,13 +57,9 @@ const ContactPage = ({ data }) => {
         ...values
       })
     })
-      .then(() => navigate("/"))
+      .then(handleModalOpen)
       .catch(error => alert(error));
   };
-
-  // const submitHandler = values => {
-  //   console.log("values", values);
-  // };
 
   // We define our schema based on the same keys as our form:
   const schema = Yup.object().shape({
@@ -96,7 +102,6 @@ const ContactPage = ({ data }) => {
                     <TextField
                       required
                       label="Name:"
-                      defaultValue=""
                       className="contactInput"
                       name="name"
                     />
@@ -104,21 +109,29 @@ const ContactPage = ({ data }) => {
                       required
                       id="standard-required"
                       label="Email:"
-                      defaultValue=""
                       className="contactInput"
                       name="email"
                     />
                     <div className="contactInput textAreaWrapper flex items-center flex-column">
                       <Field name="message">
-                        {({ input, meta }) => {
+                        {({ input, meta: { error, touched } }) => {
+                          const isError = error && touched;
+
                           return (
                             <>
-                              <div className="w-100 text-left">
-                                {meta.error && meta.touched
-                                  ? meta.error
-                                  : "Message:"}
+                              <div
+                                className={
+                                  isError
+                                    ? "w-100 text-left mb2 error"
+                                    : "w-100 text-left mb2 mt3"
+                                }
+                              >
+                                {isError ? error : "Message: *"}
                               </div>
-                              <textarea {...input} />
+                              <textarea
+                                className={isError ? "errorTextarea" : null}
+                                {...input}
+                              />
                             </>
                           );
                         }}
@@ -133,12 +146,12 @@ const ContactPage = ({ data }) => {
                         type="submit"
                       />
                     </div>
-                    {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
                   </form>
                 );
               }}
             </Form>
           </Paper>
+          <CustomizedDialogs open={open} handleModalClose={handleModalClose} />
         </StyledForm>
       </div>
     </Layout>
