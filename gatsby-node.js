@@ -61,7 +61,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path:
           edge.node.frontmatter.templateKey === "post"
-            ? `/blog${String(edge.node.fields.slug)}`
+            ? `blog${String(edge.node.fields.slug)}`
             : edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
@@ -99,6 +99,8 @@ exports.createPages = ({ actions, graphql }) => {
         }
       });
     });
+
+    return result;
   });
 };
 
