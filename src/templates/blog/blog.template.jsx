@@ -13,19 +13,19 @@ import CustomBtn from "../../components/materialui/button.component";
 const BlogPage = ({ data }) => {
   const {
     blog: { edges: postEdges, group },
-    hero
+    hero,
   } = data;
 
   const tags = group;
   const [searchField, setSearchField] = useState("");
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { value } = event.target;
 
     setSearchField(value);
   };
 
-  const filteredPosts = postEdges.filter(post =>
+  const filteredPosts = postEdges.filter((post) =>
     post.node.frontmatter.title
       .toLowerCase()
       .includes(searchField.toLowerCase())
@@ -52,7 +52,7 @@ const BlogPage = ({ data }) => {
         </div>
 
         <div className="categorySection">
-          {tags.map(tag => {
+          {tags.map((tag) => {
             return (
               <CustomBtn
                 onClick={() =>
