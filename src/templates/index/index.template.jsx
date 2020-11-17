@@ -77,7 +77,7 @@ const Home = ({ data }) => {
             </div>
           </div>
         </section>
-        <Divider className="container--fixed" />
+        <Divider style={{ maxWidth: "900px", margin: "0 auto" }} />
         {/* Blog Section */}
         <section className="sections sections__blog">
           <div className="sections__heading">

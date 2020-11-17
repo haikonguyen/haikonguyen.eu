@@ -18,7 +18,7 @@ const StyledMain = styled.main`
       hr {
         border: ${rem("1px")} solid
           ${props => props.theme.colors.primaryThemeColor};
-        width: ${rem("100px")};
+        max-width: ${rem("100px")};
         margin: ${rem("10px")} auto 0;
       }
     }
