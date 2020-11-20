@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "Heroes Square"
 date: "2017-07-04"
-coverImage: "2C001251.jpg"
+cover: "2C001251.jpg"
+slug: Heroes Square
+tags:
+  - travel
+  - photography
 ---
 
 Hősök tere aka Heroes' Square

@@ -1,7 +1,11 @@
 ---
+templateKey: post
 title: "Canon nFD 200 mm F4 review"
 date: "2015-10-08"
-coverImage: "s-l1600.jpg"
+cover: "s-l1600.jpg"
+slug: Canon nFD 200 mm F4 review
+tags:
+  - review
 ---
 
 Well after the purchase and the [review](http://haihanguyen.eu/?p=303) of the legendary lens Canon FD 100mm SSC F2.8, I knew I would have to buy another Canon FD lens, because these lenses are so good, yet so affordable right now.

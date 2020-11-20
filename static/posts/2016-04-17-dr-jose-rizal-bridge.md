@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "Dr Jose Rizal Bridge"
 date: "2016-04-17"
-coverImage: "2c0DrJoseRizalBridge.jpg"
+cover: "2c0DrJoseRizalBridge.jpg"
+slug: Dr Jose Rizal Bridge
+tags:
+  - travel
+  - photography
 ---
 
 This is one is the most difficult picture I’ve ever taken. Why? Well, it was not about the composition, technical issues or weather(even though, the weather could be tad better).

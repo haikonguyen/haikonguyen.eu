@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "The Emerald City"
 date: "2016-03-19"
-coverImage: "2c0KerryPark-1.jpg"
+cover: "2c0KerryPark-1.jpg"
+slug: The Emerald City
+tags:
+  - travel
+  - photography
 ---
 
 If you ever visit [‪#‎Seattle‬](https://www.facebook.com/hashtag/seattle?source=feed_text) and would like to take a picture at the famous [‪#‎Kerry‬](https://www.facebook.com/hashtag/kerry?source=feed_text)[‪#‎Park‬](https://www.facebook.com/hashtag/park?source=feed_text), I would definitely recommend you to buy an umbrella. Why? Well let’s just say that it’s raining here much more often then what I’m used to in Prague.

@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "Singapore"
 date: "2017-02-05"
-coverImage: "DSC00443.jpg"
+cover: "DSC00443.jpg"
+slug: Canon FD 100mm F2.8 SSC Review
+tags:
+  - travel
+  - photography
 ---
 
 The Lion City aka Singapore nowadays even without the natural resources, is one of the Four Asian Tigers, an economic multinational power, has one of the biggest financial center in the world and it is considered as one of the cleanest cities on Earth.

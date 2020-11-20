@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "Seattle, Columbia Tower"
 date: "2016-05-18"
-coverImage: "2c0-1-2.jpg"
+cover: "2c0-1-2.jpg"
+slug: Seattle, Columbia Tower
+tags:
+  - travel
+  - photography
 ---
 
 If you are in Seattle, you probably would wanna go to visit either the famous Space Needle or the Columbia Tower Observatory, and if you are lucky enough, you can go to both places altogether.

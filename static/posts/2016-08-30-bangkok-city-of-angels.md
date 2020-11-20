@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "Bangkok city of Angels"
 date: "2016-08-30"
-coverImage: "2c0-1-3.jpg"
+cover: "2c0-1-3.jpg"
+slug: Bangkok city of Angels
+tags:
+  - travel
+  - photography
 ---
 
 Bangkok is an amazing city, to describe it would take me ages.

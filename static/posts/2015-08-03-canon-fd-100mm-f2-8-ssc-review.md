@@ -1,7 +1,11 @@
 ---
+templateKey: post
 title: "Canon FD 100mm F2.8 SSC Review"
 date: "2015-08-03"
-coverImage: "CanonFd100F28SSC.jpg"
+cover: "CanonFd100F28SSC.jpg"
+slug: Canon FD 100mm F2.8 SSC Review
+tags:
+  - review
 ---
 
 Canon FD 100 mm F2.8 SSC\* review

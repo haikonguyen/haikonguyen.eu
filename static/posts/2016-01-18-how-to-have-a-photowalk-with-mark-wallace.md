@@ -1,6 +1,12 @@
 ---
+templateKey: post
 title: "How to have a Photowalk with Mark Wallace"
 date: "2016-01-18"
+cover: "CanonFd100F28SSC.jpg"
+slug: How to have a Photowalk with Mark Wallace
+tags:
+  - workshop
+  - photography
 ---
 
 [My web](http://haihanguyen.eu/)|[500px](https://500px.com/haicorp)|[Flickr](https://www.flickr.com/photos/2c0/)|[Instagram](https://www.instagram.com/2c0/)|[Twitter](https://twitter.com/haicorp87)

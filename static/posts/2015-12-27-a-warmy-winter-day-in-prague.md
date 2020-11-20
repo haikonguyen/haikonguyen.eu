@@ -1,6 +1,11 @@
 ---
+templateKey: post
 title: "A warmy winter day in Prague"
 date: "2015-12-27"
+cover: ""
+slug: A warmy winter day in Prague
+tags:
+  - photography
 ---
 
 The weather in Czech Republic was really beautiful and warm yesterday.  It was really unusual to see such a beautiful day during winter season, especially in Prague. It was around 15 degrees Celsius and that’s almost identical to Vietnam Hanoi (around 15 - 18 degrees), but that’s a pretty normal for winter season in Hanoi.

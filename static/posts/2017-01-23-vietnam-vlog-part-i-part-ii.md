@@ -1,6 +1,12 @@
 ---
+templateKey: post
 title: "Vietnam Vlog Part I + Part II"
 date: "2017-01-23"
+cover: "CanonFd100F28SSC.jpg"
+slug: Vietnam Vlog Part I + Part II
+tags:
+  - vlog
+  - travel
 ---
 
 Check out my journey in Vietnam trough Vlog series. 

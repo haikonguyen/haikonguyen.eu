@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "Ha Long Bay - Descending Dragon bay"
 date: "2016-07-07"
-coverImage: "2c0-1-3.jpg"
+cover: "2c0-1-3.jpg"
+slug: Ha Long Bay - Descending Dragon bay
+tags:
+  - travel
+  - photography
 ---
 
 Ha Long Bay is the Vietnamese jewel and One of the Seven World Natural Wonders.

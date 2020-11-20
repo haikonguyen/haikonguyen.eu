@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "My new FB page"
 date: "2018-01-31"
-coverImage: "2C001422-1.jpg"
+cover: "2C001422-1.jpg"
+slug: My new FB page
+tags:
+  - travel
+  - photography
 ---
 
 Hi friends,

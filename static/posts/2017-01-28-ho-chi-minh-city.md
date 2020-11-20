@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "Ho Chi Minh City"
 date: "2017-01-28"
-coverImage: "DSC00336.jpg"
+cover: "DSC00336.jpg"
+slug: Ho Chi Minh City
+tags:
+  - travel
+  - photography
 ---
 
 Ho Chi Minh City aka Saigon is truly an amazing city. Historically the City has been occupied by so many nationalities Khmer, French, Japanese, Americans and lastly Vietnamese. That is also the reason, why this city is so diverse and multicultural nowadays.

@@ -1,7 +1,12 @@
 ---
+templateKey: post
 title: "The Hanoi Street Barber"
 date: "2016-06-20"
-coverImage: "2c0-1-3.jpg"
+cover: "2c0-1-3.jpg"
+slug: The Hanoi Street Barber
+tags:
+  - travel
+  - photography
 ---
 
 \[caption id="attachment\_476" align="aligncenter" width="1920"\][![The Hanoi Street Barber](images/2c0-1-3.jpg)](http://haihanguyen.eu/wp-content/uploads/2016/06/2c0-1-3.jpg) The Hanoi Street Barber\[/caption\]
