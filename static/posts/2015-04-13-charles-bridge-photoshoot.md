@@ -2,7 +2,7 @@
 templateKey: post
 title: Charles Bridge Photoshoot
 date: '2015-04-13'
-cover: /img/charlesbridgesworkshop.jpg
+cover: /img/2015-04-13_charlesbridgesworkshop.jpg
 slug: Charles Bridge Photoshoot
 tags:
   - photography
@@ -14,7 +14,7 @@ so the Spring already has come to Prague, but the weather is actually random (in
 
 Images:
 
-![Bridge01](/img/bridge01.jpg 'Bridge01')
+![Thao_Bridge01](/img/2015-04-13_Thao_Bridge01.jpg 'Thao_Bridge01')
 
 So I just invited some friends and we went shooting, it was fun as always and here are some example shots:
 

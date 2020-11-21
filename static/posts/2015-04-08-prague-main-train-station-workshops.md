@@ -2,7 +2,7 @@
 templateKey: post
 title: Prague Main Train Station Photoshoot
 date: '2015-04-08'
-cover: /images/2c0-10.jpg
+cover: /images/2015-04-08_MyLilBroModel.jpg
 slug: Prague Main Train Station Photoshoot
 tags:
   - photography
