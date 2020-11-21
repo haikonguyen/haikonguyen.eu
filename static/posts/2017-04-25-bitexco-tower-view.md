@@ -2,8 +2,8 @@
 templateKey: post
 title: "Bitexco Tower View"
 date: "2017-04-25"
-cover: "DSC00250-edit.jpg"
-slug: Canon FD 100mm F2.8 SSC Review
+cover: /images/2017-04-25_bitexco_tower_view.jpg
+slug: Bitexco Tower View
 tags:
   - travel
   - photography
@@ -14,3 +14,4 @@ and it's Sky Bar, It is a great place to have a date and see the city from anoth
 If you are a photographer, you are going to basically kill two birds with one stone.
 Just remember to come before sunset 😎!
 
+![Bitexco Tower View](/img/2017-04-25_bitexco_tower_view.jpg 'Bitexco Tower View')

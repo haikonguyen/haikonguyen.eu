@@ -2,7 +2,7 @@
 templateKey: post
 title: "The Emerald City"
 date: "2016-03-19"
-cover: "2c0KerryPark-1.jpg"
+cover: /images/2016-03-19_KerryPark.jpg
 slug: The Emerald City
 tags:
   - travel
@@ -16,3 +16,5 @@ The weather here in Seattle is so tricky that there were days that seems to be p
 In fact, It’s raining even in during Sunny days and according to the local statistics, there are more rainy/cloudy days than sunny days annually.
 
 Well after many attempts, I finally managed to capture the real beautiful landscape of the famous [‪#‎Emerald‬](https://www.facebook.com/hashtag/emerald?source=feed_text) #City (Rain City) from the Kerry Park.
+
+![KerryPark](/img/2016-03-19_KerryPark.jpg 'KerryPark')

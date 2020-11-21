@@ -2,7 +2,7 @@
 templateKey: post
 title: "Dr Jose Rizal Bridge"
 date: "2016-04-17"
-cover: "2c0DrJoseRizalBridge.jpg"
+cover: /images/2016-04-17_DrJoseRizalBridge.jpg
 slug: Dr Jose Rizal Bridge
 tags:
   - travel
@@ -20,3 +20,5 @@ On the bridge, there is only tiny place for pedestrians, so the cars are literal
 Well, it was a challenge for me, for sure. After first five minutes, I just put on my noise cancellation headphones, play my favourite music and imagine how the final picture would look like and here is the result.
 
 Thank you for reading, enjoy and have a great night everybody !
+
+![2016-04-17_DrJoseRizalBridge](/img/2016-04-17_DrJoseRizalBridge.jpg '2016-04-17_DrJoseRizalBridge')

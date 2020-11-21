@@ -2,7 +2,7 @@
 templateKey: post
 title: "Ha Long Bay - Descending Dragon bay"
 date: "2016-07-07"
-cover: "2c0-1-3.jpg"
+cover: /images/2016-07-07_ha-long-bay-sunset.jpg
 slug: Ha Long Bay - Descending Dragon bay
 tags:
   - travel
@@ -18,3 +18,5 @@ There are actually around 2000 islands, but vietnamese government decided to cho
 Well, that is actually all what I've remembered from the lecture of our tour guide guy.
 
 Anyway enjoy this beautiful view and goodnight guys!
+
+![Ha Long Bay - Descending Dragon bay](/img/2016-07-07_ha-long-bay-sunset.jpg 'Ha Long Bay - Descending Dragon bay')

@@ -2,13 +2,15 @@
 templateKey: post
 title: "Etnetera's Group Ball 2018"
 date: "2018-12-15"
-cover: "2c0-1-3.jpg"
+cover: /images/2018-12-15_etn_end_year_2018_party.png
 slug: Etnetera's Group Ball 2018
 tags:
   - video
 ---
+I created this video in winter 2018, at the end of the year. At first, I did not have the mood to create anything 
+creative at all, but after few shots, the mood got better, and the atmosphere was great. Plus there were two professional
+photographers, but nobody were making any videos at all. So, I told myself, the hack, I can create something with my
+trusty iPhone X.
 
+Have a look at the end result :-):
 <iframe frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" width="480" height="270" src="http://youtube.com/embed/FrI0Ygtp1EM" style="position: absolute; top: 0px; left: 0px; width: 480px; height: 270px;"></iframe>
-
-  
-via [IFTTT](https://ifttt.com/?ref=da&site=wordpress)

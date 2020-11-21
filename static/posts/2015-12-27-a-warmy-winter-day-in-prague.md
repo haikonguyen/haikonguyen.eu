@@ -2,7 +2,7 @@
 templateKey: post
 title: "A warmy winter day in Prague"
 date: "2015-12-27"
-cover: ""
+cover: /images/2015-12-27-PragueCastle.jpg
 slug: A warmy winter day in Prague
 tags:
   - photography
@@ -12,7 +12,7 @@ The weather in Czech Republic was really beautiful and warm yesterday.  It was 
 
  
 
-So because yesterday was such a beautiful day, I decided to take a picture from a different point of view. Even though this gorgeous scenery to Prague Castle from the Old Town Bridge Tower is quite famous, I never had a chance to literarily go up and take a picture. Today I can say, that I am really glad that I did. :-D
+So because yesterday was such a beautiful day, I decided to take a picture from a different point of view. Even though this gorgeous scenery to Prague Castle from the Old Town Bridge Tower is quite famous, I never had a chance to literally go up and take a picture. Today I can say, that I am really glad, that I did. :-D
 
  
 
@@ -26,4 +26,6 @@ If you are going to climb the stairs and take a picture here as well, you will n
 
  
 
-I’ve been living in Prague my whole life and I am still amazed, how beautiful and romantic the city is. I hope you will like the picture and have a nice evening!
+I’ve been living in Prague my whole life and, I am still amazed, how beautiful and romantic the city is. I hope you will like the picture and have a nice evening!
+
+![PragueCastle](/img/2015-12-27-PragueCastle.jpg 'PragueCastle')

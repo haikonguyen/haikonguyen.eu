@@ -2,17 +2,17 @@
 templateKey: post
 title: "Canon nFD 200 mm F4 review"
 date: "2015-10-08"
-cover: "s-l1600.jpg"
+cover: /images/2015-10-08_CanonFDF4_cover.jpg
 slug: Canon nFD 200 mm F4 review
 tags:
   - review
 ---
 
-Well after the purchase and the [review](http://haihanguyen.eu/?p=303) of the legendary lens Canon FD 100mm SSC F2.8, I knew I would have to buy another Canon FD lens, because these lenses are so good, yet so affordable right now.
+Well after the purchase and the legendary lens Canon FD 100mm SSC F2.8, I knew I would have to buy another Canon FD lens, because these lenses are so good, yet so affordable right now.
 
 So this time, I was looking for a longer telephoto prime lens, I didn't want a zoom lens, because I know that Canon started to produce high quality zoom lens just recently and boy they are really BIG and expensive (especially the L series with bigger apperture, like the famous 70-200mm F2.8 IS mark II, in my country the Czech republic, the prices are around 65000 czech crowns, that is around 2600 $ USD). So again, I looked at the famous old school FD primes line up, and finally found two candidates to choose from:
 
-[![Screen Shot 2015-09-08 at 22.31.59](images/Screen-Shot-2015-09-08-at-22.31.59.png)](http://haihanguyen.eu/wp-content/uploads/2015/09/Screen-Shot-2015-09-08-at-22.31.59.png)
+![Table of Lens prices](/img/2015-10-08_lens_prices_table.png 'Table of Lens prices')
 
 So after deep research, I decided to ditch the F2.8 variation for the smaller package and bought the F4 version.
 
@@ -50,20 +50,18 @@ So in this section I am going to make a short review of this beautiful lens:
  
 
 Sample images:
-
-[![BeautyWithHat](images/2c0-11-1024x683.jpg)](http://haihanguyen.eu/wp-content/uploads/2015/08/2c0-11.jpg)
+![The beauty with a Hat](/img/2015-10-08_BeautyWithHat.jpg 'The beauty with a Hat')
 
 Metadata: F4, ISO:320, Shutter speed: 1/400
 
  
-
-[![CanonFDF4-2](images/CanonFDF4-2-1024x683.jpg)](http://haihanguyen.eu/wp-content/uploads/2015/10/CanonFDF4-2.jpg)
+![CanonFDF4-2](/img/2015-10-08_CanonFDF4-2-1024x683.jpg 'CanonFDF4-2')
 
 Metadata: F4, ISO:320, Shutter speed: 1/1600
 
  
 
-[![CanonFDF4-1](images/CanonFDF4-1-1024x683.jpg)](http://haihanguyen.eu/wp-content/uploads/2015/10/CanonFDF4-1.jpg)
+![CanonFDF4-1](/img/2015-10-08_CanonFDF4-1-1024x683.jpg 'CanonFDF4-1')
 
 Metadata: F4, ISO:320, Shutter speed: 1/1600
 
@@ -73,4 +71,4 @@ Metadata: F4, ISO:320, Shutter speed: 1/1600
 
 This lens managed to beat even my lovely Canon FD 100mm F2.8 SSC that I reviewed just recently. So now it becomes the cheapest lens I’ve ever bought and also the best buy ever, period. This lens is a beast performer and gem from Canon.  After almost 40 years, its still performs as a champ. If you are on a budget and looking for an outstanding telephoto lens, then this lens is a must buy. Of course you need to sacrifice autofocus and metadata :-).
 
-[![HighRec](images/HighRec.png)](http://haihanguyen.eu/wp-content/uploads/2015/08/HighRec.png)
+![HighRec](/img/HighRec.png 'HighRec')

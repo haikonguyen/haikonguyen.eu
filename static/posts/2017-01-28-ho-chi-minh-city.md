@@ -2,7 +2,7 @@
 templateKey: post
 title: "Ho Chi Minh City"
 date: "2017-01-28"
-cover: "DSC00336.jpg"
+cover: /images/2017-01-28_bitexco_tower.jpg
 slug: Ho Chi Minh City
 tags:
   - travel
@@ -24,3 +24,5 @@ After my visit in Singapore, I can see the similarities between these two cities
 For now just enjoy this beautiful view into the City and Bitexco Tower.
 
 Happy New Lunar Year everybody!
+
+![Ho Chi Minh City](/img/2017-01-28_bitexco_tower.jpg 'Ho Chi Minh City')

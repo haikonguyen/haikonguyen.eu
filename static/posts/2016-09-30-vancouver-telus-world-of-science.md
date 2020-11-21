@@ -2,7 +2,7 @@
 templateKey: post
 title: "Vancouver, Telus World of Science:"
 date: "2016-09-30"
-cover: "CanonFd100F28SSC.jpg"
+cover: /images/2016-09-30_Telus_World_of_Science.jpg
 slug: Vancouver, Telus World of Science
 tags:
   - travel
@@ -14,3 +14,5 @@ I spent only a short time in this lovely Canadian city, but boy oh boy, what a b
 If you are like me and love the Asian cousine, then this is the place to go. After a delicious meal, you could take your lover to the place called Science World to watch the glowingly Globe with yachts in the background.
 
 Here is a just little taste, enjoy and have great rest of the weekend guys!
+
+![Vancouver, Telus World of Science](/img/2016-09-30_Telus_World_of_Science.jpg 'Vancouver, Telus World of Science')

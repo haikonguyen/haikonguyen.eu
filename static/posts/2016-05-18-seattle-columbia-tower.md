@@ -2,7 +2,7 @@
 templateKey: post
 title: "Seattle, Columbia Tower"
 date: "2016-05-18"
-cover: "2c0-1-2.jpg"
+cover: /images/2016-05-18_Seattle_Columbia_Tower.jpg
 slug: Seattle, Columbia Tower
 tags:
   - travel
@@ -21,3 +21,5 @@ When you are there, just make sure that:
 - and enjoy the beautiful VISTA.
 
 Thank you and Good Night guys!
+
+![Seattle, Columbia Tower](/img/2016-05-18_Seattle_Columbia_Tower.jpg 'Seattle, Columbia Tower')

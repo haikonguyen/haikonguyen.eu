@@ -2,11 +2,11 @@
 templateKey: post
 title: "London - Tower Bridge"
 date: "2016-10-01"
-cover: "DSC03373-Edit-2.jpg"
-slug: Canon FD 100mm F2.8 SSC Review
+cover: /images/2016-10-01_London.jpg
+slug: London - Tower Bridge
 tags:
-  - review
----
+  - travel
+  - photography
 ---
 
 Recently, I had a chance to visit London, one of the most international, modern, yet classy city on Earth.
@@ -24,3 +24,5 @@ Actually you can enjoy this beautiful scenery with me and see it for yourself.
 Thank you and Best Regards,
 
 Your boy, Haiko :-).
+
+![London - Tower Bridge](/img/2016-10-01_London.jpg 'London - Tower Bridge')

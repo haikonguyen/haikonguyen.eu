@@ -2,7 +2,7 @@
 templateKey: post
 title: "Vietnam Vlog Part I + Part II"
 date: "2017-01-23"
-cover: "CanonFd100F28SSC.jpg"
+cover: /images/2017-01-23_vlog_one_and_two.png
 slug: Vietnam Vlog Part I + Part II
 tags:
   - vlog

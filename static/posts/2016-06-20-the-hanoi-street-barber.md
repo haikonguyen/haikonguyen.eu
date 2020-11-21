@@ -2,14 +2,12 @@
 templateKey: post
 title: "The Hanoi Street Barber"
 date: "2016-06-20"
-cover: "2c0-1-3.jpg"
+cover: /images/2016-06-20_hanoi_street_barber.jpg
 slug: The Hanoi Street Barber
 tags:
   - travel
   - photography
 ---
-
-\[caption id="attachment\_476" align="aligncenter" width="1920"\][![The Hanoi Street Barber](images/2c0-1-3.jpg)](http://haihanguyen.eu/wp-content/uploads/2016/06/2c0-1-3.jpg) The Hanoi Street Barber\[/caption\]
 
 During my 5 days in Vietnam, I've seen and experienced so many interesting stories and the one that I am about to share with you guys is just one of them.
 
@@ -22,3 +20,5 @@ During the session he was very happy to have us and told us that he is very luck
 It was pleasure to watch this talented artist working and the beautiful result is just a tip of an iceberg. The stylish hairstyle costs us 30000VNDs (around 1 Euro), we were so happy and humbled to meet him and gave him 3 Euros in the end.
 
 We wished him all the best and good luck. If you ever visit Vietnam and want a stylish haircut, definitely give this young street artists a chance, you will not regret it for sure!
+
+[The Hanoi Street Barber](/img/2016-06-20_hanoi_street_barber.jpg 'The Hanoi Street Barber')

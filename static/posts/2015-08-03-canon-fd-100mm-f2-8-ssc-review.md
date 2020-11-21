@@ -2,7 +2,7 @@
 templateKey: post
 title: "Canon FD 100mm F2.8 SSC Review"
 date: "2015-08-03"
-cover: "CanonFd100F28SSC.jpg"
+cover: /images/2015-08-03_CanonFd100F28SSC.jpg
 slug: Canon FD 100mm F2.8 SSC Review
 tags:
   - review
@@ -47,13 +47,12 @@ So in this section I am going to make a short review of this beautiful lens:
 
 Sample images:
 
-[![2c0-1](images/2c0-1-1024x683.jpg)](http://haihanguyen.eu/wp-content/uploads/2015/08/2c0-1.jpg)
+![CanonFd100mmReview_01](/img/canonFd100mm_review_01.jpg 'CanonFd100mmReview_01')
 
 Metadata: F2.8, ISO:320, Shutter speed: 1/200
 
  
-
-[![2c0-2](images/2c0-2-1024x683.jpg)](http://haihanguyen.eu/wp-content/uploads/2015/08/2c0-2.jpg)
+![CanonFd100mmReview_02](/img/canonFd100mm_review_02.jpg 'CanonFd100mmReview_02')
 
 Metadata: F2.8, ISO:320, Shutter speed: 1/200
 
@@ -62,5 +61,4 @@ Metadata: F2.8, ISO:320, Shutter speed: 1/200
 **Verdict:**
 
 This is my first full manual and also the cheapest lens I've ever bought, but it is also one of the best buy I've ever made. This lens is a gem from Canon and a must for every portrait photographer who are not afraid of manual focusing and want to learn. The quality of this lens is outstanding, after 40 years, its still performs as a champ. Even though the lens has no autofocus, no metadata information, I still love this lens. It makes me slow down a little bit and have a time to think about the composition, ISO, shutter speed and it is so fun to nail the focus.
-
-[![HighRec](images/HighRec.png)](http://haihanguyen.eu/wp-content/uploads/2015/08/HighRec.png)
+![HighRec](/img/HighRec.png 'HighRec')
