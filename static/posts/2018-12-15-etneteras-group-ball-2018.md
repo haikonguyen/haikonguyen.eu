@@ -13,4 +13,4 @@ photographers, but nobody were making any videos at all. So, I told myself, the 
 trusty iPhone X.
 
 Have a look at the end result :-):
-<iframe frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" width="480" height="270" src="http://youtube.com/embed/FrI0Ygtp1EM" style="position: absolute; top: 0px; left: 0px; width: 480px; height: 270px;"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FrI0Ygtp1EM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -13,10 +13,11 @@ Check out my journey in Vietnam trough Vlog series. 
 
 In this post you can find the first two parts below:
 
-Links:
+Part I:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LZxOlpn_9Xk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-1. [Part I](https://youtu.be/LZxOlpn_9Xk)
-2. [Part II](https://youtu.be/C8eMovquDT0)
+Part II:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C8eMovquDT0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Enjoy and BR, 
 
