@@ -57,6 +57,7 @@ I've been interested in Gatsby for some time, and working as Front-End developer
 So, one day, when I was researching the Web, I end up at this site [https://www.taniarascia.com/](https://www.taniarascia.com/). This is a personal blog of Tania Rascia, she is an amazing tech writer, self-taught professional software engineer and tutor. When I first saw here page, I was fascinated about the speed of the site, everything was butter-ly smooth and snappy. I've spent quite some time browsing her blog, and you know what, I subscribe immediately. Reading her blog, I've found out that she has quite similar background, which is very close to mine, and I can relate to her, plus her site was exceptional. That day, I told myself, I need to make something like that with my site. Next steps, very pretty easy, I followed her article about migrating WordPress site to Gatsby. Research more about each technology and that was it.
 
 ## Step Two - The Design
+![Final Design](/img/2020-11-22_welcome_to_my_new_site_wireframe_design.jpg 'Final Design')
 
 I am not a Designer by a profession, but for a long time, I really liked the Google's material design. Personally, I think it was made for web, and Google did a great job, creating a masterpiece blueprint. So, I knew in my mind, it should be based on material design. I started to draw some sketches and wireframe, and designed my site based on the Google's [blueprint](https://material.io/design). That's basically my workflow for designing process. 
 
