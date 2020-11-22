@@ -41,7 +41,7 @@ const ContactPage = props => {
 
   const {
     node: {
-      frontmatter: { title, aboutHero }
+      frontmatter: { aboutHero }
     }
   } = edges[0];
 
@@ -80,7 +80,8 @@ const ContactPage = props => {
       <div className="contact-container">
         <Helmet title={`Contact | ${config.siteTitle}`} />
         <Hero isHome={isHome} fluid={aboutHero.childImageSharp.fluid}>
-          <h1>{title}</h1>
+          {/* TODO: REFACTOR, use better template */}
+          <h1>CONTACT</h1>
         </Hero>
         <StyledForm className="container--fixed mt5-l mt4 mb5-l mb4">
           <Paper className="flex justify-center" elevation={3}>

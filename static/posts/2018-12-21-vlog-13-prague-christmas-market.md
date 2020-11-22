@@ -9,7 +9,7 @@ tags:
   - vlog
 ---
 It's christmas here in Prague, and I told myself, it's been a while, since I've done any Vlogs. Usually, I try to make
-English speaking version, but there are so many of them on youtube already, so cause I am also a Vietnamese, why not
+an English-speaking version, but there are so many of them on youtube already, so cause I am also a Vietnamese, why not
 make a video about Christmas mood here in Prague, and show my family, how the Christmas atmosphere here in Prague is 
 not behind any major Cities in the world.
 
