@@ -1,8 +1,8 @@
 {
   "MENU": {
-    "HOME": "DOMŮ",
-    "ABOUT": "O MNĚ",
+    "HOME": "HOME",
+    "ABOUT": "ABOUT",
     "BLOG": "BLOG",
-    "CONTACT": "KONTAKT"
+    "CONTACT": "CONTACT"
   }
 }

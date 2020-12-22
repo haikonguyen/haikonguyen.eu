@@ -1,60 +1,64 @@
-import React from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
-import { Link } from 'gatsby';
-import { navigate } from '@reach/router';
-import CustomBtn from '../materialui/button.component';
-import TemporaryDrawer from '../materialui/drawer.component';
-import config from '../../../data/SiteConfig';
-import StyledAppBar from './navigation.style';
-import mainLogo from '../../img/mainLogoOptimized.png';
+import React from "react";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
+import Brightness7Icon from "@material-ui/icons/Brightness7";
+import { Link } from "gatsby";
+import { navigate } from "@reach/router";
+import { useTranslation } from "react-i18next";
+import CustomBtn from "../materialui/button.component";
+import TemporaryDrawer from "../materialui/drawer.component";
+import config from "../../../data/SiteConfig";
+import StyledAppBar from "./navigation.style";
+import mainLogo from "../../img/mainLogoOptimized.png";
+import LanguageMenu from "./lang-menu.component";
 
-const Nav = (props) => {
+const Nav = props => {
   const { themeToggler, lightTheme, showOnScroll } = props;
+  const { t } = useTranslation("MENU");
 
   return (
     <StyledAppBar
-      position={showOnScroll ? 'fixed' : 'absolute'}
+      position={showOnScroll ? "fixed" : "absolute"}
       showonscroll={showOnScroll ? 1 : 0}
     >
-      <Toolbar className='mobileNav' variant='dense'>
+      <Toolbar className="mobileNav" variant="dense">
         <TemporaryDrawer themeToggler={themeToggler} lightTheme={lightTheme} />
       </Toolbar>
 
-      <div className='desktopNav'>
-        <section className='desktopNav__logo'>
-          <IconButton aria-label='menu' onClick={() => navigate('/')}>
-            <img src={mainLogo} alt='The logo' />
+      <div className="desktopNav">
+        <section className="desktopNav__logo">
+          <IconButton aria-label="menu" onClick={() => navigate("/")}>
+            <img src={mainLogo} alt="The logo" />
           </IconButton>
         </section>
 
-        <section className='destkopNav__links'>
-          {config.navLinks.map((link) => (
+        <section className="destkopNav__links">
+          {config.navLinks.map(link => (
             <Link
               key={link.id}
               to={link.href}
-              activeClassName='destkopNav__links--active'
+              activeClassName="destkopNav__links--active"
             >
               <CustomBtn
                 className={
                   showOnScroll
-                    ? 'navLinks__btn navLinks__btn--scrolled'
-                    : 'navLinks__btn'
+                    ? "navLinks__btn navLinks__btn--scrolled"
+                    : "navLinks__btn"
                 }
-                size='large'
-                text={link.name}
+                size="large"
+                text={t(`${link.name}`)}
               />
             </Link>
           ))}
           <IconButton onClick={() => themeToggler()}>
             {lightTheme ? (
-              <Brightness4Icon className='themeToggleIcon' />
+              <Brightness4Icon className="themeToggleIcon" />
             ) : (
-              <Brightness7Icon className='themeToggleIcon' />
+              <Brightness7Icon className="themeToggleIcon" />
             )}
           </IconButton>
+          <LanguageMenu />
         </section>
       </div>
     </StyledAppBar>

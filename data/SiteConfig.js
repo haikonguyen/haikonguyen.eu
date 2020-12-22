@@ -51,22 +51,22 @@ const config = {
     {
       id: 1,
       href: "/",
-      name: "Home"
+      name: "HOME"
     },
     {
       id: 2,
       href: "/about",
-      name: "About"
+      name: "ABOUT"
     },
     {
       id: 3,
       href: "/blog",
-      name: "Blog"
+      name: "BLOG"
     },
     {
       id: 4,
       href: "/contact",
-      name: "Contact"
+      name: "CONTACT"
     }
   ],
   copyright: `Copyright © ${footerYear}. Haiko Nguyen`, // Copyright string for the footer of the website and RSS feed.
