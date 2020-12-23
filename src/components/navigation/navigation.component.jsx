@@ -19,7 +19,7 @@ const Nav = props => {
 
   return (
     <StyledAppBar
-      position={showOnScroll ? "fixed" : "absolute"}
+      position={showOnScroll ? "fixed" : "relative"}
       showonscroll={showOnScroll ? 1 : 0}
     >
       <Toolbar className="mobileNav" variant="dense">

@@ -20,7 +20,11 @@ const LanguageMenu = () => {
   };
 
   return (
-    <FormControl>
+    <FormControl
+      style={{
+        verticalAlign: "middle"
+      }}
+    >
       <Select
         value={values.language}
         onChange={e => handleChange(e)}
