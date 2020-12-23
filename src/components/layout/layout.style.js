@@ -1,58 +1,55 @@
-import { createGlobalStyle } from 'styled-components';
-import { rem } from 'polished';
+import { createGlobalStyle } from "styled-components";
+import { rem } from "polished";
 
 export const GlobalStyle = createGlobalStyle`
 body {
   padding: 0;
   margin: 0;
-  background-color: ${(props) => props.theme.colors.backgroundColor};
-  color: ${(props) => props.theme.colors.bodyTextColor};
+  background-color: ${props => props.theme.colors.backgroundColor};
+  color: ${props => props.theme.colors.bodyTextColor};
   outline: none;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-
   overflow-wrap: break-word;
   word-wrap: break-word;
-
-  outline: none;
 }
 
 h1 {
-  font-size: ${rem('25px')};
+  font-size: ${rem("25px")};
 
-  @media ${(props) => props.theme.screen.tablet} {
-    font-size: ${rem('35px')};
+  @media ${props => props.theme.screen.tablet} {
+    font-size: ${rem("35px")};
   }
 }
 
 h2 {
-  font-size: ${rem('22px')};
+  font-size: ${rem("22px")};
 
-  @media ${(props) => props.theme.screen.tablet} {
-    font-size: ${rem('29px')};
+  @media ${props => props.theme.screen.tablet} {
+    font-size: ${rem("29px")};
   }
 }
 
 h3 {
-  font-size: ${rem('20px')};
+  font-size: ${rem("20px")};
 
-  @media ${(props) => props.theme.screen.tablet} {
-    font-size: ${rem('25px')};
+  @media ${props => props.theme.screen.tablet} {
+    font-size: ${rem("25px")};
   }
 }
 
 h4 {
-  font-size: ${rem('18px')};
+  font-size: ${rem("18px")};
 
-  @media ${(props) => props.theme.screen.tablet} {
-    font-size: ${rem('22px')};
+  @media ${props => props.theme.screen.tablet} {
+    font-size: ${rem("22px")};
   }
 }
 
 p {
-  line-height: ${rem('24px')};
+  line-height: ${rem("24px")};
 
-  @media ${(props) => props.theme.screen.tablet} {
-    line-height: ${rem('26px')};
+  @media ${props => props.theme.screen.tablet} {
+    line-height: ${rem("26px")};
   }
 }
 
@@ -61,7 +58,7 @@ a:-webkit-any-link {
 }
 
 .container {
-  padding: ${rem('70px')} ${rem('15px')};
+  padding: ${rem("70px")} ${rem("15px")};
 
   &--fluid {
     width: 100%;
@@ -69,7 +66,7 @@ a:-webkit-any-link {
 
   &--fixed {
     margin: 0 auto;
-    max-width: ${rem('1140px')};
+    max-width: ${rem("1140px")};
 
   }
 
@@ -77,8 +74,12 @@ a:-webkit-any-link {
 
 .MuiButton-textPrimary {
   && {
-  color: ${(props) => props.theme.colors.bodyTextColor};
+  color: ${props => props.theme.colors.bodyTextColor};
   }
+}
+
+.MuiSvgIcon-root {
+  fill: ${props => props.theme.colors.bodyTextColor} !important;
 }
 
 @keyframes slide-down {
