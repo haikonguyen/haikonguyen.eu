@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { FormControl } from "@material-ui/core";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import { useTranslation } from "react-i18next";
+import usePersistedState from "../../utils/usePersistedState";
 
 const LanguageMenu = () => {
   const { i18n } = useTranslation();
-  const [values, setValues] = useState({
+  const [values, setValues] = usePersistedState("persisted-language", {
     language: "en"
   });
 
