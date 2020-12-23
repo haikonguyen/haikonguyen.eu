@@ -23,7 +23,7 @@ const Home = ({ data }) => {
     }
   } = homeEdge[0];
 
-  const { t } = useTranslation("ABOUT");
+  const { t } = useTranslation("HOME");
 
   return (
     <Layout>
