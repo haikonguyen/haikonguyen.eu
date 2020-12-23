@@ -1,7 +1,9 @@
 import csMainTranslation from "./csMainTranslation";
+import csHomePage from "./csHomePage.json";
 
 const csGlobals = {
-  ...csMainTranslation
+  ...csMainTranslation,
+  ...csHomePage
 };
 
 export default csGlobals;

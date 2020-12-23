@@ -3,6 +3,7 @@ import { navigate } from "@reach/router";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Divider from "@material-ui/core/Divider";
+import { useTranslation } from "react-i18next";
 import CustomBtn from "../../components/materialui/button.component";
 import Hero from "../../components/hero/hero.component";
 import Layout from "../../components/layout/layout.component";
@@ -18,9 +19,11 @@ const Home = ({ data }) => {
   } = data;
   const {
     node: {
-      frontmatter: { aboutSection, latestSection, profileImage, subheading }
+      frontmatter: { aboutSection, profileImage, subheading }
     }
   } = homeEdge[0];
+
+  const { t } = useTranslation("ABOUT");
 
   return (
     <Layout>
@@ -41,7 +44,7 @@ const Home = ({ data }) => {
             <section className="homeHero__profileWrap__buttons">
               <CustomBtn
                 onClick={() => navigate("/contact")}
-                text="Contact Me"
+                text={t("CONTACT_BUTTON")}
                 variant="contained"
                 size="large"
                 color="primary"
@@ -52,7 +55,7 @@ const Home = ({ data }) => {
         {/* About Section */}
         <section className="sections">
           <div className="sections__heading">
-            <h1>{aboutSection.title}</h1>
+            <h1>{t("HEADING")}</h1>
             <hr />
           </div>
           <div className="about container--fixed">
@@ -65,12 +68,10 @@ const Home = ({ data }) => {
               <div className="profilePicture--designElement" />
             </div>
             <div>
-              <p
-                dangerouslySetInnerHTML={{ __html: aboutSection.description }}
-              />
+              <p>{t("PARAGRAPH")}</p>
               <CustomBtn
                 onClick={() => navigate("/about")}
-                text="Read My Story"
+                text={t("READ_MY_STORY_BTN")}
                 variant="outlined"
                 color="primary"
               />
@@ -81,14 +82,14 @@ const Home = ({ data }) => {
         {/* Blog Section */}
         <section className="sections sections__blog">
           <div className="sections__heading">
-            <h1>{latestSection.title}</h1>
+            <h1>{t("LATEST_POSTS")}</h1>
             <hr />
           </div>
           <PostListing postEdges={postEdges} />
           <div className="container container--fixed sections__blog__btn">
             <CustomBtn
               onClick={() => navigate("/blog")}
-              text="Read More"
+              text={t("READ_MORE_BTN")}
               variant="outlined"
               color="primary"
             />

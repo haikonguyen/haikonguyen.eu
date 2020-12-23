@@ -1,7 +1,9 @@
 import viMainTranslation from "./viMainTranslation";
+import viHomePage from "./viHomePage.json";
 
 const viGlobals = {
-  ...viMainTranslation
+  ...viMainTranslation,
+  ...viHomePage
 };
 
 export default viGlobals;
