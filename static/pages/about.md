@@ -48,7 +48,7 @@ Today, I still love PHOTOGRAPHY, besides PORTRAITURE, I started to really like T
 
 I don't know if I can ever shoot a wedding, but I keep shooting 😝!
 
-## Travel and Cousine
+## Travel and Cuisine
 
 When my Dad passed away in 2016, I spent all my saving to for travelling. Interesting fact is that, I've never travelled so much before, in fact it was not something that would make me happy, so I was not even paying attention about it. I would rather spent the money for some Tech or Video Game, but when my Dad passed away, I just wanted to travel to forget about the fact, that he was not with us anymore. I started to travel at first with few friends, and eventually I mastered the SOLO travelling, and started to travel by myself.
 
@@ -68,11 +68,11 @@ I've managed to visit these countries:
 - 🇭🇺Hungary, Budapest
 - 🇸🇰Slovakia, Bratislava
 
-What about the Cousine in the heading you may ask? Well, I was always passionate about the food that my Mom and Dad cooked, but when I started to travel, that was really the moment, when I really found the passion in enjoying food around the World. Besides, a man gotta eat, right?
+What about the Cuisine in the heading you may ask? Well, I was always passionate about the food that my Mom and Dad cooked, but when I started to travel, that was really the moment, when I really found the passion in enjoying food around the World. Besides, a man gotta eat, right?
 
 ## Web Development
 
-My passion about web started already in 1995, when my friend for the first time showed me the SEZNAM search engine. Like everybody else, I was hooked in using the web, especially for finding information, chatting, playing games and listening to music. Basically, I was using it as everybody else, but never ever have I thought, that someday I would be creating the apps on the WEB.
+My passion about the Web started already in 1995, when my friend for the first time showed me the SEZNAM search engine. Like everybody else, I was hooked in using the web, especially for finding information, chatting, playing games and listening to music. Basically, I was using it as everybody else, but never ever have I thought, that someday I would be creating the apps on the WEB.
 
 It's kind a shame, that I got into this topic really late. Especially, when I had my first computer quite early. I think it is connected with the fact, that both of my parents are non-technical, and when I finished elementary school, I basically had no idea, what I would be doing in the future, so I enrolled for Business Academy. During my four years of high school, there were IT courses, but most of them were only teaching how to work with Microsoft Office. Well, what can you expect from BIZ school right?
 
@@ -84,7 +84,7 @@ There were few faculties I could choose to enroll the studies:
 - Faculty of Financial Studies (would be most appropriate for me coming from BIZ Academy)
 - Faculty of Informatics and Statistics (I ended here :-))
 
-Frankly, I was aiming for the first two, because it would be logical choice. At least, I thought so, naively 😝! The thing is that I failed the entrance exam, and I had to do the exams again during summer 2007. I've always liked the IT, with my background it would be natural choice, but again since I was spending for years learning BIZ and Economics, I thought it would be waste of my time.
+Frankly, I was aiming for the first two, because it would be logical choice. At least, I thought so, naively 😝! The thing is that I failed the entrance exam, and I had to do the exams again during summer 2007. I've always liked the IT, with my background it would be natural choice, but again since I was spending four years learning BIZ and Economics, I thought it would be waste of my time.
 
 Luckily, I think it was my destiny, that I failed the other two faculties, because of that, I had to attend the FIT.
 
