@@ -46,7 +46,7 @@ const AboutPage = ({ location: { pathname }, data }) => {
           {/* WHAT I LIKE */}
           <h1>{t("WHAT_I_LIKE_H1")}</h1>
           <p>{t("WHAT_I_LIKE_P")}</p>
-          {/* GANES AND COMPUTERS */}
+          {/* GAMES AND COMPUTERS */}
           <h2>{t("GAMES_AND_COMPUTERS_H2")}</h2>
           <p>{t("GAMES_AND_COMPUTERS_P")}</p>
           <p>{t("GAMES_AND_COMPUTERS_P2")}</p>
@@ -66,19 +66,78 @@ const AboutPage = ({ location: { pathname }, data }) => {
           <p>{t("TRAVEL_AND_CUISINE_P")}</p>
           <h2>{t("TRAVEL_AND_CUISINE_H3")}</h2>
           <ul>
-            <li>🇺🇸 USA, Seattle</li>
-            <li>🇨🇦 Canada, Vancouver</li>
-            <li>🇷🇸 Serbia, Belgrade</li>
-            <li>🇹🇭 Thailand, Bangkok</li>
-            <li>🇩🇪 Germany, Berlin, Frankfurt</li>
-            <li>🇦🇹 Austria, Vienna</li>
-            <li>🇻🇳 Vietnam, a lot of cities :-)</li>
-            <li>🇰🇷 South Korea, Seoul</li>
-            <li>🇨🇳 China, Shanghai</li>
-            <li>🇸🇬 Singapore</li>
-            <li>🇬🇧 UK, London</li>
-            <li>🇭🇺 Hungary, Budapest</li>
-            <li>🇸🇰 Slovakia, Bratislava</li>
+            <li>
+              <span role="img" aria-label="">
+                🇺🇸
+              </span>{" "}
+              USA, Seattle
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇨🇦
+              </span>{" "}
+              Canada, Vancouver
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇷🇸
+              </span>{" "}
+              Serbia, Belgrade
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇹🇭
+              </span>{" "}
+              Thailand, Bangkok
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇩🇪
+              </span>{" "}
+              Germany, Berlin, Frankfurt
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇦🇹
+              </span>{" "}
+              Austria, Vienna
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇻🇳
+              </span>{" "}
+              Vietnam, a lot of cities
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇰🇷
+              </span>{" "}
+              South Korea, Seoul
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇨🇳
+              </span>{" "}
+              China, Shanghai
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇸🇬
+              </span>{" "}
+              Singapore
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇬🇧
+              </span>{" "}
+              UK, London
+            </li>
+            <li>
+              <span role="img" aria-label="">
+                🇭🇺
+              </span>{" "}
+              Hungary, Budapest
+            </li>
           </ul>
           <p>{t("TRAVEL_AND_CUISINE_P2")}</p>
           {/* WEB DEVELOPMENT */}
