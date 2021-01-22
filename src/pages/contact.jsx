@@ -8,6 +8,7 @@ import * as Yup from "yup";
 // components
 import { TextField, makeValidate } from "mui-rff";
 import Paper from "@material-ui/core/Paper";
+import { useTranslation } from "react-i18next";
 import config from "../../data/SiteConfig";
 import Layout from "../components/layout/layout.component";
 import Hero from "../components/hero/hero.component";
@@ -48,6 +49,8 @@ const ContactPage = props => {
   const uiContext = useContext(UiContext);
   const { isHome } = uiContext;
 
+  const { t } = useTranslation("CONTACT");
+
   const submitHandler = values => {
     fetch("/", {
       method: "POST",
@@ -58,6 +61,7 @@ const ContactPage = props => {
       })
     })
       .then(handleModalOpen)
+      // eslint-disable-next-line no-alert
       .catch(error => alert(error));
   };
 
@@ -81,7 +85,7 @@ const ContactPage = props => {
         <Helmet title={`Contact | ${config.siteTitle}`} />
         <Hero isHome={isHome} fluid={aboutHero.childImageSharp.fluid}>
           {/* TODO: REFACTOR, use better template */}
-          <h1>CONTACT</h1>
+          <h1>{t("HEADING")}</h1>
         </Hero>
         <StyledForm className="container--fixed mt5-l mt4 mb5-l mb4">
           <Paper className="flex justify-center" elevation={3}>
